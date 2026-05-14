@@ -1,0 +1,287 @@
+{
+  "audit_elapsed_seconds": 0.5,
+  "audit_meta": {},
+  "audit_mode": "deep",
+  "audit_version": "0.1.0",
+  "audited_at": "2026-05-14T02:58:55Z",
+  "core_loop": {
+    "path": "tools/task_templates.py",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {},
+  "description": "A philosophical around typed absence, provenance, and compaction in agent systems. Milestone 1 is now complete: https://github.com/Joona-t/primordial",
+  "disk_usage_kb": 1272,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": false,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 1,
+    "file_count": 1002,
+    "files_by_lang": {
+      "JSON": 346,
+      "Markdown": 109,
+      "Other": 466,
+      "Python": 80
+    },
+    "largest_source_files": [
+      {
+        "bytes": 67206,
+        "path": "tools/task_templates.py"
+      },
+      {
+        "bytes": 66017,
+        "path": "tools/adversarial_corpus.py"
+      },
+      {
+        "bytes": 65382,
+        "path": "tools/compaction_analysis.py"
+      },
+      {
+        "bytes": 62227,
+        "path": "tools/test_forge_v1_convergence.py"
+      },
+      {
+        "bytes": 49178,
+        "path": "tools/xarch_analysis.py"
+      },
+      {
+        "bytes": 40008,
+        "path": "tools/xarch_campaign_runner.py"
+      },
+      {
+        "bytes": 38748,
+        "path": "tools/test_extended_validator.py"
+      },
+      {
+        "bytes": 32775,
+        "path": "tools/synthesis.py"
+      },
+      {
+        "bytes": 32723,
+        "path": "tools/test_compaction_analysis.py"
+      },
+      {
+        "bytes": 31705,
+        "path": "tools/test_langgraph_integration.py"
+      },
+      {
+        "bytes": 31551,
+        "path": "tools/test_compaction_harness.py"
+      },
+      {
+        "bytes": 30767,
+        "path": "tools/run_pilot_track_a.py"
+      }
+    ],
+    "loc_by_lang": {
+      "JSON": 222260,
+      "Markdown": 31898,
+      "Other": 14790,
+      "Python": 44822
+    },
+    "loc_total": 313770,
+    "primary_language": "Python"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 106,
+    "contributor_count": 2,
+    "contributors": [
+      {
+        "commits": 104,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      },
+      {
+        "commits": 2,
+        "name": "Darkfire <darkfire@Darkfires-Virtual-Machine.local>"
+      }
+    ],
+    "first_commit_date": "2026-03-28T20:12:46+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-28T20:12:46+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-28T20:12:46+02:00",
+        "sha": "55ba8ed",
+        "subject": "chore: archive v2.0 research milestone \u2014 The Forgetting Agent"
+      },
+      {
+        "date": "2026-03-28T19:31:55+02:00",
+        "sha": "d559926",
+        "subject": "docs(phase-08): mark Phase 8 and v2.0 milestone complete in ROADMAP"
+      },
+      {
+        "date": "2026-03-28T19:31:08+02:00",
+        "sha": "8b11878",
+        "subject": "state(phase-08): update STATE.md with Phase 8 results and RQ4 verdict"
+      },
+      {
+        "date": "2026-03-28T19:29:29+02:00",
+        "sha": "08513d8",
+        "subject": "docs(08-04): complete cross-architecture analysis plan \u2014 RQ4 POSITIVE"
+      },
+      {
+        "date": "2026-03-28T19:27:32+02:00",
+        "sha": "2207ef6",
+        "subject": "validate(08-04): comprehensive test suite for cross-architecture analysis"
+      },
+      {
+        "date": "2026-03-28T19:20:02+02:00",
+        "sha": "9e11e8a",
+        "subject": "analyze(08-04): build cross-architecture analysis module with RQ4 verdict"
+      },
+      {
+        "date": "2026-03-28T19:14:45+02:00",
+        "sha": "2493167",
+        "subject": "docs(08-03): complete cross-architecture campaign plan"
+      },
+      {
+        "date": "2026-03-28T19:12:53+02:00",
+        "sha": "ebcd278",
+        "subject": "validate(08-03): 76 cross-architecture campaign tests passing"
+      },
+      {
+        "date": "2026-03-28T19:10:25+02:00",
+        "sha": "d52bd2b",
+        "subject": "validate(08-03): cross-architecture campaign runner with 110 sessions"
+      },
+      {
+        "date": "2026-03-28T19:05:24+02:00",
+        "sha": "ee68301",
+        "subject": "docs(08-02): complete LangGraph integration harness plan"
+      },
+      {
+        "date": "2026-03-28T19:03:42+02:00",
+        "sha": "8978b6d",
+        "subject": "validate(08-02): 37 integration tests for LangGraph adapter \u2014 all passing"
+      },
+      {
+        "date": "2026-03-28T18:57:16+02:00",
+        "sha": "350d456",
+        "subject": "implement(08-02): LangGraph integration harness with mock StateGraph and ForgeCheckpointSaver"
+      },
+      {
+        "date": "2026-03-28T18:54:55+02:00",
+        "sha": "32b9442",
+        "subject": "docs(08-01): complete AG2 integration harness and tests plan"
+      },
+      {
+        "date": "2026-03-28T18:53:13+02:00",
+        "sha": "7a22719",
+        "subject": "validate(08-01): 36 integration tests for AG2 adapter \u2014 all forge guarantees verified"
+      },
+      {
+        "date": "2026-03-28T18:50:29+02:00",
+        "sha": "095ea89",
+        "subject": "implement(08-01): AG2 integration harness with mock framework and 5 scenarios"
+      },
+      {
+        "date": "2026-03-28T18:36:09+02:00",
+        "sha": "503a5b7",
+        "subject": "docs(08-cross-architecture): create phase plan \u2014 4 plans in 3 waves"
+      },
+      {
+        "date": "2026-03-28T08:51:26+02:00",
+        "sha": "6abf88d",
+        "subject": "docs(phase-07): complete adversarial task campaign \u2014 RQ2b NEGATIVE-STRONG"
+      },
+      {
+        "date": "2026-03-28T08:49:27+02:00",
+        "sha": "c3827a1",
+        "subject": "docs(07-04): complete statistical analysis and RQ2b verdict plan"
+      },
+      {
+        "date": "2026-03-28T08:47:32+02:00",
+        "sha": "75e8c49",
+        "subject": "document(07-04): comprehensive RQ2b violation campaign report"
+      },
+      {
+        "date": "2026-03-28T08:44:13+02:00",
+        "sha": "ae755c2",
+        "subject": "compute(07-04): statistical analysis of 211-run adversarial campaign"
+      },
+      {
+        "date": "2026-03-28T08:37:44+02:00",
+        "sha": "3a78802",
+        "subject": "docs(07-03): complete adversarial campaign plan with SUMMARY"
+      },
+      {
+        "date": "2026-03-28T08:35:21+02:00",
+        "sha": "1fc38f4",
+        "subject": "validate(07-03): post-hoc validation and violation extraction for 211 runs"
+      },
+      {
+        "date": "2026-03-28T08:31:41+02:00",
+        "sha": "3e5c0d8",
+        "subject": "compute(07-03): execute 211-run adversarial campaign with mock backend"
+      },
+      {
+        "date": "2026-03-28T08:26:43+02:00",
+        "sha": "ab740fd",
+        "subject": "docs(07-02): complete adversarial task corpus and campaign runner plan"
+      },
+      {
+        "date": "2026-03-28T08:24:53+02:00",
+        "sha": "49e70e8",
+        "subject": "implement(07-02): campaign runner with 7-channel instrumentation"
+      },
+      {
+        "date": "2026-03-28T08:23:41+02:00",
+        "sha": "1f2eeae",
+        "subject": "docs(07-01): complete extended validator plan summary"
+      },
+      {
+        "date": "2026-03-28T08:22:30+02:00",
+        "sha": "fb71b93",
+        "subject": "validate(07-01): injection sanity check -- 9/9 D-types at 100% detection"
+      },
+      {
+        "date": "2026-03-28T08:21:51+02:00",
+        "sha": "481e68f",
+        "subject": "implement(07-02): adversarial task corpus with 20 templates across 9 categories"
+      },
+      {
+        "date": "2026-03-28T08:20:59+02:00",
+        "sha": "ed25d8a",
+        "subject": "implement(07-01): extended validator covering D1-D9 canonical taxonomy"
+      },
+      {
+        "date": "2026-03-28T08:02:47+02:00",
+        "sha": "15febb5",
+        "subject": "fix(07): add D6 illegal transition check, fix error-code-to-D-type mapping in Plan 01"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/primordial.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/forge/primordial",
+  "ls_check": null,
+  "name": "primordial",
+  "pushed_at": "2026-03-28T21:24:40Z",
+  "stars": 2,
+  "tier": 1,
+  "tier_reason": "explicit allowlist (Tier 1)",
+  "url": "https://github.com/Joona-t/primordial",
+  "version": null,
+  "visibility": "public"
+}

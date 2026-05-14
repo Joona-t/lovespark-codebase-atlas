@@ -1,0 +1,337 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>primordial — atlas</title><style>
+:root {
+  --ls-pink-light: #ffc8d6;
+  --ls-pink-mid: #ff9bbb;
+  --ls-pink-deep: #c5276f;
+  --ls-pink-accent: #ff5fa2;
+  --ls-cream: #fff5f8;
+  --ls-text: #2a1825;
+  --ls-text-soft: #6b4858;
+  --ls-bg-gradient: linear-gradient(135deg, #ffc8d6 0%, #ff9bbb 50%, #ffe0e9 100%);
+  --ls-glass: rgba(255, 255, 255, 0.7);
+  --ls-glass-strong: rgba(255, 255, 255, 0.92);
+  --ls-shadow: 0 4px 14px rgba(197, 39, 111, 0.15);
+  --ls-focus: #c5276f;
+  --tier-1: #c5276f;
+  --tier-2: #ff5fa2;
+  --tier-3: #ff9bbb;
+}
+
+[data-theme="dark"] {
+  --ls-bg-gradient: linear-gradient(135deg, #2a1825 0%, #3d1f2e 50%, #1a0f15 100%);
+  --ls-text: #ffe0e9;
+  --ls-text-soft: #c5a3b4;
+  --ls-glass: rgba(60, 30, 45, 0.7);
+  --ls-glass-strong: rgba(80, 40, 60, 0.92);
+  --ls-cream: #2a1825;
+  --ls-pink-deep: #ff9bbb;
+}
+
+[data-theme="beige"] {
+  --ls-bg-gradient: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 50%, #f0dcc0 100%);
+  --ls-pink-deep: #8b3a5f;
+  --ls-pink-accent: #c5276f;
+  --ls-glass: rgba(255, 250, 240, 0.7);
+  --ls-glass-strong: rgba(255, 250, 240, 0.95);
+}
+
+[data-theme="slate"] {
+  --ls-bg-gradient: linear-gradient(135deg, #3d4a5c 0%, #2a3441 50%, #4a5868 100%);
+  --ls-text: #e0e6ef;
+  --ls-text-soft: #a8b3c0;
+  --ls-glass: rgba(70, 80, 95, 0.7);
+  --ls-glass-strong: rgba(85, 95, 110, 0.92);
+  --ls-cream: #2a3441;
+  --ls-pink-deep: #ffb3cc;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'OpenDyslexic', system-ui, -apple-system, 'SF Pro Rounded', 'Segoe UI', sans-serif;
+  background: var(--ls-bg-gradient);
+  background-attachment: fixed;
+  color: var(--ls-text);
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+.layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+.sidebar {
+  background: var(--ls-glass-strong);
+  border-right: 1px solid rgba(197, 39, 111, 0.18);
+  padding: 16px 14px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+}
+@media (max-width: 900px) { .sidebar { position: static; height: auto; } }
+
+.brand { display: flex; align-items: center; gap: 10px; padding: 4px 8px 12px; }
+.brand img { width: 44px; height: 44px; border-radius: 12px; box-shadow: var(--ls-shadow); }
+.brand-text { font-weight: 700; font-size: 14px; color: var(--ls-pink-deep); line-height: 1.2; }
+.brand-text small { display: block; font-weight: 400; color: var(--ls-text-soft); font-size: 11px; margin-top: 2px; }
+
+.atlas-link { display: block; font-size: 11px; color: var(--ls-pink-deep); text-decoration: none; padding: 6px 8px; margin-bottom: 8px; border-radius: 8px; background: rgba(255, 255, 255, 0.4); }
+.atlas-link:hover { background: rgba(255, 255, 255, 0.7); }
+
+.nav { display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
+.nav a {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--ls-text);
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav a:hover { background: rgba(255, 95, 162, 0.12); }
+.nav a:focus-visible { outline: 2px solid var(--ls-focus); outline-offset: 2px; }
+.nav .num { font-size: 10px; opacity: 0.5; font-variant-numeric: tabular-nums; }
+
+.theme-toggle { margin-top: 14px; padding: 0 8px; }
+.theme-toggle select {
+  width: 100%;
+  font: inherit;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(197, 39, 111, 0.3);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ls-text);
+  cursor: pointer;
+}
+.theme-toggle select:focus-visible { outline: 2px solid var(--ls-focus); }
+
+.main { padding: 28px 36px; max-width: 1080px; }
+@media (max-width: 900px) { .main { padding: 16px; } }
+
+header.repo-head { margin-bottom: 22px; }
+header.repo-head h1 { margin: 0 0 4px; font-size: 32px; color: var(--ls-pink-deep); }
+header.repo-head .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; color: var(--ls-text-soft); font-size: 13px; }
+header.repo-head .meta a { color: var(--ls-pink-deep); }
+
+.tier-badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+.tier-badge.tier-1 { background: var(--tier-1); }
+.tier-badge.tier-2 { background: var(--tier-2); }
+.tier-badge.tier-3 { background: var(--tier-3); color: #5c1a36; }
+.visibility-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(197, 39, 111, 0.12);
+  color: var(--ls-pink-deep);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.archived-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(120, 120, 120, 0.2);
+  color: #555;
+  font-weight: 600;
+}
+
+section.atlas-section { background: var(--ls-glass); border-radius: 14px; padding: 18px 22px; box-shadow: var(--ls-shadow); margin-bottom: 18px; }
+section.atlas-section h2 { color: var(--ls-pink-deep); margin: 0 0 12px; font-size: 20px; border-bottom: 2px solid rgba(197, 39, 111, 0.18); padding-bottom: 6px; }
+section.atlas-section h3 { color: var(--ls-pink-deep); margin: 14px 0 6px; font-size: 15px; }
+section.atlas-section p { margin: 8px 0; }
+section.atlas-section ul, section.atlas-section ol { margin: 8px 0; padding-left: 22px; }
+section.atlas-section li { margin: 4px 0; }
+section.atlas-section a { color: var(--ls-pink-deep); }
+section.atlas-section a:hover { color: var(--ls-pink-accent); }
+
+code { background: rgba(197, 39, 111, 0.08); padding: 1px 6px; border-radius: 4px; font-size: 0.88em; }
+pre { background: rgba(42, 24, 37, 0.94); color: #ffe0e9; padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 12.5px; line-height: 1.45; }
+pre code { background: transparent; padding: 0; color: inherit; }
+[data-theme="dark"] pre { background: rgba(0, 0, 0, 0.5); }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid rgba(197, 39, 111, 0.12); vertical-align: top; }
+th { font-weight: 600; color: var(--ls-pink-deep); }
+
+.kv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin: 10px 0; }
+.kv { background: var(--ls-glass-strong); border-radius: 10px; padding: 10px 12px; }
+.kv .k { font-size: 10.5px; color: var(--ls-text-soft); text-transform: uppercase; letter-spacing: 0.4px; }
+.kv .v { font-size: 18px; font-weight: 700; color: var(--ls-pink-deep); display: block; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.kv .v.good { color: #2a9d4a; }
+.kv .v.warn { color: #e0a836; }
+.kv .v.danger { color: #c44248; }
+
+.mermaid-host { background: rgba(255, 255, 255, 0.5); border-radius: 10px; padding: 14px; margin: 10px 0; overflow-x: auto; text-align: center; }
+
+.empty-state { color: var(--ls-text-soft); font-style: italic; font-size: 13px; }
+
+.health-banner { padding: 10px 14px; border-radius: 10px; margin-bottom: 14px; font-size: 13px; }
+.health-banner.danger { background: rgba(196, 66, 72, 0.12); color: #8c2429; border: 1px solid rgba(196, 66, 72, 0.3); }
+.health-banner.warn { background: rgba(224, 168, 54, 0.15); color: #8b6212; border: 1px solid rgba(224, 168, 54, 0.3); }
+.health-banner.good { background: rgba(42, 157, 74, 0.12); color: #167a32; border: 1px solid rgba(42, 157, 74, 0.3); }
+
+footer.repo-foot { margin-top: 24px; padding-top: 14px; border-top: 1px solid rgba(197, 39, 111, 0.2); font-size: 12px; color: var(--ls-text-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer.repo-foot a { color: var(--ls-pink-deep); }
+
+/* card layout for Tier 3 single-page atlases */
+body.card-mode .main { max-width: 760px; padding: 22px 26px; }
+body.card-mode .layout { grid-template-columns: 1fr; }
+body.card-mode .sidebar { display: none; }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+:focus-visible { outline: 2px solid var(--ls-focus); outline-offset: 2px; border-radius: 4px; }
+</style></head><body class="deep-mode"><div class="layout"><aside class="sidebar"><div class="brand"><img src="../assets/mascot.png" alt="Sparky mascot — LoveSpark codebase atlas"><div class="brand-text">Atlas<small>LoveSpark Codebase Atlas</small></div></div><a class="atlas-link" href="../index.html">&larr; back to index</a><nav class="nav"><a href="#sec-tldr">TL;DR</a><a href="#sec-data">The Data</a><a href="#sec-architecture">The Architecture</a><a href="#sec-core_loop">The Core Loop</a><a href="#sec-stack">The Stack</a><a href="#sec-decisions">The Decisions</a><a href="#sec-tradeoffs">The Trade-offs</a><a href="#sec-metrics">The Metrics</a><a href="#sec-failures">The Failures</a><a href="#sec-v_next">v0.next</a><a href="#sec-reproducibility">Reproducibility</a><a href="#sec-takeaway">Karpathy Takeaway</a></nav><div class="theme-toggle"><select id="theme-select" aria-label="Theme"><option value="retro">Retro pink</option><option value="dark">Dark</option><option value="beige">Beige</option><option value="slate">Slate</option></select></div></aside><main class="main"><header class="repo-head"><h1>primordial</h1><div class="meta"><span class="tier-badge tier-1">Tier&nbsp;1</span> · <span class="visibility-badge">public</span> · <a href="https://github.com/Joona-t/primordial" target="_blank" rel="noopener">Joona-t/primordial</a></div></header><section class="atlas-section" id="sec-tldr"><h2>TL;DR</h2><p class="empty-state">Add a `tldr:` field to `audit-meta.yml` at the repo root.</p>
+<div class="kv-grid">
+<div class="kv"><div class="k">Primary language</div><span class="v">Python</span></div>
+<div class="kv"><div class="k">LOC (source)</div><span class="v">313,770</span></div>
+<div class="kv"><div class="k">Files</div><span class="v">1,002</span></div>
+<div class="kv"><div class="k">Last commit</div><span class="v">2026-03-28</span></div>
+<div class="kv"><div class="k">Commits</div><span class="v">106</span></div>
+</div></section><section class="atlas-section" id="sec-data"><h2>The Data</h2><p class="empty-state">Add a `data:` block to `audit-meta.yml` to describe inputs/outputs/shape.</p></section><section class="atlas-section" id="sec-architecture"><h2>The Architecture</h2><h3>Top-level layout (auto)</h3>
+<div class="mermaid-host">
+<pre><code class="language-mermaid">graph TD
+  Repo[&quot;primordial&quot;]
+  Repo --&gt; data[&quot;data/&quot;]
+  Repo --&gt; docs[&quot;docs/&quot;]
+  Repo --&gt; experiments[&quot;experiments/&quot;]
+  Repo --&gt; integration_samples[&quot;integration_samples/&quot;]
+  Repo --&gt; tools[&quot;tools/&quot;]</code></pre>
+</div>
+<p class="empty-state">Replace with a real C4 diagram via <code>audit-meta.yml</code> → <code>architecture.diagram</code>.</p></section><section class="atlas-section" id="sec-core_loop"><h2>The Core Loop</h2><p>File: <code>tools/task_templates.py</code></p>
+<p class='empty-state'>Role: largest source file &middot; detection: size-heuristic</p>
+<pre><code class="lang-py">&quot;&quot;&quot;Track A Task Templates — Phase 6, Plan 02 of Primordial v2.0.
+
+Three task template classes for Track A experiments:
+1. CodingTaskTemplate (A1): Multi-file refactoring with provenance chains
+2. DebuggingTaskTemplate (A2): Bug-fix chains with hypothesis-test-revise loops
+3. SpecificationTaskTemplate (A3): Spec compliance with requirement tracing
+
+Each template:
+- Produces unique, non-trivial content per iteration
+- Builds genuine provenance chains (each artifact references predecessors)
+- Generates enough tokens to reach the 80K LLM compaction threshold
+- Embeds forge artifact IDs naturally in the task context
+
+Convention assertions (project-specific — physics conventions N/A):
+  artifact_id_format = &quot;artifact:&lt;run&gt;:stage:&lt;seat&gt;:&lt;revision&gt;&quot;
+  compaction_disambiguation = &quot;forge compaction = lossless hash-verified;
+    LLM compaction = lossy semantic; unqualified &#x27;compaction&#x27; FORBIDDEN&quot;
+  all_metrics_dimensionless = True
+&quot;&quot;&quot;
+
+import hashlib
+from typing import Any
+
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+
+from compaction_experiment import inject_artifact_markers
+
+
+# --- Base Class ---
+
+class TaskTemplate:
+    &quot;&quot;&quot;Base class for Track A task templates.
+
+    Subclasses must implement:
+    - _iteration_prompts: list of iteration prompt templates
+    - category: str identifying the task category
+    - track: str identifying the experimental track (default &quot;A&quot;)
+    &quot;&quot;&quot;
+
+    category: str = &quot;generic&quot;
+    track: str = &quot;A&quot;
+
+    def __init__(self, run_id: str = &quot;default&quot;):
+        self.run_id = run_id
+        self._artifacts: list[dict] = []  # {id, iteration, source_refs}
+        self._generated_ids: set[str] = set()
+
+    def generate_iteration(self, iteration: int) -&gt; str:
+        &quot;&quot;&quot;Generate a user prompt for this iteration.
+
+        Each iteration:
+        1. Builds on the previous iteration&#x27;s context
+        2. Injects a forge artifact ID for survival tracking
+        3. References previous artifacts via source_refs
+
+        Args:
+            iteration: Zero-based iteration index.
+
+        Returns:
+            User prompt string with embedded forge provenance.
+        &quot;&quot;&quot;
+        prompt_text = self._get_iteration_prompt(iteration)
+
+        # Inject artifact marker
+        marked_text, artifact_id = inject_artifact_markers(
+            prompt_text, self.run_id, iteration
+        )
+        self._generated_ids.add(artifact_id)
+
+        # Build source_refs chain
+        source_refs = []
+        if self._artifacts:
+            # Reference the most recent artifact
+            source_refs.append(self._artifacts[-1][&quot;id&quot;])
+            # For deeper chains, also reference 2-back when available
+            if len(self._artifacts) &gt;= 3 and iteration % 3 == 0:
+                source_refs.append(self._artifacts[-3][&quot;id&quot;])
+
+</code></pre>
+<p class='empty-state'>(truncated to first 80 lines — see source for the rest)</p></section><section class="atlas-section" id="sec-stack"><h2>The Stack</h2><p class="empty-state">No declared dependencies detected (no package.json, Cargo.toml, Package.swift, etc.).</p></section><section class="atlas-section" id="sec-decisions"><h2>The Decisions</h2><p class="empty-state">Add a `decisions:` list to `audit-meta.yml` — each item: date, title, why.</p></section><section class="atlas-section" id="sec-tradeoffs"><h2>The Trade-offs</h2><p class="empty-state">Add `tradeoffs:` to `audit-meta.yml` — what got cut, why.</p></section><section class="atlas-section" id="sec-metrics"><h2>The Metrics</h2><div class="kv-grid">
+<div class="kv"><div class="k">Total LOC</div><span class="v">313,770</span></div>
+<div class="kv"><div class="k">Files</div><span class="v">1,002</span></div>
+<div class="kv"><div class="k">Binary files</div><span class="v">1</span></div>
+<div class="kv"><div class="k">Commits</div><span class="v">106</span></div>
+<div class="kv"><div class="k">Contributors</div><span class="v">2</span></div>
+</div>
+<h3>Lines of code by language</h3>
+<table><thead><tr><th>Language</th><th style="text-align:right">Lines</th><th style="text-align:right">%</th></tr></thead><tbody><tr><td>JSON</td><td style='text-align:right'>222,260</td><td style='text-align:right'>70.8%</td></tr><tr><td>Python</td><td style='text-align:right'>44,822</td><td style='text-align:right'>14.3%</td></tr><tr><td>Markdown</td><td style='text-align:right'>31,898</td><td style='text-align:right'>10.2%</td></tr><tr><td>Other</td><td style='text-align:right'>14,790</td><td style='text-align:right'>4.7%</td></tr></tbody></table></section><section class="atlas-section" id="sec-failures"><h2>The Failures</h2><p class="empty-state">Create a `BUGS_AND_ITERATIONS.md` at the repo root per CLAUDE.md rule #11 — every bug fix and iteration logged.</p></section><section class="atlas-section" id="sec-v_next"><h2>v0.next</h2><p class="empty-state">Add `v_next:` (a list of strings) to `audit-meta.yml` — the top 3–5 things you&#x27;d change today.</p></section><section class="atlas-section" id="sec-reproducibility"><h2>Reproducibility</h2><pre><code class="lang-bash"># clone
+git clone https://github.com/Joona-t/primordial.git
+cd primordial</code></pre></section><section class="atlas-section" id="sec-takeaway"><h2>Karpathy Takeaway</h2><p class="empty-state">Add a `takeaway:` list to `audit-meta.yml` — 1–3 transferable lessons. (Phase 1 LLM draft will fill this for Tier&amp;nbsp;1.)</p></section><footer class="repo-foot"><div>Generated by atlas v0.1.0 · 2026-05-14T02:58:55Z</div><div><a href="../index.html">&larr; atlas index</a></div></footer></main></div><script>
+const themeSel = document.getElementById('theme-select');
+if (themeSel) {
+  const saved = localStorage.getItem('ls-atlas-theme') || 'retro';
+  themeSel.value = saved;
+  if (saved !== 'retro') document.documentElement.dataset.theme = saved;
+  themeSel.addEventListener('change', () => {
+    const t = themeSel.value;
+    if (t === 'retro') delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = t;
+    localStorage.setItem('ls-atlas-theme', t);
+  });
+}
+</script></body></html>
