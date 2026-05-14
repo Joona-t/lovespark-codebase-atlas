@@ -1,0 +1,293 @@
+{
+  "audit_elapsed_seconds": 30.24,
+  "audit_meta": {
+    "assumptions": [
+      "Browser has p5.js 1.11.2+ from CDN (no offline mode)",
+      "User will edit CONFIG in the HTML source and reload (no UI controls)",
+      "Recording mode uses JSZip and browser download API (not Node.js)",
+      "System has ffmpeg on PATH for export-gif.sh (optional; skipped if not present)"
+    ],
+    "core_loop": {
+      "path": "index.html lines 200-400 (the p5.draw function + glyph sampling loop)",
+      "role": "Walk an N\u00d7M grid over source Graphics buffer, sample brightness/color per cell, pick character from ramp, render at source hue."
+    },
+    "data": {
+      "inputs": [
+        "CONFIG object (canvas size, grid density, scene name, palette, sampling strategy)",
+        "p5.js draw loop frame callback at 30 FPS",
+        "Scene function returns offscreen p5.Graphics with rendered geometry",
+        "Recording mode: frame number \u2192 capture PNG"
+      ],
+      "outputs": [
+        "Visible canvas with character-grid composited on top of geometric source",
+        "Optional ZIP of PNG frames (glyph-grid_*.zip) when CONFIG.record=true",
+        "FFmpeg-compatible frame sequence for GIF/video export"
+      ]
+    },
+    "decisions": [
+      {
+        "date": "2026-04-16",
+        "title": "Implemented brute-force shape-atlas lookup before k-d tree optimization",
+        "why": "At n\u2248256 shapes, k=6 dims: tight Float32Array loop often equals or beats pointer-chasing k-d tree in V8. Profile first, tree second."
+      },
+      {
+        "date": "2026-04-16",
+        "title": "Rec.709 weights for linearized luminance, not Rec.601",
+        "why": "Rec.601 weights are gamma-encoded; Rec.709 applies to linear-light sRGB after EOTF. Category error caught in code review."
+      },
+      {
+        "date": "2026-04-16",
+        "title": "Bundled Cascadia Mono WOFF2 subset for Unicode 16 octants fallback",
+        "why": "No mainstream OS ships octants by default (Sep 2024). Runtime cascade: octant \u2192 sextant \u2192 braille \u2192 block covers system variance."
+      }
+    ],
+    "naive_version": "Draw a sine wave into an offscreen buffer. Walk a 10\u00d710 grid, print . for dark cells and # for bright. Done.",
+    "reproducibility": "git clone https://github.com/Joona-t/glyph-grid.git cd glyph-grid open index.html  # macOS; start index.html on Windows; xdg-open on Linux # Edit CONFIG object at top of index.html and reload",
+    "stack_top3": [
+      {
+        "dep": "p5.js",
+        "why": "2D graphics rendering, offscreen Graphics buffers, frame callback."
+      },
+      {
+        "dep": "JSZip",
+        "why": "frame-to-ZIP export in browser for recording mode."
+      },
+      {
+        "dep": "FFmpeg",
+        "why": "post-render stitch (Bayer dither via palettegen/paletteuse, called from bash)."
+      }
+    ],
+    "takeaway": [
+      "Single-file tools live or die on CONFIG clarity. Second: byte-identity constraints on generative art are real and worth locking in early (v1 compat guard saves you from breaking 8 finalized pieces)."
+    ],
+    "tier": 1,
+    "tldr": "Single-file p5.js renderer overlaying ASCII character grids on geometric scenes, byte-identical under v1 compat.",
+    "tradeoffs": [
+      "No GPU rendering path initially; error-diffusion dither cannot run on WebGL (no inter-fragment communication). Validator auto-downgrades to Bayer.",
+      "Single HTML file means no module system; all CONFIG at top, no layering",
+      "Recording mode is deterministic but unoptimized; 4sec \u00d7 30fps on high grid density can be slow"
+    ],
+    "v_next": [
+      "WebGL scene renderer path (skip dither on GPU path)",
+      "Runtime UI for CONFIG editing instead of source edit + reload",
+      "Octant shape-vector mode (6D shape selection, orthogonal to brightness ramp)",
+      "Stream frames to MP4 instead of ZIP (chunked encode)"
+    ],
+    "verification": "No formal tests; verification is visual + byte-identity under CONFIG.compat='v1'. Eight frozen pieces must regenerate byte-identically. CR-5 caught under-sampled Gaussian in XDoG. No runtime errors in recording mode (deterministic seed)."
+  },
+  "audit_mode": "deep",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:37:18Z",
+  "core_loop": {
+    "path": "index.html lines 200-400 (the p5.draw function + glyph sampling loop)",
+    "role": "Walk an N\u00d7M grid over source Graphics buffer, sample brightness/color per cell, pick character from ramp, render at source hue.",
+    "source": "audit-meta.yml override"
+  },
+  "data_samples": [],
+  "deps": {},
+  "description": "Single-file p5.js ASCII/glyph-grid renderer. Inspired by Nous Research's Hermes Agent skill system.",
+  "disk_usage_kb": 5841,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": true,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": true,
+    "plan.md": true,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 270.4632352941176,
+    "source_file_count": 136,
+    "source_loc": 36783,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 94,
+    "file_count": 291,
+    "files_by_lang": {
+      "HTML": 8,
+      "JSON": 23,
+      "JavaScript": 128,
+      "Markdown": 23,
+      "Other": 6,
+      "Python": 2,
+      "Shell": 6,
+      "YAML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 55055,
+        "path": "pieces/shai-hulud-arrival/index.html"
+      },
+      {
+        "bytes": 48801,
+        "path": "pieces/wave1-demo/index.html"
+      },
+      {
+        "bytes": 48160,
+        "path": "skill/scripts/render.html"
+      },
+      {
+        "bytes": 45518,
+        "path": "pieces/paul-crysknife/index.html"
+      },
+      {
+        "bytes": 42977,
+        "path": "pieces/paul-atreides-dune/index.html"
+      },
+      {
+        "bytes": 33122,
+        "path": "index.html"
+      },
+      {
+        "bytes": 30747,
+        "path": "skill/scripts/lib/glyph-wave6.js"
+      },
+      {
+        "bytes": 30747,
+        "path": "pieces/wave1-demo/lib/glyph-wave6.js"
+      },
+      {
+        "bytes": 30747,
+        "path": "pieces/wave-showcase/lib/glyph-wave6.js"
+      },
+      {
+        "bytes": 30747,
+        "path": "pieces/shai-hulud-arrival/lib/glyph-wave6.js"
+      },
+      {
+        "bytes": 30747,
+        "path": "pieces/paul-crysknife/lib/glyph-wave6.js"
+      },
+      {
+        "bytes": 30747,
+        "path": "pieces/paul-atreides-dune/lib/glyph-wave6.js"
+      }
+    ],
+    "loc_by_lang": {
+      "HTML": 7078,
+      "JSON": 27228,
+      "JavaScript": 35657,
+      "Markdown": 2164,
+      "Other": 519,
+      "Python": 758,
+      "Shell": 368,
+      "YAML": 64
+    },
+    "loc_total": 73836,
+    "primary_language": "JavaScript"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 12,
+    "contributor_count": 2,
+    "contributors": [
+      {
+        "commits": 7,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      },
+      {
+        "commits": 5,
+        "name": "Joona Tyrninoksa <you@example.com>"
+      }
+    ],
+    "first_commit_date": "2026-04-18T14:56:51+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-04-18T14:56:51+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-04-18T14:56:51+03:00",
+        "sha": "2a084eb",
+        "subject": "glyph-grid v2.1: pipeline refactor, new pieces, harness upgrade"
+      },
+      {
+        "date": "2026-04-17T02:09:03+03:00",
+        "sha": "67b1230",
+        "subject": "add paul-atreides-dune piece + batch-gif harness"
+      },
+      {
+        "date": "2026-04-17T01:22:25+03:00",
+        "sha": "4e010ff",
+        "subject": "glyph-grid skill v2.0.0: pipeline + fonts + analytical sets + harness"
+      },
+      {
+        "date": "2026-04-15T12:08:55+03:00",
+        "sha": "6c30637",
+        "subject": "add skill/ subfolder with canonical Claude Code skill source"
+      },
+      {
+        "date": "2026-04-15T11:44:43+03:00",
+        "sha": "a56dee2",
+        "subject": "add sparkyPortrait scene + extract Claude Code skill"
+      },
+      {
+        "date": "2026-04-15T08:00:02+03:00",
+        "sha": "656c008",
+        "subject": "credit Nous Research / Hermes Agent as tooling inspiration"
+      },
+      {
+        "date": "2026-04-15T07:47:11+03:00",
+        "sha": "508a64c",
+        "subject": "Merge branch 'main' of https://github.com/Joona-t/glyph-grid"
+      },
+      {
+        "date": "2026-04-15T07:46:46+03:00",
+        "sha": "6a96676",
+        "subject": "Initial commit"
+      },
+      {
+        "date": "2026-04-15T07:28:26+03:00",
+        "sha": "bf9cd76",
+        "subject": "Phase 4: extract to ~/.claude/skills/glyph-grid/ + flesh out README"
+      },
+      {
+        "date": "2026-04-15T07:20:12+03:00",
+        "sha": "d837981",
+        "subject": "Phase 3: record mode + ffmpeg stitch script"
+      },
+      {
+        "date": "2026-04-15T07:15:23+03:00",
+        "sha": "6989f12",
+        "subject": "Phases 1+2a+2b: full renderer with locked scene contract"
+      },
+      {
+        "date": "2026-04-15T06:44:34+03:00",
+        "sha": "fcdef75",
+        "subject": "Phase 0: scaffold + PLAN.md"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/glyph-grid.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "llm_enrich": {
+    "silent_failures": "- If a CONFIG field is renamed or removed but old sketches still reference it via `CONFIG.compat`, the fallback path silently uses the v2 default and renders a subtly different image \u2014 byte-identical claim broken with no error.\n- p5.js loads from CDN by `<script>` tag; if the CDN version auto-bumps (e.g. unpinned `p5.min.js`), `noiseSeed`/`randomSeed` RNG output can shift and every sketch renders differently with no warning.\n- Glyph-density mapping reads pixel luminance after `pixelDensity()` defaults to devicePixelRatio; running the same sketch on a Retina vs. 1x display yields a different glyph count and aspect, looking \"fine\" on both.\n- XDoG prefilter and CRT post-process chain are floating-point pipelines \u2014 on a browser update that changes Canvas2D antialiasing or WebGL precision, output drifts gradually across commits and no test catches it (291 files, zero declared deps means no pinned toolchain).\n- With 73k LOC across 291 single-file sketches and no shared module, a copy-paste bug in the v1\u2192v2 compat shim can land in one sketch and stay invisible for months because nothing cross-validates rendered output against a reference image.",
+    "stack_rationale": "Pure browser p5.js \u2014 zero declared dependencies, single-file sketch loaded via CDN script tag. No build step, no bundler, no package.json, no TypeScript. Notably absent: any npm tooling at all, which is unusual for a 73k-LOC JS repo and suggests the LOC count is dominated by generated output, fixtures, or vendored p5 rather than authored source."
+  },
+  "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/glyph-grid",
+  "ls_check": null,
+  "name": "glyph-grid",
+  "pushed_at": "2026-04-28T11:24:00Z",
+  "stars": 0,
+  "tier": 1,
+  "tier_reason": "from audit-meta.yml",
+  "url": "https://github.com/Joona-t/glyph-grid",
+  "version": null,
+  "visibility": "public"
+}

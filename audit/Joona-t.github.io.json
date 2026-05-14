@@ -1,0 +1,276 @@
+{
+  "audit_elapsed_seconds": 0.3,
+  "audit_meta": {},
+  "audit_mode": "medium",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:38:17Z",
+  "core_loop": {
+    "path": "styles.css",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "data_samples": [],
+  "deps": {},
+  "description": "LoveSpark portfolio \u2014 retro-styled landing page showcasing the full suite of browser extensions, tools, and research projects",
+  "disk_usage_kb": 13066,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": null,
+    "deps_total": 0,
+    "loc_per_source_file": 239.0,
+    "source_file_count": 1,
+    "source_loc": 239,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [
+    {
+      "title": ": |2026-02-18|||Fix background as CSS-only layer with overlay and assets path"
+    },
+    {
+      "title": ": |2026-03-06|||Fix Games hero CTA: vibrant ocean blue gradient, white text, pink glow, moved above Zarathustra"
+    },
+    {
+      "title": ": |2026-02-20|||fix: add ko-fi link (ko-fi.com/joonat)"
+    },
+    {
+      "title": ": |2026-02-18|||Revert \"Fix background as CSS-only layer with overlay and assets path\""
+    }
+  ],
+  "files": {
+    "binary_count": 2,
+    "file_count": 10,
+    "files_by_lang": {
+      "CSS": 1,
+      "HTML": 1,
+      "JavaScript": 1,
+      "Markdown": 2,
+      "Other": 3
+    },
+    "largest_source_files": [
+      {
+        "bytes": 27104,
+        "path": "styles.css"
+      },
+      {
+        "bytes": 25343,
+        "path": "index.html"
+      },
+      {
+        "bytes": 8967,
+        "path": "script.js"
+      }
+    ],
+    "loc_by_lang": {
+      "CSS": 978,
+      "HTML": 530,
+      "JavaScript": 239,
+      "Markdown": 111,
+      "Other": 86
+    },
+    "loc_total": 1944,
+    "primary_language": "JavaScript"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 66,
+    "contributor_count": 2,
+    "contributors": [
+      {
+        "commits": 42,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      },
+      {
+        "commits": 24,
+        "name": "Joona Tyrninoksa <you@example.com>"
+      }
+    ],
+    "first_commit_date": "2026-05-11T15:12:01+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-05-11T15:12:01+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-05-11T15:12:01+03:00",
+        "sha": "47958df",
+        "subject": "feat(suite): add Mac & iOS coming-soon section (Sparky, LoveSparkCards, Tongue)"
+      },
+      {
+        "date": "2026-03-21T11:29:05+02:00",
+        "sha": "9d3b161",
+        "subject": "feat: add Cozy ADHD & Dyslexia Accessibility Toolkit to the suite"
+      },
+      {
+        "date": "2026-03-17T10:36:52+02:00",
+        "sha": "d2ec5a0",
+        "subject": "docs: populate bugs & iterations log from git history"
+      },
+      {
+        "date": "2026-03-17T10:31:58+02:00",
+        "sha": "156e369",
+        "subject": "docs: add bugs & iterations log"
+      },
+      {
+        "date": "2026-03-10T16:44:19+02:00",
+        "sha": "fbb0164",
+        "subject": "add Pomodoro Focus Timer as live extension"
+      },
+      {
+        "date": "2026-03-07T20:40:54+02:00",
+        "sha": "da2433e",
+        "subject": "Update contact email to joona@lovespark.love"
+      },
+      {
+        "date": "2026-03-07T20:23:19+02:00",
+        "sha": "b88d1a8",
+        "subject": "Create CNAME"
+      },
+      {
+        "date": "2026-03-06T00:24:32+02:00",
+        "sha": "6c5a2c0",
+        "subject": "Move Games button below Forging"
+      },
+      {
+        "date": "2026-03-06T00:12:57+02:00",
+        "sha": "ebf96f9",
+        "subject": "Hide email from contact panel \u2014 show 'Contact me' text instead"
+      },
+      {
+        "date": "2026-03-06T00:08:59+02:00",
+        "sha": "6d43f8f",
+        "subject": "Fix Games hero CTA: vibrant ocean blue gradient, white text, pink glow, moved above Zarathustra"
+      },
+      {
+        "date": "2026-03-05T23:57:24+02:00",
+        "sha": "53ff7ea",
+        "subject": "Move Games to hero CTA button, remove Dreamy Garden from tools grid"
+      },
+      {
+        "date": "2026-03-05T23:49:19+02:00",
+        "sha": "fa3e630",
+        "subject": "Add LoveSpark Games ocean blue panel to tools grid"
+      },
+      {
+        "date": "2026-03-05T21:40:08+02:00",
+        "sha": "cad78b1",
+        "subject": "Add MIT license"
+      },
+      {
+        "date": "2026-03-05T21:35:41+02:00",
+        "sha": "fae362d",
+        "subject": "Rename LoveSpark Focus to Pomodoro Focus Timer, move to first panel"
+      },
+      {
+        "date": "2026-03-05T10:46:30+02:00",
+        "sha": "642d1d7",
+        "subject": "Add Neurodivergent Reader panel as first card"
+      },
+      {
+        "date": "2026-03-04T18:57:45+02:00",
+        "sha": "654ba6e",
+        "subject": "Add contact section with email"
+      },
+      {
+        "date": "2026-03-03T17:43:49+02:00",
+        "sha": "106770b",
+        "subject": "Increase titlebar and badge font sizes for readability"
+      },
+      {
+        "date": "2026-03-03T14:09:05+02:00",
+        "sha": "c0d9018",
+        "subject": "Add Forging panel to hero CTA group \u2014 darkfire orange \ud83d\udd25"
+      },
+      {
+        "date": "2026-03-02T22:37:38+02:00",
+        "sha": "933cc20",
+        "subject": "Update Goodreads link to profile"
+      },
+      {
+        "date": "2026-03-01T18:30:22+02:00",
+        "sha": "ebe4789",
+        "subject": "Add emoji icons to all panel titles"
+      },
+      {
+        "date": "2026-03-01T17:56:29+02:00",
+        "sha": "a06bd14",
+        "subject": "Add coming soon panels: Dashboard, Focus Blossom, Focus, Link Cleaner"
+      },
+      {
+        "date": "2026-03-01T09:47:05+02:00",
+        "sha": "09cad5b",
+        "subject": "Style Aaron install button green to match badge"
+      },
+      {
+        "date": "2026-03-01T09:43:38+02:00",
+        "sha": "2a14a8c",
+        "subject": "Add More Coming Soon card to tools grid"
+      },
+      {
+        "date": "2026-03-01T09:35:25+02:00",
+        "sha": "7dd9d77",
+        "subject": "Update notice: install or modify"
+      },
+      {
+        "date": "2026-03-01T09:31:51+02:00",
+        "sha": "59be1b3",
+        "subject": "Update site: Aaron + Cookies live, mission text added"
+      },
+      {
+        "date": "2026-02-28T12:42:12+02:00",
+        "sha": "593028f",
+        "subject": "Update Cursor Pack card: now live on Chrome Web Store"
+      },
+      {
+        "date": "2026-02-25T22:25:50+02:00",
+        "sha": "2a09c26",
+        "subject": "Add Chrome Web Store limitations notice with GitHub link"
+      },
+      {
+        "date": "2026-02-25T12:35:17+02:00",
+        "sha": "2b59d5d",
+        "subject": "Add Aaron \u2014 Public Knowledge Unblocker card"
+      },
+      {
+        "date": "2026-02-25T12:25:11+02:00",
+        "sha": "9bd6cd5",
+        "subject": "Add Reddit Ad Blocker to the suite"
+      },
+      {
+        "date": "2026-02-25T11:36:17+02:00",
+        "sha": "b56fe43",
+        "subject": "Add LoveSpark AdBlock to the suite"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/Joona-t.github.io.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/Joona-t.github.io",
+  "ls_check": null,
+  "name": "Joona-t.github.io",
+  "pushed_at": "2026-05-13T20:29:41Z",
+  "stars": 0,
+  "tier": 2,
+  "tier_reason": "explicit allowlist (Tier 2)",
+  "url": "https://github.com/Joona-t/Joona-t.github.io",
+  "version": null,
+  "visibility": "public"
+}

@@ -1,0 +1,233 @@
+{
+  "audit_elapsed_seconds": 0.27,
+  "audit_meta": {},
+  "audit_mode": "medium",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:38:19Z",
+  "core_loop": {
+    "path": "orchestrator.py",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "data_samples": [],
+  "deps": {},
+  "description": "8-agent AI research swarm with web search, semantic dedup, and priority-aware context compression. Ablation-tested: 8 agents match 14-agent quality with higher actionability.",
+  "disk_usage_kb": 313,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": true,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": true,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": true,
+    "research.md": true
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 499.4,
+    "source_file_count": 10,
+    "source_loc": 4994,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 1,
+    "file_count": 86,
+    "files_by_lang": {
+      "HTML": 1,
+      "JSON": 1,
+      "Markdown": 67,
+      "Other": 5,
+      "Python": 10,
+      "TOML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 60320,
+        "path": "orchestrator.py"
+      },
+      {
+        "bytes": 40777,
+        "path": "agents.py"
+      },
+      {
+        "bytes": 32398,
+        "path": "dashboard.html"
+      },
+      {
+        "bytes": 19961,
+        "path": "metrics.py"
+      },
+      {
+        "bytes": 19415,
+        "path": "memory.py"
+      },
+      {
+        "bytes": 19347,
+        "path": "dashboard.py"
+      },
+      {
+        "bytes": 9499,
+        "path": "context.py"
+      },
+      {
+        "bytes": 9316,
+        "path": "dedup.py"
+      },
+      {
+        "bytes": 8178,
+        "path": "ablation.py"
+      },
+      {
+        "bytes": 6761,
+        "path": "consensus.py"
+      },
+      {
+        "bytes": 2728,
+        "path": "search_server.py"
+      }
+    ],
+    "loc_by_lang": {
+      "HTML": 780,
+      "JSON": 146,
+      "Markdown": 11447,
+      "Other": 223,
+      "Python": 4994,
+      "TOML": 73
+    },
+    "loc_total": 17663,
+    "primary_language": "Python"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 18,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 18,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-14T22:21:32+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-14T22:21:32+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-14T22:21:32+02:00",
+        "sha": "9b86da0",
+        "subject": "Add ablation summary: 12-run study across 4 configs x 3 topics"
+      },
+      {
+        "date": "2026-03-14T21:42:17+02:00",
+        "sha": "616b464",
+        "subject": "Add research-grade documentation: README rewrite, research questions, methodology, evaluation, ablations, limitations, claims-to-evidence mapping, lab notebook, and structured results from 40 instrumented runs"
+      },
+      {
+        "date": "2026-03-14T17:21:30+02:00",
+        "sha": "27f0358",
+        "subject": "Revert dedup threshold to 0.39 \u2014 0.50 caused overlap=1.0 on 1/3 topics"
+      },
+      {
+        "date": "2026-03-14T16:49:40+02:00",
+        "sha": "71df964",
+        "subject": "3 Karpathy experiments: cost tracking, parallel gate, dedup tuning"
+      },
+      {
+        "date": "2026-03-14T16:25:16+02:00",
+        "sha": "e7c2cb6",
+        "subject": "Fix confidence pipeline: remove inverted override, wire critic verdict into gate"
+      },
+      {
+        "date": "2026-03-14T10:52:44+02:00",
+        "sha": "1c6671d",
+        "subject": "Update README: 8-agent architecture, web search, ablation findings, dashboard"
+      },
+      {
+        "date": "2026-03-14T10:49:50+02:00",
+        "sha": "f4149cc",
+        "subject": "Restructure to 8 agents based on ablation data (14 \u2192 8, no quality loss)"
+      },
+      {
+        "date": "2026-03-14T08:26:37+02:00",
+        "sha": "f742f39",
+        "subject": "Add web search to scouts via custom MCP server (factuality 4.0 \u2192 6.0)"
+      },
+      {
+        "date": "2026-03-14T05:30:31+02:00",
+        "sha": "779f26b",
+        "subject": "3-step self-improvement: semantic dedup, grounding, context compression"
+      },
+      {
+        "date": "2026-03-14T00:17:54+02:00",
+        "sha": "a699f52",
+        "subject": "Apply applied-agent research: confidence propagation, two-pass, CoT, trace IDs"
+      },
+      {
+        "date": "2026-03-14T00:00:34+02:00",
+        "sha": "088764f",
+        "subject": "Apply hallucination research: adversarial critic, confidence gate, provenance, factuality"
+      },
+      {
+        "date": "2026-03-13T23:26:28+02:00",
+        "sha": "1227f72",
+        "subject": "Apply timeout research: failure policy, partial recovery, timeout bumps"
+      },
+      {
+        "date": "2026-03-13T23:09:28+02:00",
+        "sha": "e252b66",
+        "subject": "Add metrics system: per-run instrumentation, regression detection, lab notebook"
+      },
+      {
+        "date": "2026-03-13T22:44:42+02:00",
+        "sha": "94c6334",
+        "subject": "Apply role differentiation research: OUT_OF_SCOPE, capability registry, dedup"
+      },
+      {
+        "date": "2026-03-13T22:22:45+02:00",
+        "sha": "296813e",
+        "subject": "Apply context injection research: narrative casting, token budgeting, conflicts"
+      },
+      {
+        "date": "2026-03-13T21:56:17+02:00",
+        "sha": "26ae486",
+        "subject": "Apply JSON compliance research: PARSE schemas, two-pass reasoning, retry logic"
+      },
+      {
+        "date": "2026-03-13T21:37:35+02:00",
+        "sha": "6863d26",
+        "subject": "Apply research findings: decay scoring, temporal validity, insight promotion"
+      },
+      {
+        "date": "2026-03-13T21:28:07+02:00",
+        "sha": "f00dbb9",
+        "subject": "Initial release: 14-agent AI research swarm"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/research-swarm.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/Claude x LoveSpark/research-swarm",
+  "ls_check": null,
+  "name": "research-swarm",
+  "pushed_at": "2026-03-17T08:38:39Z",
+  "stars": 1,
+  "tier": 2,
+  "tier_reason": "explicit allowlist (Tier 2)",
+  "url": "https://github.com/Joona-t/research-swarm",
+  "version": null,
+  "visibility": "public"
+}

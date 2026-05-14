@@ -1,0 +1,121 @@
+{
+  "audit_elapsed_seconds": 0.14,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:39:24Z",
+  "core_loop": {
+    "path": "scripts/swarm-build.py",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {},
+  "description": "15-agent orchestration skill for Claude Code CLI \u2014 6 Opus leads, 7 Sonnet specialists, 2 utility agents with scope boundaries, position-locked cross-feed, and 4-wave execution for building, auditing, and shipping browser extensions",
+  "disk_usage_kb": 40,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": true,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": false,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": null,
+    "deps_total": 0,
+    "loc_per_source_file": 579.0,
+    "source_file_count": 1,
+    "source_loc": 579,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 0,
+    "file_count": 20,
+    "files_by_lang": {
+      "Markdown": 18,
+      "Other": 1,
+      "Python": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 18670,
+        "path": "scripts/swarm-build.py"
+      }
+    ],
+    "loc_by_lang": {
+      "Markdown": 1095,
+      "Other": 23,
+      "Python": 579
+    },
+    "loc_total": 1697,
+    "primary_language": "Python"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 5,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 5,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-14T22:21:28+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-14T22:21:28+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-14T22:21:28+02:00",
+        "sha": "09f985c",
+        "subject": "Add first validation data from council-review experiment"
+      },
+      {
+        "date": "2026-03-14T21:42:21+02:00",
+        "sha": "4d6f631",
+        "subject": "Add research-grade documentation: README rewrite with explicit external evidence attribution, research questions, claims-to-evidence mapping, and implementation status"
+      },
+      {
+        "date": "2026-03-14T18:40:09+02:00",
+        "sha": "4415d9e",
+        "subject": "Add README and CHANGELOG for public release"
+      },
+      {
+        "date": "2026-03-14T18:37:09+02:00",
+        "sha": "4c13026",
+        "subject": "Restructure swarm: 22\u219215 agents, add scope boundaries, fix cross-feed"
+      },
+      {
+        "date": "2026-03-12T03:53:54+02:00",
+        "sha": "06eaf1f",
+        "subject": "Initial commit \u2014 LoveSpark Agent Swarm"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/swarm-builder-claude-cli-skill.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/Claude x LoveSpark/swarm-builder-claude-cli-skill",
+  "ls_check": null,
+  "name": "swarm-builder-claude-cli-skill",
+  "pushed_at": "2026-03-17T08:30:09Z",
+  "stars": 1,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/swarm-builder-claude-cli-skill",
+  "version": null,
+  "visibility": "public"
+}

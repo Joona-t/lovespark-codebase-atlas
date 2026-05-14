@@ -1,0 +1,141 @@
+{
+  "audit_elapsed_seconds": 0.17,
+  "audit_meta": {},
+  "audit_mode": "medium",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:38:17Z",
+  "core_loop": {
+    "path": "index.html",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "data_samples": [],
+  "deps": {},
+  "description": "LoveSpark Games \u2014 Kawaii Arcade. Free browser games, no ads, built with love.",
+  "disk_usage_kb": 3510,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": false,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": null,
+    "deps_total": 0,
+    "loc_per_source_file": 0.0,
+    "source_file_count": 1,
+    "source_loc": 0,
+    "test_loc": 0,
+    "test_to_source_ratio": null
+  },
+  "failures": [
+    {
+      "title": "2026-03-06: Upgrade planets to psychedelic trance animations (WIP ring fix)"
+    }
+  ],
+  "files": {
+    "binary_count": 4,
+    "file_count": 7,
+    "files_by_lang": {
+      "HTML": 1,
+      "Markdown": 1,
+      "Other": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 70720,
+        "path": "index.html"
+      }
+    ],
+    "loc_by_lang": {
+      "HTML": 1627,
+      "Markdown": 33,
+      "Other": 21
+    },
+    "loc_total": 1681,
+    "primary_language": "HTML"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 8,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 8,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-05-13T15:28:44+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-05-13T15:28:44+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-05-13T15:28:44+03:00",
+        "sha": "727bf7e",
+        "subject": "Add kawaii pastel \"Sparky's Vanity\" hero (hybrid w/ dark grid)"
+      },
+      {
+        "date": "2026-03-17T10:36:37+02:00",
+        "sha": "ff2a4b0",
+        "subject": "docs: populate bugs & iterations log from git history"
+      },
+      {
+        "date": "2026-03-17T10:32:13+02:00",
+        "sha": "5577f54",
+        "subject": "docs: add bugs & iterations log"
+      },
+      {
+        "date": "2026-03-06T12:34:56+02:00",
+        "sha": "8b3de86",
+        "subject": "Upgrade planets to psychedelic trance animations (WIP ring fix)"
+      },
+      {
+        "date": "2026-03-06T00:39:48+02:00",
+        "sha": "f38b229",
+        "subject": "Replace generic orbs with psychedelic trance solar system planets"
+      },
+      {
+        "date": "2026-03-06T00:04:21+02:00",
+        "sha": "28d43c7",
+        "subject": "Add kawaii waifu hero image with floating glow effect"
+      },
+      {
+        "date": "2026-03-06T00:01:02+02:00",
+        "sha": "f0d90d3",
+        "subject": "Add Chrome Web Store links for Flappy Waifu and Dreamy Garden"
+      },
+      {
+        "date": "2026-03-05T23:48:13+02:00",
+        "sha": "ac4804e",
+        "subject": "Initial commit: LoveSpark Games Kawaii Arcade"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/lovespark-games"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/lovespark-games",
+  "ls_check": null,
+  "name": "lovespark-games",
+  "pushed_at": "2026-05-13T12:30:01Z",
+  "stars": 0,
+  "tier": 2,
+  "tier_reason": "explicit allowlist (Tier 2)",
+  "url": "https://github.com/Joona-t/lovespark-games",
+  "version": null,
+  "visibility": "public"
+}

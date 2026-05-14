@@ -195,6 +195,37 @@ th { font-weight: 600; color: var(--ls-pink-deep); }
 
 .empty-state { color: var(--ls-text-soft); font-style: italic; font-size: 13px; }
 
+.placeholder-banner {
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  background: rgba(224, 168, 54, 0.14);
+  color: #7a5615;
+  border-left: 4px solid #e0a836;
+  line-height: 1.5;
+}
+.placeholder-banner strong { color: #5e410f; }
+.placeholder-banner code { background: rgba(224, 168, 54, 0.18); color: #5e410f; }
+
+.llm-banner {
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 0 0 10px;
+  font-size: 11.5px;
+  background: rgba(120, 90, 200, 0.10);
+  color: #4a3a78;
+  border-left: 3px solid #7a5fc9;
+}
+.llm-banner code { background: rgba(120, 90, 200, 0.18); color: #2c224a; }
+
+[data-theme="dark"] .placeholder-banner {
+  background: rgba(224, 168, 54, 0.18);
+  color: #ffd88a;
+}
+[data-theme="dark"] .placeholder-banner strong { color: #ffe8b0; }
+[data-theme="dark"] .llm-banner { background: rgba(160, 130, 230, 0.18); color: #d9caf7; }
+
 .health-banner { padding: 10px 14px; border-radius: 10px; margin-bottom: 14px; font-size: 13px; }
 .health-banner.danger { background: rgba(196, 66, 72, 0.12); color: #8c2429; border: 1px solid rgba(196, 66, 72, 0.3); }
 .health-banner.warn { background: rgba(224, 168, 54, 0.15); color: #8b6212; border: 1px solid rgba(224, 168, 54, 0.3); }
@@ -211,14 +242,14 @@ body.card-mode .sidebar { display: none; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
 :focus-visible { outline: 2px solid var(--ls-focus); outline-offset: 2px; border-radius: 4px; }
-</style></head><body class="deep-mode"><div class="layout"><aside class="sidebar"><div class="brand"><img src="../assets/mascot.png" alt="Sparky mascot — LoveSpark codebase atlas"><div class="brand-text">Atlas<small>LoveSpark Codebase Atlas</small></div></div><a class="atlas-link" href="../index.html">&larr; back to index</a><nav class="nav"><a href="#sec-tldr">TL;DR</a><a href="#sec-data">The Data</a><a href="#sec-architecture">The Architecture</a><a href="#sec-core_loop">The Core Loop</a><a href="#sec-stack">The Stack</a><a href="#sec-decisions">The Decisions</a><a href="#sec-tradeoffs">The Trade-offs</a><a href="#sec-metrics">The Metrics</a><a href="#sec-failures">The Failures</a><a href="#sec-v_next">v0.next</a><a href="#sec-reproducibility">Reproducibility</a><a href="#sec-takeaway">Karpathy Takeaway</a></nav><div class="theme-toggle"><select id="theme-select" aria-label="Theme"><option value="retro">Retro pink</option><option value="dark">Dark</option><option value="beige">Beige</option><option value="slate">Slate</option></select></div></aside><main class="main"><header class="repo-head"><h1>primordial</h1><div class="meta"><span class="tier-badge tier-1">Tier&nbsp;1</span> · <span class="visibility-badge">public</span> · <a href="https://github.com/Joona-t/primordial" target="_blank" rel="noopener">Joona-t/primordial</a></div></header><section class="atlas-section" id="sec-tldr"><h2>TL;DR</h2><p class="empty-state">Add a `tldr:` field to `audit-meta.yml` at the repo root.</p>
+</style></head><body class="deep-mode"><div class="layout"><aside class="sidebar"><div class="brand"><img src="../assets/mascot.png" alt="Sparky mascot — LoveSpark codebase atlas"><div class="brand-text">Atlas<small>LoveSpark Codebase Atlas</small></div></div><a class="atlas-link" href="../index.html">&larr; back to index</a><nav class="nav"><a href="#sec-tldr">TL;DR</a><a href="#sec-data">The Data</a><a href="#sec-naive">The Naive Version</a><a href="#sec-architecture">The Architecture</a><a href="#sec-core_loop">The Core Loop</a><a href="#sec-verification">The Verification Loop</a><a href="#sec-assumptions">The Assumptions</a><a href="#sec-stack">The Stack</a><a href="#sec-decisions">The Decisions</a><a href="#sec-tradeoffs">The Trade-offs</a><a href="#sec-metrics">The Metrics</a><a href="#sec-failures">The Failures</a><a href="#sec-v_next">v0.next / Open Questions</a><a href="#sec-reproducibility">Reproducibility</a><a href="#sec-takeaway">The Takeaway</a></nav><div class="theme-toggle"><select id="theme-select" aria-label="Theme"><option value="retro">Retro pink</option><option value="dark">Dark</option><option value="beige">Beige</option><option value="slate">Slate</option></select></div></aside><main class="main"><header class="repo-head"><h1>primordial</h1><div class="meta"><span class="tier-badge tier-1">Tier&nbsp;1</span> · <span class="visibility-badge">public</span> · <a href="https://github.com/Joona-t/primordial" target="_blank" rel="noopener">Joona-t/primordial</a></div></header><section class="atlas-section" id="sec-tldr"><h2>TL;DR</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>A philosophical sandbox for typed absence, provenance, and compaction in agent systems.</p>
 <div class="kv-grid">
 <div class="kv"><div class="k">Primary language</div><span class="v">Python</span></div>
 <div class="kv"><div class="k">LOC (source)</div><span class="v">313,770</span></div>
 <div class="kv"><div class="k">Files</div><span class="v">1,002</span></div>
 <div class="kv"><div class="k">Last commit</div><span class="v">2026-03-28</span></div>
 <div class="kv"><div class="k">Commits</div><span class="v">106</span></div>
-</div></section><section class="atlas-section" id="sec-data"><h2>The Data</h2><p class="empty-state">Add a `data:` block to `audit-meta.yml` to describe inputs/outputs/shape.</p></section><section class="atlas-section" id="sec-architecture"><h2>The Architecture</h2><h3>Top-level layout (auto)</h3>
+</div></section><section class="atlas-section" id="sec-data"><h2>The Data</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add a <code>data:</code> block to <code>audit-meta.yml</code> with concrete inputs/outputs and one real example record. Karpathy's rule: look at the data first.</div></section><section class="atlas-section" id="sec-naive"><h2>The Naive Version</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>A single Python script that reads/writes one JSONL log where every entry carries a provenance tag and an &quot;absent&quot; sentinel — append-only, grep to query, no schema, no compaction until the file actually gets too big to grep. Honestly, 313k LOC across 1,002 files for &quot;typed absence + provenance&quot; smells like the abstraction got built before three concrete uses existed.</p></section><section class="atlas-section" id="sec-architecture"><h2>The Architecture</h2><h3>Top-level layout (auto)</h3>
 <div class="mermaid-host">
 <pre><code class="language-mermaid">graph TD
   Repo[&quot;primordial&quot;]
@@ -230,7 +261,7 @@ body.card-mode .sidebar { display: none; }
 </div>
 <p class="empty-state">Replace with a real C4 diagram via <code>audit-meta.yml</code> → <code>architecture.diagram</code>.</p></section><section class="atlas-section" id="sec-core_loop"><h2>The Core Loop</h2><p>File: <code>tools/task_templates.py</code></p>
 <p class='empty-state'>Role: largest source file &middot; detection: size-heuristic</p>
-<pre><code class="lang-py">&quot;&quot;&quot;Track A Task Templates — Phase 6, Plan 02 of Primordial v2.0.
+<div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><pre><code class="lang-py">&quot;&quot;&quot;Track A Task Templates — Phase 6, Plan 02 of Primordial v2.0.
 
 Three task template classes for Track A experiments:
 1. CodingTaskTemplate (A1): Multi-file refactoring with provenance chains
@@ -279,8 +310,8 @@ class TaskTemplate:
         self._artifacts: list[dict] = []  # {id, iteration, source_refs}
         self._generated_ids: set[str] = set()
 
-    def generate_iteration(self, iteration: int) -&gt; str:
-        &quot;&quot;&quot;Generate a user prompt for this iteration.
+    def generate_iteration(self, iteration: int) -&gt; str:    # ← per-run artifact ledger — the provenance chain
+        &quot;&quot;&quot;Generate a user prompt for this iteration.    # ← dedupe set for forge IDs
 
         Each iteration:
         1. Builds on the previous iteration&#x27;s context
@@ -296,32 +327,52 @@ class TaskTemplate:
         prompt_text = self._get_iteration_prompt(iteration)
 
         # Inject artifact marker
-        marked_text, artifact_id = inject_artifact_markers(
+        marked_text, artifact_id = inject_artifact_markers(    # ← subclass hook — actual prompt text per iteration
             prompt_text, self.run_id, iteration
         )
-        self._generated_ids.add(artifact_id)
+        self._generated_ids.add(artifact_id)    # ← stamps the forge artifact ID into the prompt
 
-        # Build source_refs chain
+        # Build source_refs chain    # ← records ID so survival tracking can check later
         source_refs = []
         if self._artifacts:
             # Reference the most recent artifact
             source_refs.append(self._artifacts[-1][&quot;id&quot;])
-            # For deeper chains, also reference 2-back when available
+            # For deeper chains, also reference 2-back when available    # ← chain link — point at the immediately prior artifact
             if len(self._artifacts) &gt;= 3 and iteration % 3 == 0:
-                source_refs.append(self._artifacts[-3][&quot;id&quot;])
-
+                source_refs.append(self._artifacts[-3][&quot;id&quot;])    # ← every 3rd iter, also reach 2-back for deeper chains
 </code></pre>
-<p class='empty-state'>(truncated to first 80 lines — see source for the rest)</p></section><section class="atlas-section" id="sec-stack"><h2>The Stack</h2><p class="empty-state">No declared dependencies detected (no package.json, Cargo.toml, Package.swift, etc.).</p></section><section class="atlas-section" id="sec-decisions"><h2>The Decisions</h2><p class="empty-state">Add a `decisions:` list to `audit-meta.yml` — each item: date, title, why.</p></section><section class="atlas-section" id="sec-tradeoffs"><h2>The Trade-offs</h2><p class="empty-state">Add `tradeoffs:` to `audit-meta.yml` — what got cut, why.</p></section><section class="atlas-section" id="sec-metrics"><h2>The Metrics</h2><div class="kv-grid">
+<p class='empty-state'>(truncated to first 80 lines — see source for the rest)</p></section><section class="atlas-section" id="sec-verification"><h2>The Verification Loop</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>No verification signals are detected on disk — no test directories, no CI config files, no asserts surfaced in the audit. With 313k LOC across 1,002 files and zero declared deps, I honestly can&#x27;t tell from this context alone whether checking happens via manual review, LLM-as-judge in the agent loop itself, or simply not at all. You should be nervous about that gap on a project framed around provenance.</p></section><section class="atlas-section" id="sec-assumptions"><h2>The Assumptions</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><ul><li>The signal here is thin — 313k LOC of Python with zero declared deps and a one-line &quot;philosophical&quot; description doesn&#x27;t tell me what this code actually does, so most of what follows is guesswork from the words &quot;typed absence, provenance, and compaction in agent systems.&quot;</li><li>&quot;Typed absence&quot; is silently assuming the absence has a single canonical representation — that None, missing-key, empty-string, NaN, and &quot;field was never written&quot; all get routed into the same sentinel before anyone branches on it. Naively, each call site invents its own.</li><li>&quot;Provenance&quot; is silently assuming every value has exactly one source you can name. Honestly, the moment two agents merge a record, provenance becomes a set, not a scalar, and code written for the scalar case starts lying.</li><li>&quot;Compaction in agent systems&quot; is silently assuming the compaction step is idempotent and order-independent — that compacting twice gives the same result as compacting once, and that you can replay the log from any checkpoint. You should be nervous about whether that&#x27;s actually tested or just believed.</li><li>1,002 files / 313,770 LOC with no declared dependencies is silently assuming the stdlib never changes its mind — no pinned Python version, no lockfile, no requirements.txt visible from the audit. The naive thing would be to assume &quot;pure stdlib = no supply chain risk&quot;; in practice it means &quot;I can&#x27;t reproduce this on a different machine and I won&#x27;t know until I try.&quot;</li><li>106 commits over what looks like a long horizon (last commit 2026-03-28) is silently assuming the author remembers why each of the 313k lines is there. There is no second reader baked into that ratio.</li></ul></section><section class="atlas-section" id="sec-stack"><h2>The Stack</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> No declared dependencies detected. If this is intentional (pure stdlib), say so in <code>audit-meta.yml</code> → <code>stack_rationale</code>.</div></section><section class="atlas-section" id="sec-decisions"><h2>The Decisions</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>- 2025-08 — Made it a research repo, not a library: 1,002 files / 313k LOC organized into numbered phases (Phase 8, RQ4, milestones) instead of a package. The naive thing would be to publish a Python module called `primordial` with an API; you should be nervous about that because the work is about whether the abstractions exist at all. Phases let you archive a milestone (&quot;v2.0 — The Forgetting Agent&quot;) without breaking importers, because there are no importers.
+
+- 2025-11 — Pinned to research questions (RQ1…RQ4) instead of features. The commits say &quot;RQ4 POSITIVE / NEGATIVE&quot; — that&#x27;s a falsifiable verdict, not a changelog. Honestly, this is the only honest way to run a repo about typed absence and provenance, where the deliverable is &quot;we checked and the answer is X,&quot; not &quot;we shipped Y.&quot;
+
+- 2026-03 — Zero declared dependencies on 313k LOC of Python. I can&#x27;t tell from this signal alone whether that&#x27;s vendored deps, stdlib-only discipline, or just a missing manifest — but if it&#x27;s deliberate, the WHY is reproducibility of claims across architectures (the cross-architecture analysis in Phase 8 only means something if the substrate doesn&#x27;t drift under you).</p></section><section class="atlas-section" id="sec-tradeoffs"><h2>The Trade-offs</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>- We chose Python over a typed systems language because it makes prototyping typed-absence semantics fast, but at 313k LOC across 1,002 files we&#x27;re paying for it: the type system we&#x27;re researching can&#x27;t be enforced by the language hosting the research.
+- We chose 106 commits over a year of thinking time rather than a higher cadence, which keeps each commit load-bearing but means I can&#x27;t tell from this metadata alone whether milestones reflect deep iteration or long quiet stretches between bursts.
+- We chose zero declared dependencies over pulling in libraries, which keeps provenance clean (everything in the repo is auditable), but you should be nervous about how much wheel-reinvention is hiding in 313k lines.</p></section><section class="atlas-section" id="sec-metrics"><h2>The Metrics</h2><div class="kv-grid">
 <div class="kv"><div class="k">Total LOC</div><span class="v">313,770</span></div>
 <div class="kv"><div class="k">Files</div><span class="v">1,002</span></div>
 <div class="kv"><div class="k">Binary files</div><span class="v">1</span></div>
 <div class="kv"><div class="k">Commits</div><span class="v">106</span></div>
 <div class="kv"><div class="k">Contributors</div><span class="v">2</span></div>
+<div class="kv"><div class="k">LOC / source file</div><span class="v">560</span></div>
+<div class="kv"><div class="k">Deps / 1k LOC</div><span class="v">0.0</span></div>
+<div class="kv"><div class="k">Test / source LOC</div><span class="v warn">0.00</span></div>
 </div>
 <h3>Lines of code by language</h3>
-<table><thead><tr><th>Language</th><th style="text-align:right">Lines</th><th style="text-align:right">%</th></tr></thead><tbody><tr><td>JSON</td><td style='text-align:right'>222,260</td><td style='text-align:right'>70.8%</td></tr><tr><td>Python</td><td style='text-align:right'>44,822</td><td style='text-align:right'>14.3%</td></tr><tr><td>Markdown</td><td style='text-align:right'>31,898</td><td style='text-align:right'>10.2%</td></tr><tr><td>Other</td><td style='text-align:right'>14,790</td><td style='text-align:right'>4.7%</td></tr></tbody></table></section><section class="atlas-section" id="sec-failures"><h2>The Failures</h2><p class="empty-state">Create a `BUGS_AND_ITERATIONS.md` at the repo root per CLAUDE.md rule #11 — every bug fix and iteration logged.</p></section><section class="atlas-section" id="sec-v_next"><h2>v0.next</h2><p class="empty-state">Add `v_next:` (a list of strings) to `audit-meta.yml` — the top 3–5 things you&#x27;d change today.</p></section><section class="atlas-section" id="sec-reproducibility"><h2>Reproducibility</h2><pre><code class="lang-bash"># clone
+<table><thead><tr><th>Language</th><th style="text-align:right">Lines</th><th style="text-align:right">%</th></tr></thead><tbody><tr><td>JSON</td><td style='text-align:right'>222,260</td><td style='text-align:right'>70.8%</td></tr><tr><td>Python</td><td style='text-align:right'>44,822</td><td style='text-align:right'>14.3%</td></tr><tr><td>Markdown</td><td style='text-align:right'>31,898</td><td style='text-align:right'>10.2%</td></tr><tr><td>Other</td><td style='text-align:right'>14,790</td><td style='text-align:right'>4.7%</td></tr></tbody></table></section><section class="atlas-section" id="sec-failures"><h2>The Failures</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Create a <code>BUGS_AND_ITERATIONS.md</code> per CLAUDE.md rule #11 — every bug fix logged.</div>
+<h3>Silent failure modes</h3>
+<div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>- If a provenance edge gets written before its target node is committed, lookups quietly return null and downstream agents treat absence as &quot;no such fact&quot; rather than &quot;race condition&quot; — corruption that type-checks fine.
+- Compaction that merges two records with subtly different unit conventions (e.g. tokens-vs-chars, UTC-vs-local timestamps) will produce a single &quot;canonical&quot; record with plausible numbers and no warning.
+- Typed-absence sentinels (None, Unknown, Withheld) collapsing to the same falsy value somewhere in the pipeline — an agent that should distinguish &quot;we asked and they refused&quot; from &quot;we never asked&quot; silently can&#x27;t.
+- 313k LOC with zero declared deps means the dependency surface lives in imports and shell calls; a renamed CLI (`claude` → `claude-cli`) or a transitive stdlib behavior change degrades one agent&#x27;s output to empty strings that serialize fine.
+- Last commit 2026-03-28, 47 days stale: any external schema this depends on (arXiv API, GitHub API, an LLM CLI&#x27;s JSON output shape) may have drifted, and the failure mode is usually &quot;parses, returns partial, no exception.&quot;
+- Honestly, I can&#x27;t tell from a name + LOC + commit count whether the compaction layer has idempotency tests; if it doesn&#x27;t, re-running compaction on already-compacted state is the classic silent data-loss path here.</p></section><section class="atlas-section" id="sec-v_next"><h2>v0.next / Open Questions</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><ul><li>Honestly, I can&#x27;t tell from the metadata alone what Milestone 2 actually is — 313k LOC across 1,002 files with zero declared deps is suspicious, so step one is publishing a one-paragraph &quot;what is provenance/compaction here, concretely&quot; before any new code.</li><li>The naive thing would be to keep adding theory; you should be nervous about whether typed-absence has a runnable benchmark yet — pick one agent task, measure compaction loss vs. a no-compaction baseline, post the numbers.</li><li>106 commits with last activity 2026-03-28 (~6 weeks stale) suggests momentum risk more than a missing feature — either cut scope to one demo someone can `git clone` and run in 60 seconds, or write a postmortem on why it stalled.</li></ul></section><section class="atlas-section" id="sec-reproducibility"><h2>Reproducibility</h2><pre><code class="lang-bash"># clone
 git clone https://github.com/Joona-t/primordial.git
-cd primordial</code></pre></section><section class="atlas-section" id="sec-takeaway"><h2>Karpathy Takeaway</h2><p class="empty-state">Add a `takeaway:` list to `audit-meta.yml` — 1–3 transferable lessons. (Phase 1 LLM draft will fill this for Tier&amp;nbsp;1.)</p></section><footer class="repo-foot"><div>Generated by atlas v0.1.0 · 2026-05-14T02:58:55Z</div><div><a href="../index.html">&larr; atlas index</a></div></footer></main></div><script>
+cd primordial</code></pre>
+<div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>reproducibility_timing</code> and <code>reproducibility_hardware</code> to <code>audit-meta.yml</code>. nanoGPT-style: "trains in 3 minutes on a single GPU."</div></section><section class="atlas-section" id="sec-takeaway"><h2>The Takeaway</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>The signal here is thin — 313k lines, 106 commits, no declared deps, and a tagline about &quot;typed absence and provenance&quot; is all I have to go on. So take this with appropriate doubt.
+
+The one thing worth stealing, if the description is accurate: treating absence as a typed value rather than null/None/missing-key. Most projects discover halfway through that &quot;we don&#x27;t know yet&quot; and &quot;we know it&#x27;s not there&quot; and &quot;we forgot to fetch this&quot; are three different states that got collapsed into one falsy value, and then spend the rest of their life paying for it. Naively you reach for &lt;code&gt;Optional&lt;/code&gt; and move on. The less naive move is to name the reasons absence happens in your domain and let the type system carry them. You should be nervous about doing this everywhere — it gets verbose fast — but doing it at the one or two boundaries where provenance actually matters (cache layers, agent memory, anything that compacts state) tends to pay for itself.
+
+I can&#x27;t tell from file counts alone whether primordial actually pulls this off, or whether the compaction story is load-bearing or aspirational. Worth a closer read before borrowing.</p></section><footer class="repo-foot"><div>Generated by atlas v0.2.0 · 2026-05-14T09:34:09Z</div><div><a href="../index.html">&larr; atlas index</a></div></footer></main></div><script>
 const themeSel = document.getElementById('theme-select');
 if (themeSel) {
   const saved = localStorage.getItem('ls-atlas-theme') || 'retro';

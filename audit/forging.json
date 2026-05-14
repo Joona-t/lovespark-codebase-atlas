@@ -1,0 +1,164 @@
+{
+  "audit_elapsed_seconds": 0.21,
+  "audit_meta": {},
+  "audit_mode": "medium",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:38:17Z",
+  "core_loop": {
+    "path": "assets/index-D9VVYao6.js",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "data_samples": [],
+  "deps": {},
+  "description": "FORGING \u2014 Glitch art canvas animation with particle clouds and CRT effects",
+  "disk_usage_kb": 2355,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": false,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": false,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": null,
+    "deps_total": 0,
+    "loc_per_source_file": 9.0,
+    "source_file_count": 1,
+    "source_loc": 9,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 1,
+    "file_count": 7,
+    "files_by_lang": {
+      "CSS": 1,
+      "HTML": 1,
+      "JavaScript": 1,
+      "Other": 2,
+      "YAML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 194629,
+        "path": "assets/index-D9VVYao6.js"
+      },
+      {
+        "bytes": 39655,
+        "path": "assets/index-Ci9sSk1a.css"
+      },
+      {
+        "bytes": 812,
+        "path": "index.html"
+      }
+    ],
+    "loc_by_lang": {
+      "CSS": 2,
+      "HTML": 18,
+      "JavaScript": 9,
+      "Other": 34,
+      "YAML": 33
+    },
+    "loc_total": 96,
+    "primary_language": "JavaScript"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 11,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 11,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-28T06:09:02+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-28T06:09:02+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-28T06:09:02+02:00",
+        "sha": "b19f1bc",
+        "subject": "feat: replace logo with Chi-Rho (Chrismon) symbol"
+      },
+      {
+        "date": "2026-03-28T02:32:50+02:00",
+        "sha": "43bc36a",
+        "subject": "fix: center particles + finer cosmic stardust glistening"
+      },
+      {
+        "date": "2026-03-28T02:23:13+02:00",
+        "sha": "dfe5ec7",
+        "subject": "strip to pure Imperium: stardust particle hero only"
+      },
+      {
+        "date": "2026-03-28T02:13:32+02:00",
+        "sha": "6831c77",
+        "subject": "rename: The Forge \u2192 Forging across title, header, hero, footer"
+      },
+      {
+        "date": "2026-03-28T02:10:49+02:00",
+        "sha": "ee01484",
+        "subject": "feat: swap Sparky for Roman toga + laurel wreath variant"
+      },
+      {
+        "date": "2026-03-28T02:00:23+02:00",
+        "sha": "d381888",
+        "subject": "feat: Imperium \u2014 Roman static glitch redesign"
+      },
+      {
+        "date": "2026-03-17T10:32:27+02:00",
+        "sha": "979ade2",
+        "subject": "docs: add bugs & iterations log"
+      },
+      {
+        "date": "2026-03-05T21:40:19+02:00",
+        "sha": "21daf8b",
+        "subject": "Add MIT license"
+      },
+      {
+        "date": "2026-03-03T12:46:12+02:00",
+        "sha": "c10edce",
+        "subject": "Performance: Carmack-style optimization pass \u2014 11 fixes for 60fps"
+      },
+      {
+        "date": "2026-03-03T12:09:22+02:00",
+        "sha": "20c4b5a",
+        "subject": "Add GitHub Pages deploy workflow"
+      },
+      {
+        "date": "2026-03-03T12:05:05+02:00",
+        "sha": "5ca41aa",
+        "subject": "Initial release: FORGING \u2014 Signal from the Void v3 \ud83d\udc95"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/forging.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/forging",
+  "ls_check": null,
+  "name": "forging",
+  "pushed_at": "2026-03-28T04:09:06Z",
+  "stars": 0,
+  "tier": 2,
+  "tier_reason": "explicit allowlist (Tier 2)",
+  "url": "https://github.com/Joona-t/forging",
+  "version": null,
+  "visibility": "public"
+}

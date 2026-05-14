@@ -1,0 +1,149 @@
+{
+  "audit_elapsed_seconds": 0.16,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:39:26Z",
+  "core_loop": {
+    "path": "verify-claims.py",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {},
+  "description": "Lightweight CLI tools for verifying plan/claim drift against actual code",
+  "disk_usage_kb": 29,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": false,
+    "PLAN.md": true,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": true,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": true,
+    "research.md": true
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 126.61538461538461,
+    "source_file_count": 13,
+    "source_loc": 1646,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 1,
+    "file_count": 27,
+    "files_by_lang": {
+      "JavaScript": 3,
+      "Markdown": 7,
+      "Other": 6,
+      "Python": 1,
+      "Shell": 9
+    },
+    "largest_source_files": [
+      {
+        "bytes": 18909,
+        "path": "verify-claims.py"
+      },
+      {
+        "bytes": 8343,
+        "path": "run-selftest.sh"
+      },
+      {
+        "bytes": 5156,
+        "path": "audit-zip.sh"
+      },
+      {
+        "bytes": 4910,
+        "path": "audit-run.sh"
+      },
+      {
+        "bytes": 4288,
+        "path": "scenario-runner.sh"
+      },
+      {
+        "bytes": 2247,
+        "path": "diff-hash-trees.sh"
+      },
+      {
+        "bytes": 2077,
+        "path": "snapshot-wrap.sh"
+      },
+      {
+        "bytes": 1615,
+        "path": "unpack-zip-clean.sh"
+      },
+      {
+        "bytes": 1409,
+        "path": "audit-plan.sh"
+      },
+      {
+        "bytes": 1330,
+        "path": "hash-tree.sh"
+      },
+      {
+        "bytes": 132,
+        "path": "_selftest/dir_b/new-feature.js"
+      },
+      {
+        "bytes": 82,
+        "path": "_selftest/dir_b/sub/code.js"
+      }
+    ],
+    "loc_by_lang": {
+      "JavaScript": 15,
+      "Markdown": 599,
+      "Other": 56,
+      "Python": 527,
+      "Shell": 1104
+    },
+    "loc_total": 2301,
+    "primary_language": "Shell"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-05T09:51:32+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-05T09:51:32+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-05T09:51:32+02:00",
+        "sha": "c25ca52",
+        "subject": "Auditkit v2: structured claims, git-diff mode, zip audit, scenario runner"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/auditkit.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/Claude x LoveSpark/auditkit",
+  "ls_check": null,
+  "name": "auditkit",
+  "pushed_at": "2026-03-17T08:32:47Z",
+  "stars": 1,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/auditkit",
+  "version": null,
+  "visibility": "public"
+}

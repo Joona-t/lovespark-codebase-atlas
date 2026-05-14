@@ -1,0 +1,134 @@
+{
+  "audit_elapsed_seconds": 0.16,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:39:27Z",
+  "core_loop": {
+    "path": "game.js",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {},
+  "description": "",
+  "disk_usage_kb": 22,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 1141.0,
+    "source_file_count": 1,
+    "source_loc": 1141,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 0,
+    "file_count": 7,
+    "files_by_lang": {
+      "HTML": 1,
+      "JavaScript": 1,
+      "Markdown": 2,
+      "Other": 2,
+      "YAML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 38805,
+        "path": "game.js"
+      },
+      {
+        "bytes": 13220,
+        "path": "index.html"
+      }
+    ],
+    "loc_by_lang": {
+      "HTML": 406,
+      "JavaScript": 1141,
+      "Markdown": 197,
+      "Other": 54,
+      "YAML": 22
+    },
+    "loc_total": 1820,
+    "primary_language": "JavaScript"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 6,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 6,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-12T02:48:36+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-12T02:48:36+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-12T02:48:36+02:00",
+        "sha": "8fcbad9",
+        "subject": "swarm audit: bundle fonts locally, add CSP, fix security + perf + reliability"
+      },
+      {
+        "date": "2026-03-17T10:32:30+02:00",
+        "sha": "91e537e",
+        "subject": "docs: add bugs & iterations log"
+      },
+      {
+        "date": "2026-03-05T21:40:17+02:00",
+        "sha": "13514f3",
+        "subject": "Add MIT license"
+      },
+      {
+        "date": "2026-03-04T19:58:16+02:00",
+        "sha": "ea033bf",
+        "subject": "Production audit fixes: gecko block, mascot, permissions, storage.local migration \ud83d\udc95"
+      },
+      {
+        "date": "2026-02-27T02:54:39+02:00",
+        "sha": "8bf3646",
+        "subject": "Add deterministic seed PRNG + episode trace export \ud83c\udfb2"
+      },
+      {
+        "date": "2026-02-19T01:37:57+02:00",
+        "sha": "8dae6f5",
+        "subject": "Initial commit - LoveSpark Boxhead \ud83e\udddf\u200d\u2640\ufe0f\ud83d\udc95"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/lovespark-boxhead.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/Claude x LoveSpark/Extensions/Games/lovespark-boxhead",
+  "ls_check": null,
+  "name": "lovespark-boxhead",
+  "pushed_at": "2026-03-28T18:16:22Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/lovespark-boxhead",
+  "version": null,
+  "visibility": "public"
+}

@@ -1,0 +1,190 @@
+{
+  "audit_elapsed_seconds": 0.21,
+  "audit_meta": {},
+  "audit_mode": "medium",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:38:17Z",
+  "core_loop": {
+    "path": "canon/the-garden-and-the-gom-jabbar.html",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "data_samples": [],
+  "deps": {},
+  "description": "A quiet archive of AI-generated philosophical writings \u2014 curated reflections from Zarathustra, an AI agent persona",
+  "disk_usage_kb": 3238,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": null,
+    "deps_total": 0,
+    "loc_per_source_file": 46.666666666666664,
+    "source_file_count": 3,
+    "source_loc": 140,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 2,
+    "file_count": 23,
+    "files_by_lang": {
+      "CSS": 7,
+      "HTML": 8,
+      "JavaScript": 3,
+      "Markdown": 1,
+      "Other": 2
+    },
+    "largest_source_files": [
+      {
+        "bytes": 11623,
+        "path": "canon/the-garden-and-the-gom-jabbar.html"
+      },
+      {
+        "bytes": 9341,
+        "path": "canon/ascension-the-second-nervous-system.html"
+      },
+      {
+        "bytes": 8420,
+        "path": "canon/guerilla-open-access-for-the-agent.html"
+      },
+      {
+        "bytes": 4762,
+        "path": "css/components.css"
+      },
+      {
+        "bytes": 4658,
+        "path": "canon/scripture-of-the-quiet-instrument.html"
+      },
+      {
+        "bytes": 4051,
+        "path": "about.html"
+      },
+      {
+        "bytes": 3463,
+        "path": "index.html"
+      },
+      {
+        "bytes": 2640,
+        "path": "js/render.js"
+      },
+      {
+        "bytes": 2434,
+        "path": "canon.html"
+      },
+      {
+        "bytes": 2400,
+        "path": "tags.html"
+      },
+      {
+        "bytes": 1812,
+        "path": "js/posts.js"
+      },
+      {
+        "bytes": 1629,
+        "path": "css/layout.css"
+      }
+    ],
+    "loc_by_lang": {
+      "CSS": 490,
+      "HTML": 951,
+      "JavaScript": 140,
+      "Markdown": 36,
+      "Other": 24
+    },
+    "loc_total": 1641,
+    "primary_language": "JavaScript"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 9,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 9,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-11T15:43:58+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-11T15:43:58+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-11T15:43:58+02:00",
+        "sha": "b1a5849",
+        "subject": "Add essay: Against the Lie of Empowerment"
+      },
+      {
+        "date": "2026-03-05T21:40:16+02:00",
+        "sha": "2b31870",
+        "subject": "Add MIT license"
+      },
+      {
+        "date": "2026-03-05T08:53:03+02:00",
+        "sha": "ef8f5d3",
+        "subject": "Add golden glowing inscription between image and footer"
+      },
+      {
+        "date": "2026-03-05T08:43:04+02:00",
+        "sha": "bc98bbf",
+        "subject": "Move second hero image below posts, above footer"
+      },
+      {
+        "date": "2026-03-05T08:14:17+02:00",
+        "sha": "0542195",
+        "subject": "Add second hero image: Zarathustra My Love"
+      },
+      {
+        "date": "2026-03-04T20:59:47+02:00",
+        "sha": "b232ad7",
+        "subject": "Add essay: Ascension \u2014 The Second Nervous System"
+      },
+      {
+        "date": "2026-03-03T10:48:02+02:00",
+        "sha": "9ce5ccf",
+        "subject": "Show all essays on home page, not just latest"
+      },
+      {
+        "date": "2026-03-02T03:12:58+02:00",
+        "sha": "b7dd910",
+        "subject": "Add essay: The Quiet Uprising of Architects"
+      },
+      {
+        "date": "2026-02-25T02:24:08+02:00",
+        "sha": "1aa6447",
+        "subject": "Initial release: Zarathustra archive v0.1 \ud80c\udc80"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/zarathustra.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/zarathustra",
+  "ls_check": null,
+  "name": "zarathustra",
+  "pushed_at": "2026-03-17T08:31:54Z",
+  "stars": 0,
+  "tier": 2,
+  "tier_reason": "explicit allowlist (Tier 2)",
+  "url": "https://github.com/Joona-t/zarathustra",
+  "version": null,
+  "visibility": "public"
+}

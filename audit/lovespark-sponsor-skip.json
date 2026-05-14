@@ -1,0 +1,266 @@
+{
+  "audit_elapsed_seconds": 0.24,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:38:47Z",
+  "core_loop": {
+    "path": "background.js",
+    "role": "Chrome extension service worker / background",
+    "source": "canonical-name"
+  },
+  "deps": {
+    "chrome_host_permissions": [
+      "*://*.youtube.com/*",
+      "https://sponsor.ajay.app/*"
+    ],
+    "chrome_permissions": [
+      "storage"
+    ]
+  },
+  "description": "Browser extension that auto-skips YouTube sponsors, intros, and outros via SponsorBlock \u2014 three skip modes with channel whitelisting",
+  "disk_usage_kb": 756,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": true,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 158.63636363636363,
+    "source_file_count": 11,
+    "source_loc": 1745,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [
+    {
+      "title": ": |2026-03-05|||Fix theme dropdown: add missing CSS styles for styled dropdown menu"
+    },
+    {
+      "title": ": |2026-03-05|||fix: theme title text visibility on beige (#4a7c59 earthy green) and slate (#d4714e terracotta)"
+    },
+    {
+      "title": ": |2026-03-05|||fix: replace broken footer with aesthetic ls-footer"
+    },
+    {
+      "title": ": |2026-03-04|||Fix description length for Chrome Web Store (max 132 chars)"
+    }
+  ],
+  "files": {
+    "binary_count": 55,
+    "file_count": 137,
+    "files_by_lang": {
+      "CSS": 7,
+      "HTML": 2,
+      "JSON": 56,
+      "JavaScript": 10,
+      "Markdown": 4,
+      "Other": 2,
+      "Python": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 21382,
+        "path": "lib/lovespark-fonts.css"
+      },
+      {
+        "bytes": 16965,
+        "path": "background.js"
+      },
+      {
+        "bytes": 15065,
+        "path": "content.js"
+      },
+      {
+        "bytes": 14134,
+        "path": "popup.css"
+      },
+      {
+        "bytes": 13192,
+        "path": "settings.css"
+      },
+      {
+        "bytes": 9035,
+        "path": "popup.js"
+      },
+      {
+        "bytes": 8455,
+        "path": "settings.html"
+      },
+      {
+        "bytes": 7356,
+        "path": "settings.js"
+      },
+      {
+        "bytes": 6280,
+        "path": "popup.html"
+      },
+      {
+        "bytes": 4878,
+        "path": "lib/lovespark-tokens.css"
+      },
+      {
+        "bytes": 4789,
+        "path": "generate_icons.py"
+      },
+      {
+        "bytes": 3166,
+        "path": "lib/lovespark-base.css"
+      }
+    ],
+    "loc_by_lang": {
+      "CSS": 1923,
+      "HTML": 250,
+      "JSON": 528,
+      "JavaScript": 1607,
+      "Markdown": 333,
+      "Other": 25,
+      "Python": 138
+    },
+    "loc_total": 4804,
+    "primary_language": "JavaScript"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 19,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 19,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-17T10:38:32+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-17T10:38:32+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-17T10:38:32+02:00",
+        "sha": "5f346f2",
+        "subject": "docs: populate bugs & iterations log from git history"
+      },
+      {
+        "date": "2026-03-17T10:30:16+02:00",
+        "sha": "ecc8056",
+        "subject": "docs: add bugs & iterations log"
+      },
+      {
+        "date": "2026-03-12T02:46:27+02:00",
+        "sha": "3cbd0d0",
+        "subject": "swarm audit: bundle fonts locally, add CSP, fix security + perf + reliability"
+      },
+      {
+        "date": "2026-03-07T20:51:57+02:00",
+        "sha": "d8e00cf",
+        "subject": "Add bug report button to shared footer"
+      },
+      {
+        "date": "2026-03-07T14:05:09+02:00",
+        "sha": "bedcff9",
+        "subject": "bump version + sync shared lib"
+      },
+      {
+        "date": "2026-03-05T14:52:26+02:00",
+        "sha": "c253c72",
+        "subject": "fix: replace broken footer with aesthetic ls-footer"
+      },
+      {
+        "date": "2026-03-05T14:16:22+02:00",
+        "sha": "8d8b6fc",
+        "subject": "feat: add author credit and Ko-fi footer to all extensions"
+      },
+      {
+        "date": "2026-03-05T11:15:42+02:00",
+        "sha": "a542075",
+        "subject": "fix: theme title text visibility on beige (#4a7c59 earthy green) and slate (#d4714e terracotta)"
+      },
+      {
+        "date": "2026-03-05T10:59:07+02:00",
+        "sha": "92b7d3e",
+        "subject": "Fix theme dropdown: add missing CSS styles for styled dropdown menu"
+      },
+      {
+        "date": "2026-03-04T23:29:01+02:00",
+        "sha": "da4b004",
+        "subject": "Replace theme cycling button with dropdown menu"
+      },
+      {
+        "date": "2026-03-04T13:50:52+02:00",
+        "sha": "01d6c8f",
+        "subject": "Bump version for i18n localization update"
+      },
+      {
+        "date": "2026-03-04T13:38:38+02:00",
+        "sha": "c5442af",
+        "subject": "Fix description length for Chrome Web Store (max 132 chars)"
+      },
+      {
+        "date": "2026-03-04T13:21:02+02:00",
+        "sha": "eb6a611",
+        "subject": "Add i18n localization support (55 languages)"
+      },
+      {
+        "date": "2026-03-04T13:10:46+02:00",
+        "sha": "f7e0062",
+        "subject": "Add 4-theme system (dark/retro/beige/slate)"
+      },
+      {
+        "date": "2026-03-04T12:05:51+02:00",
+        "sha": "d8f406c",
+        "subject": "Add dark mode toggle (LoveSpark Noir)"
+      },
+      {
+        "date": "2026-02-23T13:04:49+02:00",
+        "sha": "fbdb440",
+        "subject": "Add privacy policy for Chrome Web Store submission"
+      },
+      {
+        "date": "2026-02-23T12:43:15+02:00",
+        "sha": "10cfe68",
+        "subject": "CWS compliance: drop tabs permission, fix navigation race condition"
+      },
+      {
+        "date": "2026-02-22T06:31:37+02:00",
+        "sha": "2c98a3b",
+        "subject": "Initial release: LoveSpark Sponsor Skip v1.0.0 \u23ed\ufe0f\ud83d\udc95"
+      },
+      {
+        "date": "2026-02-22T06:16:25+02:00",
+        "sha": "35762ee",
+        "subject": "Claude.md"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/lovespark-sponsor-skip.git"
+  },
+  "is_archived": false,
+  "kind": {
+    "is_chrome_extension": true
+  },
+  "local_path": "/Users/darkfire/Claude x LoveSpark/Extensions/productivity/lovespark-sponsor-skip",
+  "ls_check": null,
+  "name": "lovespark-sponsor-skip",
+  "pushed_at": "2026-03-17T08:38:33Z",
+  "stars": 1,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/lovespark-sponsor-skip",
+  "version": "2.0.35",
+  "visibility": "public"
+}

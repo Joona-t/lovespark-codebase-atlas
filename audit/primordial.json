@@ -1,14 +1,15 @@
 {
-  "audit_elapsed_seconds": 0.5,
+  "audit_elapsed_seconds": 189.51,
   "audit_meta": {},
   "audit_mode": "deep",
-  "audit_version": "0.1.0",
-  "audited_at": "2026-05-14T02:58:55Z",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:34:09Z",
   "core_loop": {
     "path": "tools/task_templates.py",
     "role": "largest source file",
     "source": "size-heuristic"
   },
+  "data_samples": [],
   "deps": {},
   "description": "A philosophical around typed absence, provenance, and compaction in agent systems. Milestone 1 is now complete: https://github.com/Joona-t/primordial",
   "disk_usage_kb": 1272,
@@ -31,6 +32,15 @@
     "audit-meta.yml": false,
     "plan.md": false,
     "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 560.275,
+    "source_file_count": 80,
+    "source_loc": 44822,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
   },
   "failures": [],
   "files": {
@@ -274,6 +284,48 @@
   },
   "is_archived": false,
   "kind": {},
+  "llm_enrich": {
+    "assumptions": "- The signal here is thin \u2014 313k LOC of Python with zero declared deps and a one-line \"philosophical\" description doesn't tell me what this code actually does, so most of what follows is guesswork from the words \"typed absence, provenance, and compaction in agent systems.\"\n- \"Typed absence\" is silently assuming the absence has a single canonical representation \u2014 that None, missing-key, empty-string, NaN, and \"field was never written\" all get routed into the same sentinel before anyone branches on it. Naively, each call site invents its own.\n- \"Provenance\" is silently assuming every value has exactly one source you can name. Honestly, the moment two agents merge a record, provenance becomes a set, not a scalar, and code written for the scalar case starts lying.\n- \"Compaction in agent systems\" is silently assuming the compaction step is idempotent and order-independent \u2014 that compacting twice gives the same result as compacting once, and that you can replay the log from any checkpoint. You should be nervous about whether that's actually tested or just believed.\n- 1,002 files / 313,770 LOC with no declared dependencies is silently assuming the stdlib never changes its mind \u2014 no pinned Python version, no lockfile, no requirements.txt visible from the audit. The naive thing would be to assume \"pure stdlib = no supply chain risk\"; in practice it means \"I can't reproduce this on a different machine and I won't know until I try.\"\n- 106 commits over what looks like a long horizon (last commit 2026-03-28) is silently assuming the author remembers why each of the 313k lines is there. There is no second reader baked into that ratio.",
+    "core_loop_annotations": [
+      {
+        "line": 50,
+        "note": "per-run artifact ledger \u2014 the provenance chain"
+      },
+      {
+        "line": 51,
+        "note": "dedupe set for forge IDs"
+      },
+      {
+        "line": 67,
+        "note": "subclass hook \u2014 actual prompt text per iteration"
+      },
+      {
+        "line": 70,
+        "note": "stamps the forge artifact ID into the prompt"
+      },
+      {
+        "line": 72,
+        "note": "records ID so survival tracking can check later"
+      },
+      {
+        "line": 77,
+        "note": "chain link \u2014 point at the immediately prior artifact"
+      },
+      {
+        "line": 79,
+        "note": "every 3rd iter, also reach 2-back for deeper chains"
+      }
+    ],
+    "decisions": "- 2025-08 \u2014 Made it a research repo, not a library: 1,002 files / 313k LOC organized into numbered phases (Phase 8, RQ4, milestones) instead of a package. The naive thing would be to publish a Python module called `primordial` with an API; you should be nervous about that because the work is about whether the abstractions exist at all. Phases let you archive a milestone (\"v2.0 \u2014 The Forgetting Agent\") without breaking importers, because there are no importers.\n\n- 2025-11 \u2014 Pinned to research questions (RQ1\u2026RQ4) instead of features. The commits say \"RQ4 POSITIVE / NEGATIVE\" \u2014 that's a falsifiable verdict, not a changelog. Honestly, this is the only honest way to run a repo about typed absence and provenance, where the deliverable is \"we checked and the answer is X,\" not \"we shipped Y.\"\n\n- 2026-03 \u2014 Zero declared dependencies on 313k LOC of Python. I can't tell from this signal alone whether that's vendored deps, stdlib-only discipline, or just a missing manifest \u2014 but if it's deliberate, the WHY is reproducibility of claims across architectures (the cross-architecture analysis in Phase 8 only means something if the substrate doesn't drift under you).",
+    "naive": "A single Python script that reads/writes one JSONL log where every entry carries a provenance tag and an \"absent\" sentinel \u2014 append-only, grep to query, no schema, no compaction until the file actually gets too big to grep. Honestly, 313k LOC across 1,002 files for \"typed absence + provenance\" smells like the abstraction got built before three concrete uses existed.",
+    "silent_failures": "- If a provenance edge gets written before its target node is committed, lookups quietly return null and downstream agents treat absence as \"no such fact\" rather than \"race condition\" \u2014 corruption that type-checks fine.\n- Compaction that merges two records with subtly different unit conventions (e.g. tokens-vs-chars, UTC-vs-local timestamps) will produce a single \"canonical\" record with plausible numbers and no warning.\n- Typed-absence sentinels (None, Unknown, Withheld) collapsing to the same falsy value somewhere in the pipeline \u2014 an agent that should distinguish \"we asked and they refused\" from \"we never asked\" silently can't.\n- 313k LOC with zero declared deps means the dependency surface lives in imports and shell calls; a renamed CLI (`claude` \u2192 `claude-cli`) or a transitive stdlib behavior change degrades one agent's output to empty strings that serialize fine.\n- Last commit 2026-03-28, 47 days stale: any external schema this depends on (arXiv API, GitHub API, an LLM CLI's JSON output shape) may have drifted, and the failure mode is usually \"parses, returns partial, no exception.\"\n- Honestly, I can't tell from a name + LOC + commit count whether the compaction layer has idempotency tests; if it doesn't, re-running compaction on already-compacted state is the classic silent data-loss path here.",
+    "stack_rationale": "Honestly, the signal is thin \u2014 \"(none declared)\" for top deps in a 313k-LOC Python repo means either no requirements.txt/pyproject.toml at the root, or the audit didn't find one. I can't tell from this alone whether that's pure-stdlib discipline or just missing metadata. If it really is zero declared deps across 1,002 files, that's a Karpathy-style statement: a philosophical project on typed absence and provenance, written in plain Python with nothing to install. What's notably absent if so: no pydantic (surprising for a \"typed absence\" project), no pytest config visible, no LLM SDK \u2014 which would be on-brand for a repo theorizing about agents rather than calling them.",
+    "takeaway": "The signal here is thin \u2014 313k lines, 106 commits, no declared deps, and a tagline about \"typed absence and provenance\" is all I have to go on. So take this with appropriate doubt.\n\nThe one thing worth stealing, if the description is accurate: treating absence as a typed value rather than null/None/missing-key. Most projects discover halfway through that \"we don't know yet\" and \"we know it's not there\" and \"we forgot to fetch this\" are three different states that got collapsed into one falsy value, and then spend the rest of their life paying for it. Naively you reach for <code>Optional</code> and move on. The less naive move is to name the reasons absence happens in your domain and let the type system carry them. You should be nervous about doing this everywhere \u2014 it gets verbose fast \u2014 but doing it at the one or two boundaries where provenance actually matters (cache layers, agent memory, anything that compacts state) tends to pay for itself.\n\nI can't tell from file counts alone whether primordial actually pulls this off, or whether the compaction story is load-bearing or aspirational. Worth a closer read before borrowing.",
+    "tldr": "A philosophical sandbox for typed absence, provenance, and compaction in agent systems.",
+    "tradeoffs": "- We chose Python over a typed systems language because it makes prototyping typed-absence semantics fast, but at 313k LOC across 1,002 files we're paying for it: the type system we're researching can't be enforced by the language hosting the research.\n- We chose 106 commits over a year of thinking time rather than a higher cadence, which keeps each commit load-bearing but means I can't tell from this metadata alone whether milestones reflect deep iteration or long quiet stretches between bursts.\n- We chose zero declared dependencies over pulling in libraries, which keeps provenance clean (everything in the repo is auditable), but you should be nervous about how much wheel-reinvention is hiding in 313k lines.",
+    "v_next": "- Honestly, I can't tell from the metadata alone what Milestone 2 actually is \u2014 313k LOC across 1,002 files with zero declared deps is suspicious, so step one is publishing a one-paragraph \"what is provenance/compaction here, concretely\" before any new code.\n- The naive thing would be to keep adding theory; you should be nervous about whether typed-absence has a runnable benchmark yet \u2014 pick one agent task, measure compaction loss vs. a no-compaction baseline, post the numbers.\n- 106 commits with last activity 2026-03-28 (~6 weeks stale) suggests momentum risk more than a missing feature \u2014 either cut scope to one demo someone can `git clone` and run in 60 seconds, or write a postmortem on why it stalled.",
+    "verification": "No verification signals are detected on disk \u2014 no test directories, no CI config files, no asserts surfaced in the audit. With 313k LOC across 1,002 files and zero declared deps, I honestly can't tell from this context alone whether checking happens via manual review, LLM-as-judge in the agent loop itself, or simply not at all. You should be nervous about that gap on a project framed around provenance."
+  },
   "local_path": "/Users/darkfire/forge/primordial",
   "ls_check": null,
   "name": "primordial",
