@@ -1,0 +1,164 @@
+{
+  "audit_elapsed_seconds": 0.62,
+  "audit_meta": {},
+  "audit_mode": "medium",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:46:27Z",
+  "core_loop": {
+    "path": "src/commands/perf-issue/index.js",
+    "role": "JavaScript entry",
+    "source": "canonical-name"
+  },
+  "data_samples": [
+    {
+      "content": "scripts:\n  prepare-src: node scripts/prepare-src.mjs\n  build: npm run prepare-src && node scripts/build.mjs\n  check: npm run prepare-src && tsc --noEmit\n  start: node dist/cli.js",
+      "label": "Run targets (from package.json)",
+      "lang": "yaml"
+    }
+  ],
+  "deps": {
+    "npm": [],
+    "npm_dev": [
+      "esbuild",
+      "typescript"
+    ]
+  },
+  "description": "Learning ",
+  "disk_usage_kb": 9452,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": false,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 267.83480979676915,
+    "source_file_count": 1919,
+    "source_loc": 513975,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 0,
+    "file_count": 1936,
+    "files_by_lang": {
+      "JSON": 3,
+      "JavaScript": 31,
+      "Markdown": 13,
+      "Other": 1,
+      "TypeScript": 1888
+    },
+    "largest_source_files": [
+      {
+        "bytes": 895850,
+        "path": "src/screens/REPL.tsx"
+      },
+      {
+        "bytes": 803924,
+        "path": "src/main.tsx"
+      },
+      {
+        "bytes": 355032,
+        "path": "src/components/PromptInput/PromptInput.tsx"
+      },
+      {
+        "bytes": 321775,
+        "path": "src/commands/plugin/ManagePlugins.tsx"
+      },
+      {
+        "bytes": 271407,
+        "path": "src/components/Settings/Config.tsx"
+      },
+      {
+        "bytes": 251886,
+        "path": "src/ink/ink.tsx"
+      },
+      {
+        "bytes": 233734,
+        "path": "src/tools/AgentTool/AgentTool.tsx"
+      },
+      {
+        "bytes": 214955,
+        "path": "src/utils/ansiToPng.ts"
+      },
+      {
+        "bytes": 212735,
+        "path": "src/cli/print.ts"
+      },
+      {
+        "bytes": 212610,
+        "path": "src/hooks/useTypeahead.tsx"
+      },
+      {
+        "bytes": 200487,
+        "path": "src/components/LogSelector.tsx"
+      },
+      {
+        "bytes": 193203,
+        "path": "src/utils/messages.ts"
+      }
+    ],
+    "loc_by_lang": {
+      "JSON": 573,
+      "JavaScript": 709,
+      "Markdown": 2592,
+      "Other": 3,
+      "TypeScript": 513266
+    },
+    "loc_total": 517143,
+    "primary_language": "TypeScript"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "sanbuphy <physicoada@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-31T21:31:43+08:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-31T21:31:43+08:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-31T21:31:43+08:00",
+        "sha": "3da94d5",
+        "subject": "Update copyright attribution from PBC to Anthropic and Claude"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/Learning.git"
+  },
+  "is_archived": false,
+  "kind": {
+    "is_node_project": true
+  },
+  "local_path": "/Users/darkfire/atlas-source-clones/Learning",
+  "ls_check": null,
+  "name": "Learning",
+  "pushed_at": "2026-03-31T13:31:47Z",
+  "stars": 0,
+  "tier": 2,
+  "tier_reason": "explicit allowlist (Tier 2)",
+  "url": "https://github.com/Joona-t/Learning",
+  "version": "2.1.88",
+  "visibility": "public"
+}

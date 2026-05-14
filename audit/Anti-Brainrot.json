@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.86,
+  "audit_elapsed_seconds": 0.22,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:38:27Z",
+  "audited_at": "2026-05-14T09:46:35Z",
   "core_loop": {
     "path": "content.js",
     "role": "Chrome extension content script",

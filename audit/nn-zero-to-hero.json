@@ -1,0 +1,90 @@
+{
+  "audit_elapsed_seconds": 0.16,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:47:06Z",
+  "core_loop": null,
+  "deps": {},
+  "description": "Neural Networks: Zero to Hero",
+  "disk_usage_kb": 50,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": null,
+    "deps_total": 0,
+    "loc_per_source_file": 0.0,
+    "source_file_count": 1,
+    "source_loc": 0,
+    "test_loc": 0,
+    "test_to_source_ratio": null
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 0,
+    "file_count": 9,
+    "files_by_lang": {
+      "Markdown": 1,
+      "Other": 8
+    },
+    "largest_source_files": [],
+    "loc_by_lang": {
+      "Markdown": 92,
+      "Other": 7687
+    },
+    "loc_total": 7779,
+    "primary_language": "Other"
+  },
+  "git": {
+    "branch": "master",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Andrej Karpathy <andrej.karpathy@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2024-02-20T09:19:51-08:00",
+    "is_git": true,
+    "last_commit_date": "2024-02-20T09:19:51-08:00",
+    "recent_commits": [
+      {
+        "date": "2024-02-20T09:19:51-08:00",
+        "sha": "73c3fcc",
+        "subject": "add lecture 8 tokenization"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/nn-zero-to-hero.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/atlas-source-clones/nn-zero-to-hero",
+  "ls_check": null,
+  "name": "nn-zero-to-hero",
+  "pushed_at": "2024-08-18T12:16:26Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/nn-zero-to-hero",
+  "version": null,
+  "visibility": "public"
+}

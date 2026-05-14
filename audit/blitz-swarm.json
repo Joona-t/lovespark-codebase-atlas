@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.31,
+  "audit_elapsed_seconds": 0.3,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:38:19Z",
+  "audited_at": "2026-05-14T09:46:30Z",
   "core_loop": {
     "path": "orchestrator.py",
     "role": "largest source file",

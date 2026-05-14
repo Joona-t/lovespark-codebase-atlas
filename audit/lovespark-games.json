@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.17,
+  "audit_elapsed_seconds": 0.35,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:38:17Z",
+  "audited_at": "2026-05-14T09:46:28Z",
   "core_loop": {
     "path": "index.html",
     "role": "largest source file",

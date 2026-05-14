@@ -86,7 +86,9 @@ TIER_2 = {
     "claudetui",
 }
 
-# Where to look for local clones — covers Joona's known workspace layout.
+# Where to look for local clones — covers Joona's known workspace layout PLUS
+# the atlas-managed clone pool at ~/atlas-source-clones/ (where the nightly cron
+# auto-clones any repo that isn't already on disk somewhere).
 LOCAL_SCAN_ROOTS = [
     "/Users/darkfire",
     "/Users/darkfire/Claude x LoveSpark",
@@ -96,6 +98,7 @@ LOCAL_SCAN_ROOTS = [
     "/Users/darkfire/Claude x LoveSpark/Web Projects",
     "/Users/darkfire/Claude x LoveSpark/Games",
     "/Users/darkfire/forge",
+    "/Users/darkfire/atlas-source-clones",
 ]
 
 

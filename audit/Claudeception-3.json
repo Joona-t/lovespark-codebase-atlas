@@ -1,0 +1,110 @@
+{
+  "audit_elapsed_seconds": 0.23,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:47:07Z",
+  "core_loop": {
+    "path": "scripts/claudeception-activator.sh",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {},
+  "description": "A Claude Code skill for autonomous skill extraction and continuous learning. Have Claude Code get smarter as it works.",
+  "disk_usage_kb": 40,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": null,
+    "deps_total": 0,
+    "loc_per_source_file": 39.0,
+    "source_file_count": 1,
+    "source_loc": 39,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [
+    {
+      "title": ": |2026-01-18|||fix: use correct slash command /continuous-learning instead of /retrospective"
+    },
+    {
+      "title": ": |2026-01-22|||fix: remove duplicated sentence in README"
+    }
+  ],
+  "files": {
+    "binary_count": 0,
+    "file_count": 12,
+    "files_by_lang": {
+      "Markdown": 9,
+      "Other": 1,
+      "Shell": 1,
+      "YAML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 1770,
+        "path": "scripts/claudeception-activator.sh"
+      }
+    ],
+    "loc_by_lang": {
+      "Markdown": 1458,
+      "Other": 21,
+      "Shell": 39,
+      "YAML": 7
+    },
+    "loc_total": 1525,
+    "primary_language": "Shell"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-17T10:36:18+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-17T10:36:18+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-17T10:36:18+02:00",
+        "sha": "5f908fe",
+        "subject": "docs: populate bugs & iterations log from git history"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/Claudeception-3.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/atlas-source-clones/Claudeception-3",
+  "ls_check": null,
+  "name": "Claudeception-3",
+  "pushed_at": "2026-03-17T08:36:19Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/Claudeception-3",
+  "version": null,
+  "visibility": "public"
+}

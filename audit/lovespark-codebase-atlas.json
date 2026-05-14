@@ -1,0 +1,160 @@
+{
+  "audit_elapsed_seconds": 0.19,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:46:59Z",
+  "core_loop": {
+    "path": "index.html",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {},
+  "description": "Karpathy-style audit of every Joona-t public repo. Auto-updates on push. Built with the LoveSpark atlas pipeline.",
+  "disk_usage_kb": 404,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 339.7,
+    "source_file_count": 10,
+    "source_loc": 3397,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [
+    {
+      "title": "2026-05-14 \u00b7 ITER-001 \u2014 Bootstrap"
+    }
+  ],
+  "files": {
+    "binary_count": 3,
+    "file_count": 70,
+    "files_by_lang": {
+      "HTML": 26,
+      "JSON": 26,
+      "Markdown": 2,
+      "Other": 2,
+      "Python": 10,
+      "YAML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 40911,
+        "path": "index.html"
+      },
+      {
+        "bytes": 34666,
+        "path": "pipeline/lib/template.py"
+      },
+      {
+        "bytes": 29198,
+        "path": "audit/primordial.html"
+      },
+      {
+        "bytes": 23489,
+        "path": "audit/blitz-swarm.html"
+      },
+      {
+        "bytes": 22299,
+        "path": "pipeline/lib/instruments.py"
+      },
+      {
+        "bytes": 21564,
+        "path": "audit/claudetui.html"
+      },
+      {
+        "bytes": 21276,
+        "path": "audit/glyph-grid.html"
+      },
+      {
+        "bytes": 20060,
+        "path": "audit/research-swarm.html"
+      },
+      {
+        "bytes": 19828,
+        "path": "audit/Joona-t.github.io.html"
+      },
+      {
+        "bytes": 19568,
+        "path": "audit/zarathustra.html"
+      },
+      {
+        "bytes": 19558,
+        "path": "audit/lovespark-a11y-toolkit.html"
+      },
+      {
+        "bytes": 19441,
+        "path": "audit/forging.html"
+      }
+    ],
+    "loc_by_lang": {
+      "HTML": 7856,
+      "JSON": 5106,
+      "Markdown": 68,
+      "Other": 25,
+      "Python": 3397,
+      "YAML": 3
+    },
+    "loc_total": 16455,
+    "primary_language": "Python"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 2,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 2,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-05-14T12:39:59+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-05-14T12:39:59+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-05-14T12:39:59+03:00",
+        "sha": "e544a6c",
+        "subject": "atlas: refresh (2026-05-14 09:39 UTC)"
+      },
+      {
+        "date": "2026-05-14T06:02:06+03:00",
+        "sha": "684c544",
+        "subject": "atlas: refresh (2026-05-14 03:02 UTC)"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/lovespark-codebase-atlas.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/atlas-checkouts/lovespark-codebase-atlas",
+  "ls_check": null,
+  "name": "lovespark-codebase-atlas",
+  "pushed_at": "2026-05-14T09:40:00Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/lovespark-codebase-atlas",
+  "version": null,
+  "visibility": "public"
+}

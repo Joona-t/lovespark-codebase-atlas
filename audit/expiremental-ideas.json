@@ -1,0 +1,160 @@
+{
+  "audit_elapsed_seconds": 0.17,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:47:07Z",
+  "core_loop": {
+    "path": "src/blitz_swarm/storage.py",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {
+    "pip": [
+      "aiosqlite",
+      "deepdiff",
+      "httpx",
+      "lancedb",
+      "networkx",
+      "pydantic",
+      "redis",
+      "typer"
+    ]
+  },
+  "description": "Experimental multi-agent research swarm with a Redis blackboard, SQLite durability, and semantic memory.",
+  "disk_usage_kb": 43,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": false,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 2.5624599615631007,
+    "deps_total": 8,
+    "loc_per_source_file": 115.62962962962963,
+    "source_file_count": 27,
+    "source_loc": 3122,
+    "test_loc": 920,
+    "test_to_source_ratio": 0.2946828955797566
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 0,
+    "file_count": 32,
+    "files_by_lang": {
+      "Markdown": 3,
+      "Other": 1,
+      "Python": 27,
+      "TOML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 19331,
+        "path": "src/blitz_swarm/storage.py"
+      },
+      {
+        "bytes": 16858,
+        "path": "src/blitz_swarm/runtime.py"
+      },
+      {
+        "bytes": 13007,
+        "path": "src/blitz_swarm/workflows/research.py"
+      },
+      {
+        "bytes": 9388,
+        "path": "src/blitz_swarm/blackboard.py"
+      },
+      {
+        "bytes": 6300,
+        "path": "src/blitz_swarm/memory.py"
+      },
+      {
+        "bytes": 5004,
+        "path": "src/blitz_swarm/vector_store.py"
+      },
+      {
+        "bytes": 4393,
+        "path": "tests/test_blackboard.py"
+      },
+      {
+        "bytes": 4057,
+        "path": "tests/test_integration.py"
+      },
+      {
+        "bytes": 3825,
+        "path": "tests/test_failures.py"
+      },
+      {
+        "bytes": 3680,
+        "path": "src/blitz_swarm/models.py"
+      },
+      {
+        "bytes": 3556,
+        "path": "src/blitz_swarm/providers/openai_compatible.py"
+      },
+      {
+        "bytes": 3173,
+        "path": "src/blitz_swarm/crdt.py"
+      }
+    ],
+    "loc_by_lang": {
+      "Markdown": 203,
+      "Other": 8,
+      "Python": 3122,
+      "TOML": 38
+    },
+    "loc_total": 3371,
+    "primary_language": "Python"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-17T10:30:14+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-17T10:30:14+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-17T10:30:14+02:00",
+        "sha": "bd09a9c",
+        "subject": "docs: add bugs & iterations log"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/expiremental-ideas.git"
+  },
+  "is_archived": false,
+  "kind": {
+    "is_python_project": true
+  },
+  "local_path": "/Users/darkfire/atlas-source-clones/expiremental-ideas",
+  "ls_check": null,
+  "name": "expiremental-ideas",
+  "pushed_at": "2026-03-17T08:30:15Z",
+  "stars": 1,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/expiremental-ideas",
+  "version": null,
+  "visibility": "public"
+}

@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.16,
+  "audit_elapsed_seconds": 0.15,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:39:30Z",
+  "audited_at": "2026-05-14T09:47:14Z",
   "core_loop": null,
   "deps": {},
   "description": "Automated AI/dev intelligence brief \u2014 an experiment in replacing social media with a curated agent loop.",

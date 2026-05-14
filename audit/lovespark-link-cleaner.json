@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.26,
+  "audit_elapsed_seconds": 0.19,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:38:31Z",
+  "audited_at": "2026-05-14T09:46:37Z",
   "core_loop": {
     "path": "background.js",
     "role": "Chrome extension service worker / background",

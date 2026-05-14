@@ -1,0 +1,145 @@
+{
+  "audit_elapsed_seconds": 0.14,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:47:05Z",
+  "core_loop": {
+    "path": "forge_chamber.py",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {},
+  "description": "Experiment: Primordial Computing grammar catches structural problems in RLM execution that native logging misses",
+  "disk_usage_kb": 56,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 391.72727272727275,
+    "source_file_count": 11,
+    "source_loc": 4309,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 0,
+    "file_count": 20,
+    "files_by_lang": {
+      "JSON": 4,
+      "Markdown": 3,
+      "Other": 2,
+      "Python": 10,
+      "Shell": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 26552,
+        "path": "forge_chamber.py"
+      },
+      {
+        "bytes": 20940,
+        "path": "forge_v1_bridge.py"
+      },
+      {
+        "bytes": 18232,
+        "path": "run_experiment.py"
+      },
+      {
+        "bytes": 15806,
+        "path": "forge_stage_output.py"
+      },
+      {
+        "bytes": 15358,
+        "path": "forge_trace_codec.py"
+      },
+      {
+        "bytes": 14048,
+        "path": "primordial_rlm_bridge.py"
+      },
+      {
+        "bytes": 10768,
+        "path": "forge_nulls.py"
+      },
+      {
+        "bytes": 9559,
+        "path": "forge_reversible_summary.py"
+      },
+      {
+        "bytes": 8859,
+        "path": "vanilla_baseline.py"
+      },
+      {
+        "bytes": 6674,
+        "path": "rigorous_tests.py"
+      },
+      {
+        "bytes": 547,
+        "path": "setup.sh"
+      }
+    ],
+    "loc_by_lang": {
+      "JSON": 611,
+      "Markdown": 566,
+      "Other": 32,
+      "Python": 4286,
+      "Shell": 23
+    },
+    "loc_total": 5518,
+    "primary_language": "Python"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-17T10:29:35+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-17T10:29:35+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-17T10:29:35+02:00",
+        "sha": "9ac75b0",
+        "subject": "docs: add bugs & iterations log"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/primordial-rlm-v2.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/atlas-source-clones/primordial-rlm-v2",
+  "ls_check": null,
+  "name": "primordial-rlm-v2",
+  "pushed_at": "2026-03-17T08:29:36Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/primordial-rlm-v2",
+  "version": null,
+  "visibility": "public"
+}

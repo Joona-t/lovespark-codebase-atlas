@@ -1,0 +1,92 @@
+{
+  "audit_elapsed_seconds": 0.14,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:46:36Z",
+  "core_loop": null,
+  "deps": {},
+  "description": "Custom Pink Aesthetic Theme for VsCode (Last one wasn't cutting it :3) ",
+  "disk_usage_kb": 1338,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": false,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": null,
+    "deps_total": 0,
+    "loc_per_source_file": 0.0,
+    "source_file_count": 1,
+    "source_loc": 0,
+    "test_loc": 0,
+    "test_to_source_ratio": null
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 3,
+    "file_count": 11,
+    "files_by_lang": {
+      "JSON": 2,
+      "Markdown": 4,
+      "Other": 2
+    },
+    "largest_source_files": [],
+    "loc_by_lang": {
+      "JSON": 447,
+      "Markdown": 92,
+      "Other": 25
+    },
+    "loc_total": 564,
+    "primary_language": "JSON"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-03-17T10:32:19+02:00",
+    "is_git": true,
+    "last_commit_date": "2026-03-17T10:32:19+02:00",
+    "recent_commits": [
+      {
+        "date": "2026-03-17T10:32:19+02:00",
+        "sha": "d5463ce",
+        "subject": "docs: add bugs & iterations log"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/valentine-light.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/atlas-source-clones/valentine-light",
+  "ls_check": null,
+  "name": "valentine-light",
+  "pushed_at": "2026-03-17T08:32:21Z",
+  "stars": 1,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/valentine-light",
+  "version": null,
+  "visibility": "public"
+}
