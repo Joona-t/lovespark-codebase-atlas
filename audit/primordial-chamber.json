@@ -1,0 +1,257 @@
+{
+  "audit_elapsed_seconds": 0.96,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-07-08T11:44:26Z",
+  "core_loop": {
+    "path": "primordial_chamber/council_runner.py",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {},
+  "description": "Local CLI council chamber for multi-agent deliberation, review, synthesis, and auditable JSONL records.",
+  "disk_usage_kb": 283007,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": true,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": true,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": true,
+    "research.md": true
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 111.43478260869566,
+    "source_file_count": 23,
+    "source_loc": 2563,
+    "test_loc": 1330,
+    "test_to_source_ratio": 0.518923136948888
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 0,
+    "file_count": 39,
+    "files_by_lang": {
+      "Markdown": 7,
+      "Other": 8,
+      "Python": 23,
+      "TOML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 8652,
+        "path": "primordial_chamber/council_runner.py"
+      },
+      {
+        "bytes": 8366,
+        "path": "scripts/primordial_chamber.py"
+      },
+      {
+        "bytes": 8222,
+        "path": "primordial_chamber/cli.py"
+      },
+      {
+        "bytes": 7019,
+        "path": "primordial_chamber/orchestrator.py"
+      },
+      {
+        "bytes": 6748,
+        "path": "primordial_chamber/seats.py"
+      },
+      {
+        "bytes": 5674,
+        "path": "primordial_chamber/absence.py"
+      },
+      {
+        "bytes": 5279,
+        "path": "primordial_chamber/harness.py"
+      },
+      {
+        "bytes": 4882,
+        "path": "primordial_chamber/openclaw_adapter.py"
+      },
+      {
+        "bytes": 4399,
+        "path": "tests/test_orchestrator.py"
+      },
+      {
+        "bytes": 3975,
+        "path": "tests/test_council_runner.py"
+      },
+      {
+        "bytes": 3660,
+        "path": "tests/test_harness.py"
+      },
+      {
+        "bytes": 3639,
+        "path": "primordial_chamber/store.py"
+      }
+    ],
+    "loc_by_lang": {
+      "Markdown": 589,
+      "Other": 125,
+      "Python": 2563,
+      "TOML": 21
+    },
+    "loc_total": 3298,
+    "primary_language": "Python"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-06-02T15:22:24+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-06-02T15:22:24+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-06-02T15:22:24+03:00",
+        "sha": "e3e1098",
+        "subject": "feat: extract standalone primordial chamber"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/primordial-chamber.git"
+  },
+  "is_archived": false,
+  "kind": {
+    "is_python_project": true
+  },
+  "local_path": "/Users/darkfire/primordial-chamber",
+  "ls_check": {
+    "categories": {
+      "python": [
+        {
+          "category": "py",
+          "details": [],
+          "evidence": [],
+          "id": "PY-TYPEHINTS",
+          "message": "Type hints on 70/74 functions (95%)",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "py",
+          "details": [
+            "  /Users/darkfire/primordial-chamber/primordial_chamber/openclaw_adapter.py:41: def normalize_openclaw_json(",
+            "  /Users/darkfire/primordial-chamber/primordial_chamber/openclaw_adapter.py:90: def run_openclaw_agent(",
+            "  /Users/darkfire/primordial-chamber/primordial_chamber/harness.py:31: def delegation_source_refs(",
+            "  /Users/darkfire/primordial-chamber/primordial_chamber/harness.py:119: def record_delegation_safely(",
+            "  /Users/darkfire/primordial-chamber/primordial_chamber/seats.py:60: def openclaw_seat(",
+            "  ... and 7 more"
+          ],
+          "evidence": [],
+          "id": "PY-DOCSTRINGS",
+          "message": "12 public functions missing docstrings",
+          "passed": false,
+          "rule_source": null,
+          "severity": "warn",
+          "suggestion": null,
+          "wcag": []
+        }
+      ],
+      "quality": [
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-README",
+          "message": "README.md present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-LICENSE",
+          "message": "LICENSE present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-GITIGNORE",
+          "message": ".gitignore present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-BUGS-LOG",
+          "message": "BUGS_AND_ITERATIONS.md present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-PAID-API",
+          "message": "No paid LLM API patterns detected",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        }
+      ]
+    },
+    "project": "primordial-chamber",
+    "schema_version": "1.0",
+    "summary": {
+      "total_fail": 0,
+      "total_pass": 6,
+      "total_warn": 1
+    },
+    "tool": "ls-check",
+    "tool_version": "0.1.0",
+    "type": "python"
+  },
+  "name": "primordial-chamber",
+  "pushed_at": "2026-06-02T12:28:09Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/primordial-chamber",
+  "version": null,
+  "visibility": "public"
+}

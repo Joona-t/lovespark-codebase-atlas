@@ -15,7 +15,7 @@ that repo's root with any of: `tier`, `tldr`, `data`, `architecture`,
 ## Snapshot
 
 - Visibility: **public**
-- Audited repos: **41**
+- Audited repos: **51**
 - Generator: atlas v0.1.0
 - Pipeline source: `Claude x LoveSpark/scripts/atlas/` (private)
 

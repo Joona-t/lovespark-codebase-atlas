@@ -1,0 +1,500 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>glyph-grid-studio — atlas</title><style>
+:root {
+  --ls-pink-light: #ffc8d6;
+  --ls-pink-mid: #ff9bbb;
+  --ls-pink-deep: #c5276f;
+  --ls-pink-accent: #ff5fa2;
+  --ls-cream: #fff5f8;
+  --ls-text: #2a1825;
+  --ls-text-soft: #6b4858;
+  --ls-bg-gradient: linear-gradient(135deg, #ffc8d6 0%, #ff9bbb 50%, #ffe0e9 100%);
+  --ls-glass: rgba(255, 255, 255, 0.7);
+  --ls-glass-strong: rgba(255, 255, 255, 0.92);
+  --ls-shadow: 0 4px 14px rgba(197, 39, 111, 0.15);
+  --ls-focus: #c5276f;
+  --tier-1: #c5276f;
+  --tier-2: #ff5fa2;
+  --tier-3: #ff9bbb;
+}
+
+[data-theme="dark"] {
+  --ls-bg-gradient: linear-gradient(135deg, #2a1825 0%, #3d1f2e 50%, #1a0f15 100%);
+  --ls-text: #ffe0e9;
+  --ls-text-soft: #c5a3b4;
+  --ls-glass: rgba(60, 30, 45, 0.7);
+  --ls-glass-strong: rgba(80, 40, 60, 0.92);
+  --ls-cream: #2a1825;
+  --ls-pink-deep: #ff9bbb;
+}
+
+[data-theme="beige"] {
+  --ls-bg-gradient: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 50%, #f0dcc0 100%);
+  --ls-pink-deep: #8b3a5f;
+  --ls-pink-accent: #c5276f;
+  --ls-glass: rgba(255, 250, 240, 0.7);
+  --ls-glass-strong: rgba(255, 250, 240, 0.95);
+}
+
+[data-theme="slate"] {
+  --ls-bg-gradient: linear-gradient(135deg, #3d4a5c 0%, #2a3441 50%, #4a5868 100%);
+  --ls-text: #e0e6ef;
+  --ls-text-soft: #a8b3c0;
+  --ls-glass: rgba(70, 80, 95, 0.7);
+  --ls-glass-strong: rgba(85, 95, 110, 0.92);
+  --ls-cream: #2a3441;
+  --ls-pink-deep: #ffb3cc;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'OpenDyslexic', system-ui, -apple-system, 'SF Pro Rounded', 'Segoe UI', sans-serif;
+  background: var(--ls-bg-gradient);
+  background-attachment: fixed;
+  color: var(--ls-text);
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+.layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+.sidebar {
+  background: var(--ls-glass-strong);
+  border-right: 1px solid rgba(197, 39, 111, 0.18);
+  padding: 16px 14px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+}
+@media (max-width: 900px) { .sidebar { position: static; height: auto; } }
+
+.brand { display: flex; align-items: center; gap: 10px; padding: 4px 8px 12px; }
+.brand img { width: 44px; height: 44px; border-radius: 12px; box-shadow: var(--ls-shadow); }
+.brand-text { font-weight: 700; font-size: 14px; color: var(--ls-pink-deep); line-height: 1.2; }
+.brand-text small { display: block; font-weight: 400; color: var(--ls-text-soft); font-size: 11px; margin-top: 2px; }
+
+.atlas-link { display: block; font-size: 11px; color: var(--ls-pink-deep); text-decoration: none; padding: 6px 8px; margin-bottom: 8px; border-radius: 8px; background: rgba(255, 255, 255, 0.4); }
+.atlas-link:hover { background: rgba(255, 255, 255, 0.7); }
+
+.nav { display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
+.nav a {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--ls-text);
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav a:hover { background: rgba(255, 95, 162, 0.12); }
+.nav a:focus-visible { outline: 2px solid var(--ls-focus); outline-offset: 2px; }
+.nav .num { font-size: 10px; opacity: 0.5; font-variant-numeric: tabular-nums; }
+
+.theme-toggle { margin-top: 14px; padding: 0 8px; }
+.theme-toggle select {
+  width: 100%;
+  font: inherit;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(197, 39, 111, 0.3);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ls-text);
+  cursor: pointer;
+}
+.theme-toggle select:focus-visible { outline: 2px solid var(--ls-focus); }
+
+.main { padding: 28px 36px; max-width: 1080px; }
+@media (max-width: 900px) { .main { padding: 16px; } }
+
+header.repo-head { margin-bottom: 22px; }
+header.repo-head h1 { margin: 0 0 4px; font-size: 32px; color: var(--ls-pink-deep); }
+header.repo-head .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; color: var(--ls-text-soft); font-size: 13px; }
+header.repo-head .meta a { color: var(--ls-pink-deep); }
+
+.tier-badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+.tier-badge.tier-1 { background: var(--tier-1); }
+.tier-badge.tier-2 { background: var(--tier-2); }
+.tier-badge.tier-3 { background: var(--tier-3); color: #5c1a36; }
+.visibility-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(197, 39, 111, 0.12);
+  color: var(--ls-pink-deep);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.archived-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(120, 120, 120, 0.2);
+  color: #555;
+  font-weight: 600;
+}
+
+section.atlas-section { background: var(--ls-glass); border-radius: 14px; padding: 18px 22px; box-shadow: var(--ls-shadow); margin-bottom: 18px; }
+section.atlas-section h2 { color: var(--ls-pink-deep); margin: 0 0 12px; font-size: 20px; border-bottom: 2px solid rgba(197, 39, 111, 0.18); padding-bottom: 6px; }
+section.atlas-section h3 { color: var(--ls-pink-deep); margin: 14px 0 6px; font-size: 15px; }
+section.atlas-section p { margin: 8px 0; }
+section.atlas-section ul, section.atlas-section ol { margin: 8px 0; padding-left: 22px; }
+section.atlas-section li { margin: 4px 0; }
+section.atlas-section a { color: var(--ls-pink-deep); }
+section.atlas-section a:hover { color: var(--ls-pink-accent); }
+
+code { background: rgba(197, 39, 111, 0.08); padding: 1px 6px; border-radius: 4px; font-size: 0.88em; }
+pre { background: rgba(42, 24, 37, 0.94); color: #ffe0e9; padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 12.5px; line-height: 1.45; }
+pre code { background: transparent; padding: 0; color: inherit; }
+[data-theme="dark"] pre { background: rgba(0, 0, 0, 0.5); }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid rgba(197, 39, 111, 0.12); vertical-align: top; }
+th { font-weight: 600; color: var(--ls-pink-deep); }
+
+.kv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin: 10px 0; }
+.kv { background: var(--ls-glass-strong); border-radius: 10px; padding: 10px 12px; }
+.kv .k { font-size: 10.5px; color: var(--ls-text-soft); text-transform: uppercase; letter-spacing: 0.4px; }
+.kv .v { font-size: 18px; font-weight: 700; color: var(--ls-pink-deep); display: block; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.kv .v.good { color: #2a9d4a; }
+.kv .v.warn { color: #e0a836; }
+.kv .v.danger { color: #c44248; }
+
+.mermaid-host { background: rgba(255, 255, 255, 0.5); border-radius: 10px; padding: 14px; margin: 10px 0; overflow-x: auto; text-align: center; }
+
+.empty-state { color: var(--ls-text-soft); font-style: italic; font-size: 13px; }
+
+.placeholder-banner {
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  background: rgba(224, 168, 54, 0.14);
+  color: #7a5615;
+  border-left: 4px solid #e0a836;
+  line-height: 1.5;
+}
+.placeholder-banner strong { color: #5e410f; }
+.placeholder-banner code { background: rgba(224, 168, 54, 0.18); color: #5e410f; }
+
+.llm-banner {
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 0 0 10px;
+  font-size: 11.5px;
+  background: rgba(120, 90, 200, 0.10);
+  color: #4a3a78;
+  border-left: 3px solid #7a5fc9;
+}
+.llm-banner code { background: rgba(120, 90, 200, 0.18); color: #2c224a; }
+
+[data-theme="dark"] .placeholder-banner {
+  background: rgba(224, 168, 54, 0.18);
+  color: #ffd88a;
+}
+[data-theme="dark"] .placeholder-banner strong { color: #ffe8b0; }
+[data-theme="dark"] .llm-banner { background: rgba(160, 130, 230, 0.18); color: #d9caf7; }
+
+.health-banner { padding: 10px 14px; border-radius: 10px; margin-bottom: 14px; font-size: 13px; }
+.health-banner.danger { background: rgba(196, 66, 72, 0.12); color: #8c2429; border: 1px solid rgba(196, 66, 72, 0.3); }
+.health-banner.warn { background: rgba(224, 168, 54, 0.15); color: #8b6212; border: 1px solid rgba(224, 168, 54, 0.3); }
+.health-banner.good { background: rgba(42, 157, 74, 0.12); color: #167a32; border: 1px solid rgba(42, 157, 74, 0.3); }
+
+footer.repo-foot { margin-top: 24px; padding-top: 14px; border-top: 1px solid rgba(197, 39, 111, 0.2); font-size: 12px; color: var(--ls-text-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer.repo-foot a { color: var(--ls-pink-deep); }
+
+/* card layout for Tier 3 single-page atlases */
+body.card-mode .main { max-width: 760px; padding: 22px 26px; }
+body.card-mode .layout { grid-template-columns: 1fr; }
+body.card-mode .sidebar { display: none; }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+:focus-visible { outline: 2px solid var(--ls-focus); outline-offset: 2px; border-radius: 4px; }
+</style></head><body class="deep-mode"><div class="layout"><aside class="sidebar"><div class="brand"><img src="../assets/mascot.png" alt="Sparky mascot — LoveSpark codebase atlas"><div class="brand-text">Atlas<small>LoveSpark Codebase Atlas</small></div></div><a class="atlas-link" href="../index.html">&larr; back to index</a><nav class="nav"><a href="#sec-tldr">TL;DR</a><a href="#sec-data">The Data</a><a href="#sec-naive">The Naive Version</a><a href="#sec-architecture">The Architecture</a><a href="#sec-core_loop">The Core Loop</a><a href="#sec-verification">The Verification Loop</a><a href="#sec-assumptions">The Assumptions</a><a href="#sec-stack">The Stack</a><a href="#sec-decisions">The Decisions</a><a href="#sec-tradeoffs">The Trade-offs</a><a href="#sec-metrics">The Metrics</a><a href="#sec-failures">The Failures</a><a href="#sec-v_next">v0.next / Open Questions</a><a href="#sec-reproducibility">Reproducibility</a><a href="#sec-takeaway">The Takeaway</a></nav><div class="theme-toggle"><select id="theme-select" aria-label="Theme"><option value="retro">Retro pink</option><option value="dark">Dark</option><option value="beige">Beige</option><option value="slate">Slate</option></select></div></aside><main class="main"><header class="repo-head"><h1>glyph-grid-studio</h1><div class="meta"><span class="tier-badge tier-1">Tier&nbsp;1</span> · <span class="visibility-badge">private</span> · <a href="https://github.com/Joona-t/glyph-grid-studio" target="_blank" rel="noopener">Joona-t/glyph-grid-studio</a> · v0.1.0</div></header><section class="atlas-section" id="sec-tldr"><h2>TL;DR</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>Render any image as character-grid art in real time — GUI, CLI, and MCP in one repo.</p>
+<div class="kv-grid">
+<div class="kv"><div class="k">Primary language</div><span class="v">JavaScript</span></div>
+<div class="kv"><div class="k">LOC (source)</div><span class="v">48,204</span></div>
+<div class="kv"><div class="k">Files</div><span class="v">174</span></div>
+<div class="kv"><div class="k">Version</div><span class="v">0.1.0</span></div>
+<div class="kv"><div class="k">Last commit</div><span class="v">2026-05-13</span></div>
+<div class="kv"><div class="k">Commits</div><span class="v">63</span></div>
+</div></section><section class="atlas-section" id="sec-data"><h2>The Data</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add a <code>data:</code> block to <code>audit-meta.yml</code> with concrete inputs/outputs and one real example record. Karpathy's rule: look at the data first.</div><ul><li>Input: HTTP requests (if server) or DOM/user events (if client).</li><li>Output: HTTP responses, files, or rendered UI.</li></ul>
+<h3>Real samples</h3>
+<p><strong>src-tauri/src/main.rs</strong></p>
+<pre><code class="lang-rust">// Prevents additional console window on Windows in release, DO NOT REMOVE!!
+#![cfg_attr(not(debug_assertions), windows_subsystem = &quot;windows&quot;)]
+
+use clap::{Parser, Subcommand};
+use std::path::PathBuf;
+
+/// Real-time character-grid image renderer.
+///
+/// Default behavior with no subcommand: launches the visual studio (GUI).
+/// Subcommands provide headless operation for scripts and AI agents.
+#[derive(Parser, Debug)]
+#[command(name = &quot;glyph-grid-studio&quot;, version, about, long_about = None)]
+struct Cli {
+    #[command(subcommand)]
+    command: Option&lt;Command&gt;,
+}
+
+#[derive(Subcommand, Debug)]
+enum Command {
+    /// Launch the visual studio (default if no subcommand given).
+    Studio,
+
+    /// Render a single image to an animated GIF, headlessly.
+    Render(RenderArgs),
+
+    /// Render many variants of the SAME source in ONE Tauri session.  Reads a
+    /// manifest JSON with `{in, frames, jobs:[{name,out,format?,config}, ...]}`
+    /// and runs all jobs back-to-back without re-launching the app per variant.
+    /// ~10× faster than calling `render` repeatedly because Tauri startup +
+    /// source-image decode happens once.  See ITER-024 in BUGS_AND_ITERATIONS.md.
+    Batch(BatchArgs),
+
+    /// Print the catalog of available palettes / ramps / dithers / glyph sets / postprocess stages.
+    Catalog,
+
+    /// Run the MCP server (Model Context Protocol over stdio JSON-RPC).
+    /// Wire this into Claude Desktop / Cursor via their MCP config; tools then
+    /// appear as `glyph_grid_render` and `glyph_grid_catalog`.
+    Mcp,
+}</code></pre>
+<p><strong>src-tauri/src/lib.rs</strong></p>
+<pre><code class="lang-rust">use base64::engine::general_purpose;
+use base64::Engine as _;
+use serde::{Deserialize, Serialize};
+use std::fs;
+use std::io::Cursor;
+use std::path::PathBuf;
+use std::sync::{Arc, Mutex};
+use tauri::Manager;
+use tauri_plugin_dialog::DialogExt;
+
+pub mod mcp;
+
+/* ============================================================================
+ *  CLI / headless-render plumbing.
+ *
+ *  When the binary is launched with `render --in foo --out bar`, main.rs
+ *  builds a HeadlessRenderJob and calls run_headless_render(). That function
+ *  spins up a Tauri runtime with a hidden window, stores the job in managed
+ *  state, and waits for the JS side to call exit_with_status() when done.
+ *  The same rendering pipeline is used as the GUI path — only the entry +
+ *  exit are different.
+ * ============================================================================ */
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct ConfigOverrides {
+    pub palette: Option&lt;String&gt;,
+    pub color_mode: Option&lt;String&gt;,
+    pub ramp: Option&lt;String&gt;,
+    pub dither_mode: Option&lt;String&gt;,
+    pub selection_mode: Option&lt;String&gt;,
+    pub glyph_set: Option&lt;String&gt;,
+    pub sampling_strategy: Option&lt;String&gt;,
+    pub postprocess: Vec&lt;String&gt;,
+    pub cols: Option&lt;u32&gt;,
+    pub rows: Option&lt;u32&gt;,
+}
+
+#[derive(Debug, Clone)]
+pub struct HeadlessRenderJob {
+    pub in_path: PathBuf,
+    pub out_path: PathBuf,
+    pub frames: u32,
+    pub show_window: bool,
+    pub preset_path: Option&lt;PathBuf&gt;,
+    pub config_overrides: ConfigOverrides,
+    /// Output format. `&quot;gif&quot;` (default) → gifski; `&quot;mp4&quot;` → openh264 + mp4.
+    /// When None, derived from `out_path`&#x27;s extension.
+    pub format: Option&lt;String&gt;,
+}
+</code></pre>
+<p><strong>IPC command: get_cli_render_job (lib.rs)</strong></p>
+<pre><code class="lang-rust">#[tauri::command]
+fn get_cli_render_job(state: tauri::State&lt;CliJobState&gt;) -&gt; Option&lt;serde_json::Value&gt; {
+    state.job.lock().ok().and_then(|g| g.clone())
+}
+
+/// JS-side log forwarding for headless / production builds where
+/// `console.log` doesn&#x27;t reach stderr.  Useful for surfacing batch errors.
+#[tauri::command]
+fn cli_log(msg: String) {
+    eprintln!(&quot;glyph-grid-studio[js]: {}&quot;, msg);
+}
+
+/// </code></pre></section><section class="atlas-section" id="sec-naive"><h2>The Naive Version</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>A single Python script: PIL to load the image, downsample to a character grid, map each cell&#x27;s brightness to a glyph from a density ramp, print to stdout. Maybe 40 lines. The GUI, the Tauri shell, the MCP server, the Rust — all of that is scaffolding around `&quot; .:-=+*#%@&quot;[int(brightness * 9)]`.</p></section><section class="atlas-section" id="sec-architecture"><h2>The Architecture</h2><h3>Top-level layout (auto)</h3>
+<div class="mermaid-host">
+<pre><code class="language-mermaid">graph TD
+  Repo[&quot;glyph-grid-studio&quot;]
+  Repo --&gt; Casks[&quot;Casks/&quot;]
+  Repo --&gt; docs[&quot;docs/&quot;]
+  Repo --&gt; scripts[&quot;scripts/&quot;]
+  Repo --&gt; src[&quot;src/&quot;]
+  Repo --&gt; src_tauri[&quot;src-tauri/&quot;]
+  Repo --&gt; tests[&quot;tests/&quot;]</code></pre>
+</div>
+<p class="empty-state">Replace with a real C4 diagram via <code>audit-meta.yml</code> → <code>architecture.diagram</code>.</p></section><section class="atlas-section" id="sec-core_loop"><h2>The Core Loop</h2><p>File: <code>src-tauri/src/main.rs</code></p>
+<p class='empty-state'>Role: Rust binary entry &middot; detection: canonical-name</p>
+<div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><pre><code class="lang-rs">// Prevents additional console window on Windows in release, DO NOT REMOVE!!
+#![cfg_attr(not(debug_assertions), windows_subsystem = &quot;windows&quot;)]    // ← hide console window on Windows release builds
+
+use clap::{Parser, Subcommand};
+use std::path::PathBuf;
+
+/// Real-time character-grid image renderer.
+///
+/// Default behavior with no subcommand: launches the visual studio (GUI).
+/// Subcommands provide headless operation for scripts and AI agents.
+#[derive(Parser, Debug)]
+#[command(name = &quot;glyph-grid-studio&quot;, version, about, long_about = None)]    // ← clap derives the whole CLI from this struct
+struct Cli {
+    #[command(subcommand)]
+    command: Option&lt;Command&gt;,    // ← subcommand optional — absence means launch GUI
+}
+
+#[derive(Subcommand, Debug)]
+enum Command {
+    /// Launch the visual studio (default if no subcommand given).
+    Studio,    // ← Studio = the default GUI path
+
+    /// Render a single image to an animated GIF, headlessly.
+    Render(RenderArgs),    // ← Render = one-shot headless image → GIF
+
+    /// Render many variants of the SAME source in ONE Tauri session.  Reads a
+    /// manifest JSON with `{in, frames, jobs:[{name,out,format?,config}, ...]}`
+    /// and runs all jobs back-to-back without re-launching the app per variant.
+    /// ~10× faster than calling `render` repeatedly because Tauri startup +
+    /// source-image decode happens once.  See ITER-024 in BUGS_AND_ITERATIONS.md.
+    Batch(BatchArgs),    // ← Batch reuses one Tauri session for ~10× speedup
+
+    /// Print the catalog of available palettes / ramps / dithers / glyph sets / postprocess stages.
+    Catalog,    // ← Catalog prints available palettes/ramps/dithers
+
+    /// Run the MCP server (Model Context Protocol over stdio JSON-RPC).
+    /// Wire this into Claude Desktop / Cursor via their MCP config; tools then    // ← Mcp exposes tools over stdio JSON-RPC to Claude/Cursor
+    /// appear as `glyph_grid_render` and `glyph_grid_catalog`.
+    Mcp,
+}
+
+#[derive(Parser, Debug, Clone)]
+struct RenderArgs {
+    /// Path to the source image (PNG / JPG / WebP / GIF / BMP / TIFF).
+    #[arg(short = &#x27;i&#x27;, long = &quot;in&quot;, value_name = &quot;PATH&quot;)]    // ← input image path, many formats accepted
+    in_path: PathBuf,
+
+    /// Path to write the output GIF.
+    #[arg(short = &#x27;o&#x27;, long = &quot;out&quot;, value_name = &quot;PATH&quot;)]
+    out_path: PathBuf,
+
+    /// Number of frames in the output animation. Default 24.
+    #[arg(long, default_value_t = 24)]
+    frames: u32,    // ← frame count drives animation length
+
+    /// Palette name. See `glyph-grid-studio catalog` for the full list.
+    #[arg(long)]
+    palette: Option&lt;String&gt;,
+
+    /// Color mode: preserve | monochrome | duotone | gradient.
+    #[arg(long, value_name = &quot;MODE&quot;)]
+    color_mode: Option&lt;String&gt;,
+
+    /// Glyph ramp.
+    #[arg(long)]
+    ramp: Option&lt;String&gt;,
+
+    /// Dither mode.
+    #[arg(long)]
+    dither: Option&lt;String&gt;,
+
+    /// Selection mode.
+    #[arg(long)]
+    selection_mode: Option&lt;String&gt;,
+
+    /// Glyph set.
+    #[arg(long)]
+    glyph_set: Option&lt;String&gt;,
+
+    /// Sampling strategy.</code></pre>
+<p class='empty-state'>(truncated to first 80 lines — see source for the rest)</p></section><section class="atlas-section" id="sec-verification"><h2>The Verification Loop</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>Honestly, the checking is mostly a hand-rolled bash script — &lt;code&gt;tests/run-all.sh&lt;/code&gt; does grep-based source hygiene (A1/A2/A3) and shells out to the built &lt;code&gt;Glyph Grid Studio.app&lt;/code&gt; binary with a fixed &lt;code&gt;~/Downloads/Thor.png&lt;/code&gt;, tallying PASS/FAIL into &lt;code&gt;RESULTS-V0.1.md&lt;/code&gt;; there&#x27;s no &lt;code&gt;.github/workflows&lt;/code&gt;, no &lt;code&gt;cargo test&lt;/code&gt; targets I can find under &lt;code&gt;src-tauri&lt;/code&gt;, and &lt;code&gt;package.json&lt;/code&gt;&#x27;s &lt;code&gt;&quot;test&quot;&lt;/code&gt; doesn&#x27;t exist (only &lt;code&gt;tauri&lt;/code&gt;). In-code self-checking is ~70 &lt;code&gt;throw&lt;/code&gt;/&lt;code&gt;assert&lt;/code&gt; sites across &lt;code&gt;src/&lt;/code&gt; JS, plus a &lt;code&gt;scripts/loop_orchestrator/&lt;/code&gt; with cycle logs that looks like an LLM-judged optimization loop (cycle-000…004 with their own &lt;code&gt;tests.log&lt;/code&gt;), and Phase E in &lt;code&gt;TEST-PLAN-V0.1.md&lt;/code&gt; is explicitly &quot;manual GUI&quot; — so the GUI path is human eyeballs. You should be nervous about: a single hard-coded test image on one machine, no CI gate, and the bulk of &quot;verification&quot; being LLM cycles judging their own output.</p></section><section class="atlas-section" id="sec-assumptions"><h2>The Assumptions</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><ul><li>The OS always has fonts available — character-grid rendering silently assumes the chosen glyph font is installed and metrics-stable; on a fresh macOS user account or a stripped-down environment the fallback font has different advance widths and the grid stops being a grid.</li><li>p5.js finishes drawing before the screenshot/MCP call returns — there&#x27;s no explicit signal in &quot;real-time renderer + MCP server&quot; that the Rust side waits for a frame to actually commit, so naively the MCP caller gets whatever pixels happened to be in the canvas at poll time.</li><li>The input image fits in memory and decodes successfully — no declared deps means no image library is named, so the code is assuming whatever Tauri/webview hands it is already a valid bitmap of reasonable size. A 50MP HEIC or a corrupt PNG isn&#x27;t on the radar.</li><li>Tauri&#x27;s IPC channel between JS and Rust is lossless and ordered — 174 files and a GUI+CLI+MCP trifecta usually means three callers racing for the same renderer; you should be nervous about whether two concurrent MCP calls clobber each other&#x27;s canvas state.</li><li>Honestly, I can&#x27;t tell from deps+permissions alone what filesystem/network surface this has — &quot;top deps: none declared&quot; is suspicious for a 48k LOC Tauri app and probably means the Rust `Cargo.toml` wasn&#x27;t sampled, so any assumption about sandboxing, file-dialog scope, or MCP transport (stdio vs socket) is one I&#x27;d refuse to make without reading `src-tauri/`.</li></ul></section><section class="atlas-section" id="sec-stack"><h2>The Stack</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>Honestly, I can&#x27;t tell from this context — &quot;top deps: (none declared)&quot; for a 48k-LOC Node + Tauri + Rust project is suspicious, since Tauri 2 alone pulls a Cargo tree and p5.js is a runtime dep. Either the audit didn&#x27;t find the manifests (package.json, Cargo.toml) or they really are uncommitted, which would itself be the story. What&#x27;s notably absent if you take the metadata at face value: no build tooling listed (no Vite, esbuild, tsc), no test framework, no linter — for a 174-file codebase shipping a GUI + CLI + MCP server, that&#x27;s either Karpathy-grade restraint or missing instrumentation.</p></section><section class="atlas-section" id="sec-decisions"><h2>The Decisions</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>- 2026-04 — Vendored p5.js into Tauri 2 instead of a web app: the WHY is that this is a macOS-targeted real-time renderer, and a browser tab can&#x27;t give you GPU-stable frame pacing, a CLI, and an MCP server from one codebase. Honestly the naive thing would be a static p5.js page on a domain; that gets you a demo, not a tool you can script against from another agent.
+- 2026-05 — Per-effect LUTs and persistent buffers (linearToSrgb 1024-entry LUT, vignette LUT, chromatic/barrel persistent buffers): the WHY is that per-pixel math inside a JS render loop is where frame time goes to die, and the opt-100/200 commits show real numbers (−50.97ms/frame geomean on one of them). You should be nervous about a 174-file project with zero declared deps trying to hit 60fps without precomputed tables.
+- 2026-05 — A BUGS_AND_ITERATIONS-style log (ITER-100/101/103, LOOP-BUG-001, opt-NNN commit prefixes): the WHY is that perf work without a written trail turns into vibes-driven optimization where you can&#x27;t tell which change bought which millisecond. The numbered ledger forces each commit to claim a measurement, which is the only way the next session knows what&#x27;s already been tried.</p></section><section class="atlas-section" id="sec-tradeoffs"><h2>The Trade-offs</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>- We chose Tauri + Rust over Electron because the binary stays small and native, but lost the ability to share a single JS codebase across desktop and web — the renderer is p5.js, the shell is Rust, and any new platform feature crosses a language boundary.
+- We chose p5.js as the rendering core over a custom WebGL/Canvas engine because it ships fast and the glyph-grid model maps cleanly onto p5&#x27;s draw loop, but you should be nervous about real-time performance on large grids — p5 is not built for tight per-frame budgets and 48k LOC of sketch code won&#x27;t outrun that.
+- We chose GUI + CLI + MCP server as three surfaces over picking one because it lets the same renderer get driven by a human, a shell pipeline, or an agent, but tripled the integration surface — every config change has to be threaded through all three entry points or they drift.
+- I can&#x27;t tell from this context (no declared deps, no audit tldr) how the p5.js sketch is actually wired into Tauri&#x27;s webview, so I can&#x27;t honestly score the JS↔Rust boundary trade-off beyond &quot;it exists.&quot;</p></section><section class="atlas-section" id="sec-metrics"><h2>The Metrics</h2><div class="kv-grid">
+<div class="kv"><div class="k">Total LOC</div><span class="v">48,204</span></div>
+<div class="kv"><div class="k">Files</div><span class="v">174</span></div>
+<div class="kv"><div class="k">Binary files</div><span class="v">40</span></div>
+<div class="kv"><div class="k">Commits</div><span class="v">63</span></div>
+<div class="kv"><div class="k">Contributors</div><span class="v">1</span></div>
+<div class="kv"><div class="k">Version</div><span class="v">0.1.0</span></div>
+<div class="kv"><div class="k">LOC / source file</div><span class="v">355</span></div>
+<div class="kv"><div class="k">Deps / 1k LOC</div><span class="v">0.0</span></div>
+<div class="kv"><div class="k">Test / source LOC</div><span class="v warn">0.08</span></div>
+</div>
+<h3>Lines of code by language</h3>
+<table><thead><tr><th>Language</th><th style="text-align:right">Lines</th><th style="text-align:right">%</th></tr></thead><tbody><tr><td>JSON</td><td style='text-align:right'>25,049</td><td style='text-align:right'>52.0%</td></tr><tr><td>JavaScript</td><td style='text-align:right'>7,424</td><td style='text-align:right'>15.4%</td></tr><tr><td>Markdown</td><td style='text-align:right'>5,336</td><td style='text-align:right'>11.1%</td></tr><tr><td>HTML</td><td style='text-align:right'>3,828</td><td style='text-align:right'>7.9%</td></tr><tr><td>Python</td><td style='text-align:right'>2,372</td><td style='text-align:right'>4.9%</td></tr><tr><td>Rust</td><td style='text-align:right'>1,568</td><td style='text-align:right'>3.3%</td></tr><tr><td>YAML</td><td style='text-align:right'>1,168</td><td style='text-align:right'>2.4%</td></tr><tr><td>Other</td><td style='text-align:right'>1,045</td><td style='text-align:right'>2.2%</td></tr><tr><td>Shell</td><td style='text-align:right'>327</td><td style='text-align:right'>0.7%</td></tr><tr><td>TOML</td><td style='text-align:right'>63</td><td style='text-align:right'>0.1%</td></tr><tr><td>Ruby</td><td style='text-align:right'>24</td><td style='text-align:right'>0.0%</td></tr></tbody></table></section><section class="atlas-section" id="sec-failures"><h2>The Failures</h2><h3>Past failures (from <code>BUGS_AND_ITERATIONS.md</code>)</h3>
+<ul><li>2026-05-11 — In-studio adaptive Twitter-fit (v0.1.2 / ITER-025 follow-up)</li><li>ITER-026 — `encode_gif_gifski_adaptive` shrink ladder (Rust)</li><li>ITER-035 — Round 7 final pursuit summary</li><li>ITER-033 — F9 (OPT-018): `srgbToLinear` 256-entry Float64 LUT — shipped manually after loop false-positive-rejected it</li><li>ITER-034 — Bench non-determinism (HARNESS BUG, filed for fix)</li><li>Pursuit infrastructure: cycle-004 baseline.json write crash (harness bug, transient)</li><li>ITER-031 — Pursuit conclusion: production-ready perf delivered, loop exhausted its hypothesis space</li><li>ITER-027 — `patch_runner._normalize_hunk_headers` recomputes hunk counts</li><li>ITER-026 — `patch_runner.py` rewrite: permissive diff extractor + inline source excerpts</li><li>ITER-026 — `patch_runner.py` rewrite: permissive diff extractor + inline source excerpts</li><li>BUG-006 — `git reset --hard` in revert path wiped the staged-but-uncommitted orchestrator</li><li>ITER-024 — `glyph-grid-studio batch --manifest &lt;PATH&gt;` subcommand for single-session multi-variant render</li><li>ITER-025 — `Export GIF (Twitter-fit)`&#x27;s 720 px hardcode is wrong for high-density content; safety net documents the failure mode</li><li>ITER-023 — Restored `--mode in-video` as default; `--mode outro` kept as opt-in</li><li>ITER-022 — Default `--ink-threshold` 200 → 140 (only shaded pixels disperse, mid-tone silhouette stays)</li></ul>
+<p class="empty-state">… and 10 more</p>
+<h3>Silent failure modes</h3>
+<div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>- If a Tauri IPC handler silently drops oversized image payloads above the default 1MB limit, the CLI/MCP path keeps returning &quot;success&quot; with a truncated or empty grid and no error surfaces to the caller.
+- If p5.js loadImage() resolves before pixel data is actually populated (the classic race), renders save a blank or partially-filled canvas that looks plausible at thumbnail size but is wrong at full resolution.
+- If glyph density lookup tables drift out of sync between the Rust CLI path and the JS GUI path, the same input image produces visually-similar-but-different output across surfaces, and nobody notices until a user diffs two renders.
+- If the MCP server caches rendered grids by input path without hashing file contents, edits to the source image return stale output indefinitely — the file mtime check that &quot;should&quot; exist is the kind of thing that gets stubbed during dev and never revisited.
+- If Tauri&#x27;s webview throttles requestAnimationFrame when the window is backgrounded, long batch renders kicked off from the MCP server complete in 10x the expected wall time with no log line indicating why, and users assume the tool is broken rather than minimized.</p></section><section class="atlas-section" id="sec-v_next"><h2>v0.next / Open Questions</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><ul><li>Honestly unclear if the MCP server gets used at all — 63 commits in, no telemetry, no usage notes; I&#x27;d add one log line and find out before building more surface area.</li><li>The naive thing would be to keep adding render modes; instead I&#x27;d cut whichever of GUI/CLI/MCP has the fewest commits touching it and see if anyone notices.</li><li>48k LOC across 174 files with zero declared deps reads like everything is vendored or hand-rolled — I can&#x27;t tell from this alone whether that&#x27;s discipline or drift, and a `du -sh node_modules` plus a dep audit would answer it in 30 seconds.</li></ul></section><section class="atlas-section" id="sec-reproducibility"><h2>Reproducibility</h2><pre><code class="lang-bash"># clone
+git clone https://github.com/Joona-t/glyph-grid-studio.git
+cd glyph-grid-studio
+
+# install + run
+npm install
+npm run dev   # or: npm start</code></pre>
+<div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>reproducibility_timing</code> and <code>reproducibility_hardware</code> to <code>audit-meta.yml</code>. nanoGPT-style: "trains in 3 minutes on a single GPU."</div></section><section class="atlas-section" id="sec-takeaway"><h2>The Takeaway</h2><div class="llm-banner">🤖 LLM-drafted from deterministic signal · override via <code>audit-meta.yml</code></div><p>I can&#x27;t tell from the metadata alone what&#x27;s actually transferable — 174 files and 48k LOC across a Tauri + p5.js + Rust + MCP server stack covers a lot of ground, and the description (&quot;GUI + CLI + MCP server&quot;) hints at one thing worth noting: the same renderer reachable from three entry points. If that&#x27;s really how it&#x27;s structured, the lesson is that the core stayed callable as a plain function before any of the shells were built. The naive thing would be to write the GUI first and then try to extract a CLI from it later, and you&#x27;d spend a week untangling p5&#x27;s draw loop from the actual pixel-to-glyph math. Worth checking whether the LoveSparkCards or Tongue stacks could expose their SRS scheduler the same way — one library, three skins — rather than reimplementing per surface.
+
+Honestly, with 63 commits and no declared deps visible in the metadata, I can&#x27;t tell whether the Rust side is doing real work or is just a Tauri shell. That changes which lesson matters, and I&#x27;d want to look at the actual code before claiming more.</p></section><footer class="repo-foot"><div>Generated by atlas v0.2.0 · 2026-05-14T09:34:10Z</div><div><a href="../index.html">&larr; atlas index</a></div></footer></main></div><script>
+const themeSel = document.getElementById('theme-select');
+if (themeSel) {
+  const saved = localStorage.getItem('ls-atlas-theme') || 'retro';
+  themeSel.value = saved;
+  if (saved !== 'retro') document.documentElement.dataset.theme = saved;
+  themeSel.addEventListener('change', () => {
+    const t = themeSel.value;
+    if (t === 'retro') delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = t;
+    localStorage.setItem('ls-atlas-theme', t);
+  });
+}
+</script></body></html>

@@ -1,0 +1,234 @@
+{
+  "audit_elapsed_seconds": 0.31,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-07-08T11:45:43Z",
+  "core_loop": {
+    "path": "index.html",
+    "role": "largest source file",
+    "source": "size-heuristic"
+  },
+  "deps": {},
+  "description": "Interactive, 100% local build guide: run Qwen on a Mac mini M4 (16GB) \u2192 RAG + multi-agent shared memory. One self-contained, offline HTML file.",
+  "disk_usage_kb": 609,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": null,
+    "deps_total": 0,
+    "loc_per_source_file": 0.0,
+    "source_file_count": 1,
+    "source_loc": 0,
+    "test_loc": 0,
+    "test_to_source_ratio": null
+  },
+  "failures": [
+    {
+      "title": "ITER-005 \u2014 SOTA research expansion: \"the moving frontier\" section (2026-06-26)"
+    },
+    {
+      "title": "ITER-004 \u2014 Candy glass-sticker re-skin from the real apps (2026-06-18)"
+    },
+    {
+      "title": "BUG-009 \u2014 Gradient-title light stop failed AA (2026-06-18)"
+    },
+    {
+      "title": "BUG-010 \u2014 White text on the bright-pink fill failed AA (2026-06-18)"
+    },
+    {
+      "title": "BUG-011 \u2014 Token fall-through: light chips in dark/alt themes (2026-06-18)"
+    },
+    {
+      "title": "ITER-003 \u2014 Sparky-aesthetic redesign (2026-06-18)"
+    },
+    {
+      "title": "ITER-002 \u2014 Adversarial self-review (2026-06-18)"
+    },
+    {
+      "title": "BUG-005 \u2014 Timeline \"done\" node digit unreadable in dark & slate themes (HIGH) (2026-06-18)"
+    },
+    {
+      "title": "BUG-006 \u2014 Touch targets under the 32px minimum (LOW) (2026-06-18)"
+    },
+    {
+      "title": "BUG-007 \u2014 Glossary disclosure state not announced to screen readers (LOW) (2026-06-18)"
+    },
+    {
+      "title": "BUG-008 \u2014 Dead no-op loop in the stage-progress callback (LOW) (2026-06-18)"
+    },
+    {
+      "title": "ITER-001 \u2014 Initial build (2026-06-18)"
+    },
+    {
+      "title": "BUG-001 \u2014 Muted text failed AA on the deep end of the pink gradient (2026-06-18)"
+    },
+    {
+      "title": "BUG-002 \u2014 Vivid accent colors used as small label TEXT failed AA on light themes (2026-06-18)"
+    },
+    {
+      "title": "BUG-003 \u2014 Syntax-highlight colors failed AA on the near-transparent code background (2026-06-18)"
+    },
+    {
+      "title": "BUG-004 \u2014 Black gaps on scroll from a viewport-fixed background on a transparent root (2026-06-18)"
+    }
+  ],
+  "files": {
+    "binary_count": 0,
+    "file_count": 6,
+    "files_by_lang": {
+      "HTML": 1,
+      "Markdown": 3,
+      "Other": 2
+    },
+    "largest_source_files": [
+      {
+        "bytes": 845636,
+        "path": "index.html"
+      }
+    ],
+    "loc_by_lang": {
+      "HTML": 1423,
+      "Markdown": 607,
+      "Other": 23
+    },
+    "loc_total": 2053,
+    "primary_language": "HTML"
+  },
+  "git": {
+    "branch": "sota-update-2026",
+    "commit_count": 2,
+    "contributor_count": 2,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Joona <tyrninoksa.joona@gmail.com>"
+      },
+      {
+        "commits": 1,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-06-26T12:36:45+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-06-26T12:36:45+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-06-26T12:36:45+03:00",
+        "sha": "1586b96",
+        "subject": "Add \"SOTA update \u2014 mid-2026\" section to both source doc and interactive guide"
+      },
+      {
+        "date": "2026-06-19T13:54:24+03:00",
+        "sha": "596ce39",
+        "subject": "Qwen Local \u2014 interactive Mac mini M4 build companion"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/qwen-local-guide.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/qwen-local-guide",
+  "ls_check": {
+    "categories": {
+      "quality": [
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-README",
+          "message": "README.md present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-LICENSE",
+          "message": "LICENSE present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-GITIGNORE",
+          "message": ".gitignore present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-BUGS-LOG",
+          "message": "BUGS_AND_ITERATIONS.md present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-PAID-API",
+          "message": "No paid LLM API patterns detected",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        }
+      ]
+    },
+    "project": "qwen-local-guide",
+    "schema_version": "1.0",
+    "summary": {
+      "total_fail": 0,
+      "total_pass": 5,
+      "total_warn": 0
+    },
+    "tool": "ls-check",
+    "tool_version": "0.1.0",
+    "type": "web-static"
+  },
+  "name": "qwen-local-guide",
+  "pushed_at": "2026-06-26T09:36:59Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/qwen-local-guide",
+  "version": null,
+  "visibility": "public"
+}

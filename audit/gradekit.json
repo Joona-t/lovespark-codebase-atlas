@@ -1,0 +1,323 @@
+{
+  "audit_elapsed_seconds": 4.46,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-07-08T11:47:38Z",
+  "core_loop": {
+    "path": "gradekit/__main__.py",
+    "role": "Python module entry",
+    "source": "canonical-name"
+  },
+  "deps": {
+    "pip": [
+      "Pillow",
+      "numpy"
+    ]
+  },
+  "description": "Local, offline CLI that diagnoses a video frame's color and bakes the fix into an editor-agnostic .cube LUT. Readable color science, no API. Apply in Premiere/Resolve/FCP/ffmpeg, or drive it from AI agents. Built to automate colour grading for videos",
+  "disk_usage_kb": 75,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 1.2254901960784315,
+    "deps_total": 2,
+    "loc_per_source_file": 85.89473684210526,
+    "source_file_count": 19,
+    "source_loc": 1632,
+    "test_loc": 702,
+    "test_to_source_ratio": 0.43014705882352944
+  },
+  "failures": [
+    {
+      "title": "ITER-004 \u2014 Warn when the source is HDR (HLG/PQ) \u2014 the real blow-out root cause (2026-06-25)"
+    },
+    {
+      "title": "ITER-003 \u2014 `--brightest`: grade the worst-case frame, not an \"average\" one (2026-06-25)"
+    },
+    {
+      "title": "BUG-002 \u2014 Exposure blows out a bright subject on a dark background (2026-06-24)"
+    },
+    {
+      "title": "BUG-001 \u2014 Hardcoded home-directory paths leaked into the public repo (2026-06-17)"
+    },
+    {
+      "title": "ITER-002 \u2014 De-branded, made public, shipped a manual (2026-06-17)"
+    },
+    {
+      "title": "ITER-001 \u2014 Repo created; premiere-grade-bot companion added (2026-06-17)"
+    }
+  ],
+  "files": {
+    "binary_count": 2,
+    "file_count": 32,
+    "files_by_lang": {
+      "HTML": 1,
+      "Markdown": 3,
+      "Other": 6,
+      "Python": 19,
+      "TOML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 37241,
+        "path": "How it works.html"
+      },
+      {
+        "bytes": 10345,
+        "path": "gradekit/frameio.py"
+      },
+      {
+        "bytes": 8061,
+        "path": "gradekit/lut.py"
+      },
+      {
+        "bytes": 7163,
+        "path": "gradekit/report.py"
+      },
+      {
+        "bytes": 7054,
+        "path": "gradekit/cli.py"
+      },
+      {
+        "bytes": 6297,
+        "path": "gradekit/whitebalance.py"
+      },
+      {
+        "bytes": 5594,
+        "path": "gradekit/exposure.py"
+      },
+      {
+        "bytes": 5450,
+        "path": "gradekit/colorscience.py"
+      },
+      {
+        "bytes": 4867,
+        "path": "gradekit/skin.py"
+      },
+      {
+        "bytes": 2813,
+        "path": "tests/make_test_frame.py"
+      },
+      {
+        "bytes": 2125,
+        "path": "tests/test_whitebalance.py"
+      },
+      {
+        "bytes": 1944,
+        "path": "tests/test_lut.py"
+      }
+    ],
+    "loc_by_lang": {
+      "HTML": 627,
+      "Markdown": 468,
+      "Other": 71947,
+      "Python": 1632,
+      "TOML": 28
+    },
+    "loc_total": 74702,
+    "primary_language": "Python"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 9,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 9,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-06-25T04:23:27+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-06-25T04:23:27+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-06-25T04:23:27+03:00",
+        "sha": "0d31612",
+        "subject": "Warn when grading an HDR (HLG/PQ) source \u2014 the silent blow-out cause (#4)"
+      },
+      {
+        "date": "2026-06-25T01:28:42+03:00",
+        "sha": "a2e087a",
+        "subject": "Merge pull request #3 from Joona-t/feat/decision-log"
+      },
+      {
+        "date": "2026-06-25T01:27:30+03:00",
+        "sha": "fca74c6",
+        "subject": "Auto-log every analyze run to the shared grade/cut decision ledger"
+      },
+      {
+        "date": "2026-06-25T00:42:42+03:00",
+        "sha": "8769b7c",
+        "subject": "Merge pull request #2 from Joona-t/feat/brightest-frame"
+      },
+      {
+        "date": "2026-06-25T00:42:12+03:00",
+        "sha": "e97c776",
+        "subject": "Add --brightest: grade the worst-case frame so highlights don't clip"
+      },
+      {
+        "date": "2026-06-24T23:51:49+03:00",
+        "sha": "7cbe0e1",
+        "subject": "Fix exposure blowing out bright subject on dark background (BUG-002) (#1)"
+      },
+      {
+        "date": "2026-06-17T22:00:04+03:00",
+        "sha": "49d68e9",
+        "subject": "Scrub hardcoded home-directory paths from public docs (privacy)"
+      },
+      {
+        "date": "2026-06-17T21:50:24+03:00",
+        "sha": "c496ddf",
+        "subject": "Publish gradekit as standalone OSS + add How it works.html manual (#1)"
+      },
+      {
+        "date": "2026-06-17T16:04:57+03:00",
+        "sha": "11b198d",
+        "subject": "Initial commit: gradekit color-grading toolkit + premiere-grade-bot"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/gradekit.git"
+  },
+  "is_archived": false,
+  "kind": {
+    "is_python_project": true
+  },
+  "local_path": "/Users/darkfire/gradekit",
+  "ls_check": {
+    "categories": {
+      "python": [
+        {
+          "category": "py",
+          "details": [],
+          "evidence": [],
+          "id": "PY-TYPEHINTS",
+          "message": "Type hints on 5913/8145 functions (73%)",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "py",
+          "details": [
+            "  /Users/darkfire/gradekit/.venv/lib/python3.14/site-packages/pygments/modeline.py:22: def get_filetype_from_line(l): # noqa: E741",
+            "  /Users/darkfire/gradekit/.venv/lib/python3.14/site-packages/pygments/console.py:40: def reset_color():",
+            "  /Users/darkfire/gradekit/.venv/lib/python3.14/site-packages/pygments/console.py:44: def colorize(color_key, text):",
+            "  /Users/darkfire/gradekit/.venv/lib/python3.14/site-packages/pygments/util.py:110: def docstring_headline(obj):",
+            "  /Users/darkfire/gradekit/.venv/lib/python3.14/site-packages/pygments/util.py:139: def shebang_matches(text, regex):",
+            "  ... and 737 more"
+          ],
+          "evidence": [],
+          "id": "PY-DOCSTRINGS",
+          "message": "742 public functions missing docstrings",
+          "passed": false,
+          "rule_source": null,
+          "severity": "warn",
+          "suggestion": null,
+          "wcag": []
+        }
+      ],
+      "quality": [
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-README",
+          "message": "README.md present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-LICENSE",
+          "message": "LICENSE present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-GITIGNORE",
+          "message": ".gitignore present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-BUGS-LOG",
+          "message": "BUGS_AND_ITERATIONS.md present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-PAID-API",
+          "message": "No paid LLM API patterns detected",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        }
+      ]
+    },
+    "project": "gradekit",
+    "schema_version": "1.0",
+    "summary": {
+      "total_fail": 0,
+      "total_pass": 6,
+      "total_warn": 1
+    },
+    "tool": "ls-check",
+    "tool_version": "0.1.0",
+    "type": "python"
+  },
+  "name": "gradekit",
+  "pushed_at": "2026-06-25T01:23:30Z",
+  "stars": 1,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/gradekit",
+  "version": null,
+  "visibility": "public"
+}
