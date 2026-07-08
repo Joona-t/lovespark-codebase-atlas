@@ -1,0 +1,459 @@
+{
+  "audit_elapsed_seconds": 216.18,
+  "audit_meta": {},
+  "audit_mode": "deep",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-05-14T09:34:10Z",
+  "core_loop": {
+    "path": "src-tauri/src/main.rs",
+    "role": "Rust binary entry",
+    "source": "canonical-name"
+  },
+  "data_samples": [
+    {
+      "content": "// Prevents additional console window on Windows in release, DO NOT REMOVE!!\n#![cfg_attr(not(debug_assertions), windows_subsystem = \"windows\")]\n\nuse clap::{Parser, Subcommand};\nuse std::path::PathBuf;\n\n/// Real-time character-grid image renderer.\n///\n/// Default behavior with no subcommand: launches the visual studio (GUI).\n/// Subcommands provide headless operation for scripts and AI agents.\n#[derive(Parser, Debug)]\n#[command(name = \"glyph-grid-studio\", version, about, long_about = None)]\nstruct Cli {\n    #[command(subcommand)]\n    command: Option<Command>,\n}\n\n#[derive(Subcommand, Debug)]\nenum Command {\n    /// Launch the visual studio (default if no subcommand given).\n    Studio,\n\n    /// Render a single image to an animated GIF, headlessly.\n    Render(RenderArgs),\n\n    /// Render many variants of the SAME source in ONE Tauri session.  Reads a\n    /// manifest JSON with `{in, frames, jobs:[{name,out,format?,config}, ...]}`\n    /// and runs all jobs back-to-back without re-launching the app per variant.\n    /// ~10\u00d7 faster than calling `render` repeatedly because Tauri startup +\n    /// source-image decode happens once.  See ITER-024 in BUGS_AND_ITERATIONS.md.\n    Batch(BatchArgs),\n\n    /// Print the catalog of available palettes / ramps / dithers / glyph sets / postprocess stages.\n    Catalog,\n\n    /// Run the MCP server (Model Context Protocol over stdio JSON-RPC).\n    /// Wire this into Claude Desktop / Cursor via their MCP config; tools then\n    /// appear as `glyph_grid_render` and `glyph_grid_catalog`.\n    Mcp,\n}",
+      "label": "src-tauri/src/main.rs",
+      "lang": "rust"
+    },
+    {
+      "content": "use base64::engine::general_purpose;\nuse base64::Engine as _;\nuse serde::{Deserialize, Serialize};\nuse std::fs;\nuse std::io::Cursor;\nuse std::path::PathBuf;\nuse std::sync::{Arc, Mutex};\nuse tauri::Manager;\nuse tauri_plugin_dialog::DialogExt;\n\npub mod mcp;\n\n/* ============================================================================\n *  CLI / headless-render plumbing.\n *\n *  When the binary is launched with `render --in foo --out bar`, main.rs\n *  builds a HeadlessRenderJob and calls run_headless_render(). That function\n *  spins up a Tauri runtime with a hidden window, stores the job in managed\n *  state, and waits for the JS side to call exit_with_status() when done.\n *  The same rendering pipeline is used as the GUI path \u2014 only the entry +\n *  exit are different.\n * ============================================================================ */\n\n#[derive(Debug, Clone, Serialize, Deserialize, Default)]\npub struct ConfigOverrides {\n    pub palette: Option<String>,\n    pub color_mode: Option<String>,\n    pub ramp: Option<String>,\n    pub dither_mode: Option<String>,\n    pub selection_mode: Option<String>,\n    pub glyph_set: Option<String>,\n    pub sampling_strategy: Option<String>,\n    pub postprocess: Vec<String>,\n    pub cols: Option<u32>,\n    pub rows: Option<u32>,\n}\n\n#[derive(Debug, Clone)]\npub struct HeadlessRenderJob {\n    pub in_path: PathBuf,\n    pub out_path: PathBuf,\n    pub frames: u32,\n    pub show_window: bool,\n    pub preset_path: Option<PathBuf>,\n    pub config_overrides: ConfigOverrides,\n    /// Output format. `\"gif\"` (default) \u2192 gifski; `\"mp4\"` \u2192 openh264 + mp4.\n    /// When None, derived from `out_path`'s extension.\n    pub format: Option<String>,\n}\n",
+      "label": "src-tauri/src/lib.rs",
+      "lang": "rust"
+    },
+    {
+      "content": "#[tauri::command]\nfn get_cli_render_job(state: tauri::State<CliJobState>) -> Option<serde_json::Value> {\n    state.job.lock().ok().and_then(|g| g.clone())\n}\n\n/// JS-side log forwarding for headless / production builds where\n/// `console.log` doesn't reach stderr.  Useful for surfacing batch errors.\n#[tauri::command]\nfn cli_log(msg: String) {\n    eprintln!(\"glyph-grid-studio[js]: {}\", msg);\n}\n\n/// ",
+      "label": "IPC command: get_cli_render_job (lib.rs)",
+      "lang": "rust"
+    }
+  ],
+  "deps": {
+    "npm": [],
+    "npm_dev": []
+  },
+  "description": "Real-time character-grid image renderer for macOS \u2014 GUI + CLI + MCP server. p5.js + Tauri 2 + Rust.",
+  "disk_usage_kb": 19554,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": true,
+    "PUBLIC-LAUNCH-PLAN.md": true,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 355.0,
+    "source_file_count": 33,
+    "source_loc": 11715,
+    "test_loc": 910,
+    "test_to_source_ratio": 0.0776781903542467
+  },
+  "failures": [
+    {
+      "title": "2026-05-11 \u2014 In-studio adaptive Twitter-fit (v0.1.2 / ITER-025 follow-up)"
+    },
+    {
+      "title": "ITER-026 \u2014 `encode_gif_gifski_adaptive` shrink ladder (Rust)"
+    },
+    {
+      "title": "ITER-035 \u2014 Round 7 final pursuit summary"
+    },
+    {
+      "title": "ITER-033 \u2014 F9 (OPT-018): `srgbToLinear` 256-entry Float64 LUT \u2014 shipped manually after loop false-positive-rejected it"
+    },
+    {
+      "title": "ITER-034 \u2014 Bench non-determinism (HARNESS BUG, filed for fix)"
+    },
+    {
+      "title": "Pursuit infrastructure: cycle-004 baseline.json write crash (harness bug, transient)"
+    },
+    {
+      "title": "ITER-031 \u2014 Pursuit conclusion: production-ready perf delivered, loop exhausted its hypothesis space"
+    },
+    {
+      "title": "ITER-027 \u2014 `patch_runner._normalize_hunk_headers` recomputes hunk counts"
+    },
+    {
+      "title": "ITER-026 \u2014 `patch_runner.py` rewrite: permissive diff extractor + inline source excerpts"
+    },
+    {
+      "title": "ITER-026 \u2014 `patch_runner.py` rewrite: permissive diff extractor + inline source excerpts"
+    },
+    {
+      "title": "BUG-006 \u2014 `git reset --hard` in revert path wiped the staged-but-uncommitted orchestrator"
+    },
+    {
+      "title": "ITER-024 \u2014 `glyph-grid-studio batch --manifest <PATH>` subcommand for single-session multi-variant render"
+    },
+    {
+      "title": "ITER-025 \u2014 `Export GIF (Twitter-fit)`'s 720 px hardcode is wrong for high-density content; safety net documents the failure mode"
+    },
+    {
+      "title": "ITER-023 \u2014 Restored `--mode in-video` as default; `--mode outro` kept as opt-in"
+    },
+    {
+      "title": "ITER-022 \u2014 Default `--ink-threshold` 200 \u2192 140 (only shaded pixels disperse, mid-tone silhouette stays)"
+    },
+    {
+      "title": "ITER-021 \u2014 `disperse_video.py` post-process: append a stardust outro to any rendered video"
+    },
+    {
+      "title": "ITER-019 \u2014 `applyFastLoadDefaults` resets postproc + breathing + dispersal on every image-load"
+    },
+    {
+      "title": "ITER-020 \u2014 `~/.claude/skills/disperse/SKILL.md`"
+    },
+    {
+      "title": "ITER-018 \u2014 Per-cell stardust dispersal effect with upward drift + alpha fade"
+    },
+    {
+      "title": "ITER-017 \u2014 `Export GIF (Twitter-fit)` + `Export MP4 (mobile-fit)` buttons"
+    },
+    {
+      "title": "2026-05-07 \u2014 Live-debug performance push: brightness 70 ms \u2192 11 ms, shape-edge-aware 162 ms \u2192 42 ms"
+    },
+    {
+      "title": "BUG-004 \u2014 `glyphSet` dropdown updates config but never swaps the atlas"
+    },
+    {
+      "title": "BUG-005 \u2014 `cargo build --release` produced binaries that loaded `http://localhost:8943/` and showed a white window"
+    },
+    {
+      "title": "ITER-013 \u2014 k-d tree wired into `selectGrid` + zero-alloc per-frame buffers (commit `82fa87f`)"
+    },
+    {
+      "title": "ITER-014 \u2014 Sprite atlas in `drawShapeGrid` (commit `8682c5e`) \u2014 162 ms \u2192 66 ms"
+    }
+  ],
+  "files": {
+    "binary_count": 40,
+    "file_count": 174,
+    "files_by_lang": {
+      "HTML": 1,
+      "JSON": 26,
+      "JavaScript": 18,
+      "Markdown": 23,
+      "Other": 48,
+      "Python": 8,
+      "Ruby": 1,
+      "Rust": 4,
+      "Shell": 2,
+      "TOML": 1,
+      "YAML": 2
+    },
+    "largest_source_files": [
+      {
+        "bytes": 169068,
+        "path": "src/index.html"
+      },
+      {
+        "bytes": 61297,
+        "path": "src/lib/glyph-studio.js"
+      },
+      {
+        "bytes": 46509,
+        "path": "src-tauri/src/lib.rs"
+      },
+      {
+        "bytes": 30747,
+        "path": "src/lib/glyph-wave6.js"
+      },
+      {
+        "bytes": 29746,
+        "path": "src/lib/glyph-crt.js"
+      },
+      {
+        "bytes": 28620,
+        "path": "scripts/loop_orchestrator/orchestrator.py"
+      },
+      {
+        "bytes": 24687,
+        "path": "scripts/loop_orchestrator/patch_runner.py"
+      },
+      {
+        "bytes": 22117,
+        "path": "src/lib/glyph-sources.js"
+      },
+      {
+        "bytes": 21183,
+        "path": "src/lib/glyph-runtime.js"
+      },
+      {
+        "bytes": 21076,
+        "path": "src/lib/glyph-shape-index.js"
+      },
+      {
+        "bytes": 15599,
+        "path": "src/lib/glyph-composition.js"
+      },
+      {
+        "bytes": 15112,
+        "path": "src/lib/glyph-outputs.js"
+      }
+    ],
+    "loc_by_lang": {
+      "HTML": 3828,
+      "JSON": 25049,
+      "JavaScript": 7424,
+      "Markdown": 5336,
+      "Other": 1045,
+      "Python": 2372,
+      "Ruby": 24,
+      "Rust": 1568,
+      "Shell": 327,
+      "TOML": 63,
+      "YAML": 1168
+    },
+    "loc_total": 48204,
+    "primary_language": "JavaScript"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 63,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 63,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-05-13T22:11:58+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-05-13T22:11:58+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-05-13T22:11:58+03:00",
+        "sha": "de7449a",
+        "subject": "fix(loop): plateau on empty queue + path-specific commit staging + historical attempts loader"
+      },
+      {
+        "date": "2026-05-13T22:11:58+03:00",
+        "sha": "6746d34",
+        "subject": "perf(opt-200+202+203+204): vignette LUT + phosphor ternary + invWindow + chromatic skip"
+      },
+      {
+        "date": "2026-05-13T15:05:04+03:00",
+        "sha": "5980d70",
+        "subject": "docs(bugs): ITER-100/101+103 win logs + LOOP-BUG-001 runaway diagnosis"
+      },
+      {
+        "date": "2026-05-13T15:03:57+03:00",
+        "sha": "a5bd10f",
+        "subject": "perf(opt-101+103): scanline no-op skip + persistent chromatic/barrel buffers"
+      },
+      {
+        "date": "2026-05-13T14:46:10+03:00",
+        "sha": "f655800",
+        "subject": "perf(opt-100): linearToSrgb 1024-entry LUT \u2014 \u221250.97ms/frame geomean"
+      },
+      {
+        "date": "2026-05-11T22:17:07+03:00",
+        "sha": "e50d2e4",
+        "subject": "feat(twitter-fit): adaptive shrink so Export GIF (Twitter-fit) actually fits"
+      },
+      {
+        "date": "2026-05-11T09:07:26+03:00",
+        "sha": "93e2b07",
+        "subject": "loop(tune): re-queue bug-era rejections + raise keep floor 2\u21924 ms"
+      },
+      {
+        "date": "2026-05-11T08:32:19+03:00",
+        "sha": "bd218c0",
+        "subject": "docs(iter-035): round 7 complete \u2014 true ship-ready state declared"
+      },
+      {
+        "date": "2026-05-11T08:03:17+03:00",
+        "sha": "aa64576",
+        "subject": "perf(F9): srgbToLinear 256-entry LUT (OPT-018) + bench non-determinism discovery"
+      },
+      {
+        "date": "2026-05-11T07:58:47+03:00",
+        "sha": "473e84f",
+        "subject": "perf(loop): one-studio-per-bench (was 4) + deterministic breathing"
+      },
+      {
+        "date": "2026-05-11T06:50:29+03:00",
+        "sha": "4097ddc",
+        "subject": "feat(loop): round-6 hypothesis batch \u2014 7 fresh bit-exact wins targeting cfg-postproc-heavy"
+      },
+      {
+        "date": "2026-05-10T20:39:57+03:00",
+        "sha": "b0f4905",
+        "subject": "docs(iter-031): pursuit conclusion \u2014 production-ready state declared"
+      },
+      {
+        "date": "2026-05-10T20:27:48+03:00",
+        "sha": "12239ab",
+        "subject": "fix(loop): re-queue OPT-006 with benchmark_first=false; reset state for round 5"
+      },
+      {
+        "date": "2026-05-10T20:25:32+03:00",
+        "sha": "3ff788d",
+        "subject": "fix(loop): identifier grep \u2014 close OPT-006 / OPT-001 excerpt-narrow class"
+      },
+      {
+        "date": "2026-05-10T20:15:22+03:00",
+        "sha": "e61c596",
+        "subject": "fix(loop): wider source excerpts + whitespace-tolerant apply fallback"
+      },
+      {
+        "date": "2026-05-10T17:29:18+03:00",
+        "sha": "2efe80a",
+        "subject": "perf(F4): tighter postprocess gate \u2014 skip readback when all stages no-op"
+      },
+      {
+        "date": "2026-05-10T17:26:45+03:00",
+        "sha": "47b9162",
+        "subject": "docs(plan): mark F8 \u2705 shipped \u2014 companion to ef725f3"
+      },
+      {
+        "date": "2026-05-10T17:26:27+03:00",
+        "sha": "ef725f3",
+        "subject": "perf(F8): branchless clamp in EMA hot path (manual ship)"
+      },
+      {
+        "date": "2026-05-10T09:46:23+03:00",
+        "sha": "5d03951",
+        "subject": "fix(loop): patch_runner recomputes hunk headers \u2014 claude routinely miscounts"
+      },
+      {
+        "date": "2026-05-10T08:41:55+03:00",
+        "sha": "d5e9db9",
+        "subject": "fix(loop): unblock 24h optimization loop \u2014 A2 test + parser + queue"
+      },
+      {
+        "date": "2026-05-10T08:25:11+03:00",
+        "sha": "2190bb9",
+        "subject": "infra: ship 24h optimization loop orchestrator + bench inputs + HOT-PATH markers"
+      },
+      {
+        "date": "2026-05-10T05:34:00+03:00",
+        "sha": "a32740a",
+        "subject": "feat(cli): batch subcommand for single-session multi-variant render"
+      },
+      {
+        "date": "2026-05-09T08:10:03+03:00",
+        "sha": "24f3dc3",
+        "subject": "docs: ITER-023 \u2014 disperse_video.py adds --mode flag, in-video is default"
+      },
+      {
+        "date": "2026-05-09T07:57:38+03:00",
+        "sha": "942bd87",
+        "subject": "docs: ITER-022 \u2014 disperse_video.py default threshold 200 \u2192 140"
+      },
+      {
+        "date": "2026-05-09T07:39:07+03:00",
+        "sha": "079104e",
+        "subject": "docs: ITER-021 \u2014 post-process dispersal outro (Mode B) for already-rendered videos"
+      },
+      {
+        "date": "2026-05-09T07:24:52+03:00",
+        "sha": "c664359",
+        "subject": "feat(ux): fast-load defaults on image upload + disperse skill registered"
+      },
+      {
+        "date": "2026-05-09T07:16:21+03:00",
+        "sha": "33337b7",
+        "subject": "feat: Dispersal \u2014 stardust effect with per-cell drift + alpha fade"
+      },
+      {
+        "date": "2026-05-09T00:43:02+03:00",
+        "sha": "f2d3921",
+        "subject": "feat(ux): one-click Twitter-fit / mobile-fit export buttons"
+      },
+      {
+        "date": "2026-05-08T07:10:02+03:00",
+        "sha": "a97c5a7",
+        "subject": "feat(brand): icon is Joona's hand-rendered ankh \u2014 generated by the studio itself"
+      },
+      {
+        "date": "2026-05-08T07:02:39+03:00",
+        "sha": "30022ed",
+        "subject": "feat(brand): new app icon \u2014 ankh rendered in cream-paper glyph art"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/glyph-grid-studio.git"
+  },
+  "is_archived": false,
+  "kind": {
+    "is_node_project": true,
+    "is_tauri_project": true
+  },
+  "llm_enrich": {
+    "assumptions": "- The OS always has fonts available \u2014 character-grid rendering silently assumes the chosen glyph font is installed and metrics-stable; on a fresh macOS user account or a stripped-down environment the fallback font has different advance widths and the grid stops being a grid.\n- p5.js finishes drawing before the screenshot/MCP call returns \u2014 there's no explicit signal in \"real-time renderer + MCP server\" that the Rust side waits for a frame to actually commit, so naively the MCP caller gets whatever pixels happened to be in the canvas at poll time.\n- The input image fits in memory and decodes successfully \u2014 no declared deps means no image library is named, so the code is assuming whatever Tauri/webview hands it is already a valid bitmap of reasonable size. A 50MP HEIC or a corrupt PNG isn't on the radar.\n- Tauri's IPC channel between JS and Rust is lossless and ordered \u2014 174 files and a GUI+CLI+MCP trifecta usually means three callers racing for the same renderer; you should be nervous about whether two concurrent MCP calls clobber each other's canvas state.\n- Honestly, I can't tell from deps+permissions alone what filesystem/network surface this has \u2014 \"top deps: none declared\" is suspicious for a 48k LOC Tauri app and probably means the Rust `Cargo.toml` wasn't sampled, so any assumption about sandboxing, file-dialog scope, or MCP transport (stdio vs socket) is one I'd refuse to make without reading `src-tauri/`.",
+    "core_loop_annotations": [
+      {
+        "line": 2,
+        "note": "hide console window on Windows release builds"
+      },
+      {
+        "line": 12,
+        "note": "clap derives the whole CLI from this struct"
+      },
+      {
+        "line": 15,
+        "note": "subcommand optional \u2014 absence means launch GUI"
+      },
+      {
+        "line": 21,
+        "note": "Studio = the default GUI path"
+      },
+      {
+        "line": 24,
+        "note": "Render = one-shot headless image \u2192 GIF"
+      },
+      {
+        "line": 31,
+        "note": "Batch reuses one Tauri session for ~10\u00d7 speedup"
+      },
+      {
+        "line": 34,
+        "note": "Catalog prints available palettes/ramps/dithers"
+      },
+      {
+        "line": 37,
+        "note": "Mcp exposes tools over stdio JSON-RPC to Claude/Cursor"
+      },
+      {
+        "line": 45,
+        "note": "input image path, many formats accepted"
+      },
+      {
+        "line": 54,
+        "note": "frame count drives animation length"
+      }
+    ],
+    "decisions": "- 2026-04 \u2014 Vendored p5.js into Tauri 2 instead of a web app: the WHY is that this is a macOS-targeted real-time renderer, and a browser tab can't give you GPU-stable frame pacing, a CLI, and an MCP server from one codebase. Honestly the naive thing would be a static p5.js page on a domain; that gets you a demo, not a tool you can script against from another agent.\n- 2026-05 \u2014 Per-effect LUTs and persistent buffers (linearToSrgb 1024-entry LUT, vignette LUT, chromatic/barrel persistent buffers): the WHY is that per-pixel math inside a JS render loop is where frame time goes to die, and the opt-100/200 commits show real numbers (\u221250.97ms/frame geomean on one of them). You should be nervous about a 174-file project with zero declared deps trying to hit 60fps without precomputed tables.\n- 2026-05 \u2014 A BUGS_AND_ITERATIONS-style log (ITER-100/101/103, LOOP-BUG-001, opt-NNN commit prefixes): the WHY is that perf work without a written trail turns into vibes-driven optimization where you can't tell which change bought which millisecond. The numbered ledger forces each commit to claim a measurement, which is the only way the next session knows what's already been tried.",
+    "naive": "A single Python script: PIL to load the image, downsample to a character grid, map each cell's brightness to a glyph from a density ramp, print to stdout. Maybe 40 lines. The GUI, the Tauri shell, the MCP server, the Rust \u2014 all of that is scaffolding around `\" .:-=+*#%@\"[int(brightness * 9)]`.",
+    "silent_failures": "- If a Tauri IPC handler silently drops oversized image payloads above the default 1MB limit, the CLI/MCP path keeps returning \"success\" with a truncated or empty grid and no error surfaces to the caller.\n- If p5.js loadImage() resolves before pixel data is actually populated (the classic race), renders save a blank or partially-filled canvas that looks plausible at thumbnail size but is wrong at full resolution.\n- If glyph density lookup tables drift out of sync between the Rust CLI path and the JS GUI path, the same input image produces visually-similar-but-different output across surfaces, and nobody notices until a user diffs two renders.\n- If the MCP server caches rendered grids by input path without hashing file contents, edits to the source image return stale output indefinitely \u2014 the file mtime check that \"should\" exist is the kind of thing that gets stubbed during dev and never revisited.\n- If Tauri's webview throttles requestAnimationFrame when the window is backgrounded, long batch renders kicked off from the MCP server complete in 10x the expected wall time with no log line indicating why, and users assume the tool is broken rather than minimized.",
+    "stack_rationale": "Honestly, I can't tell from this context \u2014 \"top deps: (none declared)\" for a 48k-LOC Node + Tauri + Rust project is suspicious, since Tauri 2 alone pulls a Cargo tree and p5.js is a runtime dep. Either the audit didn't find the manifests (package.json, Cargo.toml) or they really are uncommitted, which would itself be the story. What's notably absent if you take the metadata at face value: no build tooling listed (no Vite, esbuild, tsc), no test framework, no linter \u2014 for a 174-file codebase shipping a GUI + CLI + MCP server, that's either Karpathy-grade restraint or missing instrumentation.",
+    "takeaway": "I can't tell from the metadata alone what's actually transferable \u2014 174 files and 48k LOC across a Tauri + p5.js + Rust + MCP server stack covers a lot of ground, and the description (\"GUI + CLI + MCP server\") hints at one thing worth noting: the same renderer reachable from three entry points. If that's really how it's structured, the lesson is that the core stayed callable as a plain function before any of the shells were built. The naive thing would be to write the GUI first and then try to extract a CLI from it later, and you'd spend a week untangling p5's draw loop from the actual pixel-to-glyph math. Worth checking whether the LoveSparkCards or Tongue stacks could expose their SRS scheduler the same way \u2014 one library, three skins \u2014 rather than reimplementing per surface.\n\nHonestly, with 63 commits and no declared deps visible in the metadata, I can't tell whether the Rust side is doing real work or is just a Tauri shell. That changes which lesson matters, and I'd want to look at the actual code before claiming more.",
+    "tldr": "Render any image as character-grid art in real time \u2014 GUI, CLI, and MCP in one repo.",
+    "tradeoffs": "- We chose Tauri + Rust over Electron because the binary stays small and native, but lost the ability to share a single JS codebase across desktop and web \u2014 the renderer is p5.js, the shell is Rust, and any new platform feature crosses a language boundary.\n- We chose p5.js as the rendering core over a custom WebGL/Canvas engine because it ships fast and the glyph-grid model maps cleanly onto p5's draw loop, but you should be nervous about real-time performance on large grids \u2014 p5 is not built for tight per-frame budgets and 48k LOC of sketch code won't outrun that.\n- We chose GUI + CLI + MCP server as three surfaces over picking one because it lets the same renderer get driven by a human, a shell pipeline, or an agent, but tripled the integration surface \u2014 every config change has to be threaded through all three entry points or they drift.\n- I can't tell from this context (no declared deps, no audit tldr) how the p5.js sketch is actually wired into Tauri's webview, so I can't honestly score the JS\u2194Rust boundary trade-off beyond \"it exists.\"",
+    "v_next": "- Honestly unclear if the MCP server gets used at all \u2014 63 commits in, no telemetry, no usage notes; I'd add one log line and find out before building more surface area.\n- The naive thing would be to keep adding render modes; instead I'd cut whichever of GUI/CLI/MCP has the fewest commits touching it and see if anyone notices.\n- 48k LOC across 174 files with zero declared deps reads like everything is vendored or hand-rolled \u2014 I can't tell from this alone whether that's discipline or drift, and a `du -sh node_modules` plus a dep audit would answer it in 30 seconds.",
+    "verification": "Honestly, the checking is mostly a hand-rolled bash script \u2014 <code>tests/run-all.sh</code> does grep-based source hygiene (A1/A2/A3) and shells out to the built <code>Glyph Grid Studio.app</code> binary with a fixed <code>~/Downloads/Thor.png</code>, tallying PASS/FAIL into <code>RESULTS-V0.1.md</code>; there's no <code>.github/workflows</code>, no <code>cargo test</code> targets I can find under <code>src-tauri</code>, and <code>package.json</code>'s <code>\"test\"</code> doesn't exist (only <code>tauri</code>). In-code self-checking is ~70 <code>throw</code>/<code>assert</code> sites across <code>src/</code> JS, plus a <code>scripts/loop_orchestrator/</code> with cycle logs that looks like an LLM-judged optimization loop (cycle-000\u2026004 with their own <code>tests.log</code>), and Phase E in <code>TEST-PLAN-V0.1.md</code> is explicitly \"manual GUI\" \u2014 so the GUI path is human eyeballs. You should be nervous about: a single hard-coded test image on one machine, no CI gate, and the bulk of \"verification\" being LLM cycles judging their own output."
+  },
+  "local_path": "/Users/darkfire/glyph-grid-studio",
+  "ls_check": null,
+  "name": "glyph-grid-studio",
+  "pushed_at": "2026-05-13T19:12:12Z",
+  "stars": 1,
+  "tier": 1,
+  "tier_reason": "explicit allowlist (Tier 1)",
+  "url": "https://github.com/Joona-t/glyph-grid-studio",
+  "version": "0.1.0",
+  "visibility": "private"
+}

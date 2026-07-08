@@ -1,0 +1,307 @@
+{
+  "audit_elapsed_seconds": 1.16,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-07-08T11:44:59Z",
+  "core_loop": {
+    "path": "zenith/src/zenith_harness/__main__.py",
+    "role": "Python module entry",
+    "source": "canonical-name"
+  },
+  "deps": {},
+  "description": "An agent harness for long-running task from Intelligent Internet",
+  "disk_usage_kb": 15410,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": false,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 289.5128205128205,
+    "source_file_count": 39,
+    "source_loc": 11291,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 10,
+    "file_count": 79,
+    "files_by_lang": {
+      "Markdown": 18,
+      "Other": 7,
+      "Python": 39,
+      "TOML": 5
+    },
+    "largest_source_files": [
+      {
+        "bytes": 46199,
+        "path": "zenith/src/zenith_harness/acp_runner.py"
+      },
+      {
+        "bytes": 31336,
+        "path": "zenith/src/zenith_harness/coordinator.py"
+      },
+      {
+        "bytes": 31234,
+        "path": "zenith/src/zenith_harness/storage.py"
+      },
+      {
+        "bytes": 25051,
+        "path": "zenith/tests/test_coordinator.py"
+      },
+      {
+        "bytes": 17931,
+        "path": "zenith/src/zenith_harness/server.py"
+      },
+      {
+        "bytes": 16875,
+        "path": "zenith/tests/test_storage.py"
+      },
+      {
+        "bytes": 16719,
+        "path": "zenith/src/zenith_harness/cli.py"
+      },
+      {
+        "bytes": 15609,
+        "path": "zenith/src/zenith_harness/controller.py"
+      },
+      {
+        "bytes": 14576,
+        "path": "zenith/tests/test_coordinator_parallel.py"
+      },
+      {
+        "bytes": 14415,
+        "path": "zenith/tests/test_smoke_real_acp.py"
+      },
+      {
+        "bytes": 14209,
+        "path": "zenith/src/zenith_harness/models.py"
+      },
+      {
+        "bytes": 12584,
+        "path": "zenith/tests/test_supersede_chain.py"
+      }
+    ],
+    "loc_by_lang": {
+      "Markdown": 3958,
+      "Other": 1603,
+      "Python": 11291,
+      "TOML": 677
+    },
+    "loc_total": 17529,
+    "primary_language": "Python"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 12,
+    "contributor_count": 8,
+    "contributors": [
+      {
+        "commits": 4,
+        "name": "Duy Phung <pvduy23@gmail.com>"
+      },
+      {
+        "commits": 2,
+        "name": "Duy Phung <duyphung@Mac.lan>"
+      },
+      {
+        "commits": 1,
+        "name": "Duy Phung <duyphung@adsl-172-10-1-145.dsl.sndg02.sbcglobal.net>"
+      },
+      {
+        "commits": 1,
+        "name": "Jim Northrup <jnorthrup@users.noreply.github.com>"
+      },
+      {
+        "commits": 1,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      },
+      {
+        "commits": 1,
+        "name": "Tami <fire17@gmail.com>"
+      },
+      {
+        "commits": 1,
+        "name": "Tue Nguyen <76506421+TueVNguyen@users.noreply.github.com>"
+      },
+      {
+        "commits": 1,
+        "name": "TueVNguyen <tue@ii.inc>"
+      }
+    ],
+    "first_commit_date": "2026-07-01T08:59:02+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-07-01T08:59:02+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-07-01T08:59:02+03:00",
+        "sha": "ff4d800",
+        "subject": "Enforce in-house / subscription-only: never forward paid LLM credentials to workers (#2)"
+      },
+      {
+        "date": "2026-06-30T10:54:53+03:00",
+        "sha": "17ef688",
+        "subject": "Quick (Copy this) Agentic Instructions to install and use Zenith as a /zenith skill  (#5)"
+      },
+      {
+        "date": "2026-06-30T13:47:10+07:00",
+        "sha": "4f9c30b",
+        "subject": "Add benchmark chart"
+      },
+      {
+        "date": "2026-06-30T01:45:32-05:00",
+        "sha": "7804d95",
+        "subject": "feat: add hermes as a first-class ACP provider (#4)"
+      },
+      {
+        "date": "2026-06-29T21:38:36+07:00",
+        "sha": "ca24bd1",
+        "subject": "Zenith Release v0.1  (#2)"
+      },
+      {
+        "date": "2026-05-12T23:07:44+07:00",
+        "sha": "5f0fd8c",
+        "subject": "update technical report"
+      },
+      {
+        "date": "2026-05-12T23:01:20+07:00",
+        "sha": "c092170",
+        "subject": "update technical report"
+      },
+      {
+        "date": "2026-05-08T21:26:08+07:00",
+        "sha": "3019fd9",
+        "subject": "Enhance README title and add image"
+      },
+      {
+        "date": "2026-05-08T18:15:44+07:00",
+        "sha": "ae0ffeb",
+        "subject": "Merge pull request #1 from Intelligent-Internet/dev/readme"
+      },
+      {
+        "date": "2026-05-08T11:11:41Z",
+        "sha": "799c061",
+        "subject": "Update README and Add Angry Bird game example built with Zenith"
+      },
+      {
+        "date": "2026-05-08T17:29:57+07:00",
+        "sha": "771cf78",
+        "subject": "add technical report"
+      },
+      {
+        "date": "2026-05-08T17:28:50+07:00",
+        "sha": "951b6ea",
+        "subject": "Initial commit"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/zenith.git"
+  },
+  "is_archived": false,
+  "kind": {},
+  "local_path": "/Users/darkfire/atlas-source-clones/zenith",
+  "ls_check": {
+    "categories": {
+      "quality": [
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-README",
+          "message": "README.md present",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-LICENSE",
+          "message": "LICENSE missing",
+          "passed": false,
+          "rule_source": null,
+          "severity": "warn",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-GITIGNORE",
+          "message": ".gitignore missing",
+          "passed": false,
+          "rule_source": null,
+          "severity": "warn",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [
+            "  Required by CLAUDE.md for every repo"
+          ],
+          "evidence": [],
+          "id": "QUAL-BUGS-LOG",
+          "message": "BUGS_AND_ITERATIONS.md missing",
+          "passed": false,
+          "rule_source": null,
+          "severity": "warn",
+          "suggestion": null,
+          "wcag": []
+        },
+        {
+          "category": "qual",
+          "details": [],
+          "evidence": [],
+          "id": "QUAL-PAID-API",
+          "message": "No paid LLM API patterns detected",
+          "passed": true,
+          "rule_source": null,
+          "severity": "fail",
+          "suggestion": null,
+          "wcag": []
+        }
+      ]
+    },
+    "project": "zenith",
+    "schema_version": "1.0",
+    "summary": {
+      "total_fail": 0,
+      "total_pass": 2,
+      "total_warn": 3
+    },
+    "tool": "ls-check",
+    "tool_version": "0.1.0",
+    "type": "general"
+  },
+  "name": "zenith",
+  "pushed_at": "2026-07-01T05:59:02Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/zenith",
+  "version": null,
+  "visibility": "public"
+}

@@ -1,0 +1,183 @@
+{
+  "audit_elapsed_seconds": 25.75,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-07-08T11:44:32Z",
+  "core_loop": {
+    "path": "oxlint-plugin-t3code/index.ts",
+    "role": "TypeScript entry",
+    "source": "canonical-name"
+  },
+  "deps": {
+    "npm": [],
+    "npm_dev": [
+      "@babel/plugin-transform-react-jsx",
+      "@effect/tsgo",
+      "@oxlint/plugins",
+      "@types/node",
+      "@typescript/native-preview",
+      "vite-plus"
+    ]
+  },
+  "description": "Yoinking ideas",
+  "disk_usage_kb": 194202,
+  "docs": {
+    "AGENTS.md": true,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": true,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 301.32268907563025,
+    "source_file_count": 4165,
+    "source_loc": 1255009,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 158,
+    "file_count": 5593,
+    "files_by_lang": {
+      "C": 30,
+      "C++": 1,
+      "CSS": 17,
+      "HTML": 39,
+      "JSON": 262,
+      "JavaScript": 32,
+      "Kotlin": 2,
+      "Markdown": 701,
+      "Other": 220,
+      "SQL": 10,
+      "Shell": 10,
+      "Swift": 6,
+      "TypeScript": 4063,
+      "Vue": 11,
+      "XML": 1,
+      "YAML": 30
+    },
+    "largest_source_files": [
+      {
+        "bytes": 3249481,
+        "path": ".repos/effect-smol/packages/effect/src/unstable/httpapi/internal/httpApiScalar.ts"
+      },
+      {
+        "bytes": 1984841,
+        "path": ".repos/effect-smol/packages/effect/src/unstable/httpapi/internal/httpApiSwagger.ts"
+      },
+      {
+        "bytes": 1712077,
+        "path": ".repos/effect-smol/packages/ai/openai/src/Generated.ts"
+      },
+      {
+        "bytes": 1507639,
+        "path": "packages/effect-codex-app-server/src/_generated/schema.gen.ts"
+      },
+      {
+        "bytes": 622478,
+        "path": ".repos/effect-smol/packages/ai/anthropic/src/Generated.ts"
+      },
+      {
+        "bytes": 506223,
+        "path": "packages/effect-acp/src/_generated/schema.gen.ts"
+      },
+      {
+        "bytes": 445107,
+        "path": ".repos/effect-smol/packages/effect/src/Effect.ts"
+      },
+      {
+        "bytes": 432892,
+        "path": ".repos/effect-smol/packages/ai/openrouter/src/Generated.ts"
+      },
+      {
+        "bytes": 416507,
+        "path": ".repos/effect-smol/packages/effect/src/Schema.ts"
+      },
+      {
+        "bytes": 340380,
+        "path": ".repos/effect-smol/packages/effect/src/Stream.ts"
+      },
+      {
+        "bytes": 267196,
+        "path": ".repos/effect-smol/packages/effect/test/schema/Schema.test.ts"
+      },
+      {
+        "bytes": 264361,
+        "path": ".repos/effect-smol/packages/effect/src/Channel.ts"
+      }
+    ],
+    "loc_by_lang": {
+      "C": 6667,
+      "C++": 6,
+      "CSS": 6268,
+      "HTML": 4256,
+      "JSON": 13381,
+      "JavaScript": 3018,
+      "Kotlin": 257,
+      "Markdown": 81655,
+      "Other": 28892,
+      "SQL": 185,
+      "Shell": 375,
+      "Swift": 3948,
+      "TypeScript": 1240116,
+      "Vue": 437,
+      "XML": 1,
+      "YAML": 36323
+    },
+    "loc_total": 1425785,
+    "primary_language": "TypeScript"
+  },
+  "git": {
+    "branch": "main",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Mike Olson <mwolson@member.fsf.org>"
+      }
+    ],
+    "first_commit_date": "2026-06-26T02:34:08-04:00",
+    "is_git": true,
+    "last_commit_date": "2026-06-26T02:34:08-04:00",
+    "recent_commits": [
+      {
+        "date": "2026-06-26T02:34:08-04:00",
+        "sha": "52b04b9",
+        "subject": "fix(grok): Harden ACP resume with replay-idle load readiness (#3156)"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/t3code-Sparky-WIP.git"
+  },
+  "is_archived": false,
+  "kind": {
+    "is_node_project": true
+  },
+  "local_path": "/Users/darkfire/atlas-source-clones/t3code-Sparky-WIP",
+  "ls_check": null,
+  "name": "t3code-Sparky-WIP",
+  "pushed_at": "2026-06-26T08:03:01Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/t3code-Sparky-WIP",
+  "version": null,
+  "visibility": "public"
+}

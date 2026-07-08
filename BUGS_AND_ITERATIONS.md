@@ -83,3 +83,47 @@ Files touched (pipeline source, not under git — `Claude x LoveSpark/` has no
 - `~/Library/LaunchAgents/com.lovespark.atlas-nightly.plist`
 - `Claude x LoveSpark/scripts/atlas/atlas-publish.py`
 - `Claude x LoveSpark/scripts/atlas/atlas-index.py`
+
+## 2026-07-08 · ITER-003 — Phase 4 (Tier-3 bulk cards): coverage gap closed, 41→51 public
+
+**Problem:** Per ITER-002, both atlas mirrors sat at 41/182 public and 141/182
+private repos audited (the documented Phase 4 "Tier-3 bulk cards" pass never
+shipped — CLAUDE.md rule #13 and the atlas roadmap both flagged it as the last
+gap before the pipeline could be called complete).
+
+**Fix:** Ran `atlas-audit.py` deterministic (no-LLM) card-mode audits across
+every repo in the manifest that hadn't been covered by the Tier-1/Tier-2 passes.
+Combined with re-running `atlas-discover.py` first (fixed in ITER-002), the
+manifest now enumerates 220 repos total (was 180/182) — 51 public, 169 private,
+all archived repos excluded. Regenerated the public/private-scoped indexes via
+`atlas-index.py --public-only` / `--private-only` and staged the complete
+`audit/*.{html,json}` set plus refreshed `index.html`/`atlas-meta.json`/`README.md`
+into this checkout on the existing `fleet-p0` branch (did not touch `main`,
+did not use `atlas-publish.py`'s built-in `git push origin main` — that script
+pushes straight to the default branch, which conflicts with this unit's
+branch-first policy, so the copy+commit was done by hand instead).
+
+**Coverage: before → after**
+- Public: 41/182 → **51/51** (100% of the 51 public repos in the current
+  220-repo manifest; the "182" figure in ITER-002 was itself stale — discover
+  now finds 220 total repos, not 182, so coverage is reported against the
+  current manifest)
+- Private: 141/182 → **169/169** (100% of the 169 private repos in the current
+  manifest)
+- Combined: 182/364 (using the old manifest's stale denominator) → **220/220**
+  against the current, correct manifest. Every repo has a `card`, `medium`, or
+  `deep` mode audit with no error stubs (spot-checked; `audit_mode` present and
+  non-null on all 220 JSON files, zero repos with a missing/`None` mode).
+
+**Verification:** confirmed `data/audit/*.json` in the pipeline working dir has
+exactly 220 entries matching `repos.json` 1:1 (0 missing, 0 extra); confirmed
+the public/private split is a hard partition (e.g. `glyph-grid-studio`, a
+public repo, is present only in the public checkout's `audit/`, absent from
+private — `atlas-publish.py`'s privacy guarantee held); spot-checked a Tier-1
+deep audit (`sparky`) and several Tier-3 cards (`Aaron-Public-Knowledge-Unblocker`)
+for real narrative/description content, not empty stubs.
+
+**Not done in this pass:** did not re-run LLM enrichment on any repo (that's a
+separate, slower Phase-1-style pass, out of scope for the Phase-4 bulk-card
+unit); did not reinstall/verify the nightly cron itself (covered by ITER-002);
+did not merge the `fleet-p0` PRs — left open for review per branch policy.
