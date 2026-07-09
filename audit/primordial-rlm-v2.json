@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.14,
+  "audit_elapsed_seconds": 0.86,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:05Z",
+  "audited_at": "2026-07-09T01:25:54Z",
   "core_loop": {
     "path": "forge_chamber.py",
     "role": "largest source file",

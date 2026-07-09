@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.14,
+  "audit_elapsed_seconds": 1.15,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:36Z",
+  "audited_at": "2026-07-09T01:14:46Z",
   "core_loop": null,
   "deps": {},
   "description": "Custom Pink Aesthetic Theme for VsCode (Last one wasn't cutting it :3) ",

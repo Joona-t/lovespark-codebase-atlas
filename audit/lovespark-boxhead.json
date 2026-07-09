@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.14,
+  "audit_elapsed_seconds": 0.73,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:11Z",
+  "audited_at": "2026-07-09T01:26:42Z",
   "core_loop": {
     "path": "game.js",
     "role": "largest source file",
@@ -121,8 +121,68 @@
   },
   "is_archived": false,
   "kind": {},
-  "local_path": "/Users/darkfire/Claude x LoveSpark/Extensions/Games/lovespark-boxhead",
-  "ls_check": null,
+  "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/lovespark-boxhead",
+  "ls_check": {
+    "categories": {
+      "quality": [
+        {
+          "details": [],
+          "id": "QUAL-README",
+          "message": "README.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-LICENSE",
+          "message": "LICENSE present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-GITIGNORE",
+          "message": ".gitignore present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-BUGS-LOG",
+          "message": "BUGS_AND_ITERATIONS.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-PAID-API",
+          "message": "No paid LLM API patterns detected",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-TEST-DRIFT",
+          "message": "No test files found \u2014 nothing to compare",
+          "passed": true,
+          "severity": "warn"
+        },
+        {
+          "details": [],
+          "id": "QUAL-CHANGELOG-DRIFT",
+          "message": "No CHANGELOG.md + manifest.json pair to compare",
+          "passed": true,
+          "severity": "warn"
+        }
+      ]
+    },
+    "project": "lovespark-boxhead",
+    "summary": {
+      "total_fail": 0,
+      "total_pass": 7
+    },
+    "type": "web-static"
+  },
   "name": "lovespark-boxhead",
   "pushed_at": "2026-03-28T18:16:22Z",
   "stars": 0,

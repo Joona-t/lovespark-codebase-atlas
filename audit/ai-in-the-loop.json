@@ -1,13 +1,13 @@
 {
-  "audit_elapsed_seconds": 0.15,
+  "audit_elapsed_seconds": 1.47,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:14Z",
+  "audited_at": "2026-07-09T01:26:49Z",
   "core_loop": null,
   "deps": {},
   "description": "Automated AI/dev intelligence brief \u2014 an experiment in replacing social media with a curated agent loop.",
-  "disk_usage_kb": 10,
+  "disk_usage_kb": 12,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -40,33 +40,38 @@
   "failures": [],
   "files": {
     "binary_count": 0,
-    "file_count": 6,
+    "file_count": 7,
     "files_by_lang": {
-      "Markdown": 4,
+      "Markdown": 5,
       "Other": 2
     },
     "largest_source_files": [],
     "loc_by_lang": {
-      "Markdown": 174,
+      "Markdown": 194,
       "Other": 40
     },
-    "loc_total": 214,
+    "loc_total": 234,
     "primary_language": "Markdown"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 6,
+    "branch": "fleet-p2",
+    "commit_count": 7,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 6,
+        "commits": 7,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-05-07T00:56:52+03:00",
+    "first_commit_date": "2026-07-08T20:10:24+03:00",
     "is_git": true,
-    "last_commit_date": "2026-05-07T00:56:52+03:00",
+    "last_commit_date": "2026-07-08T20:10:24+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-08T20:10:24+03:00",
+        "sha": "0549f32",
+        "subject": "Add ARCHIVED.md: prep for fleet archive (complete-for-v1, dormant docs repo)"
+      },
       {
         "date": "2026-05-07T00:56:52+03:00",
         "sha": "efdcf34",
@@ -105,7 +110,7 @@
   "local_path": "/Users/darkfire/Code/ai-in-the-loop",
   "ls_check": null,
   "name": "ai-in-the-loop",
-  "pushed_at": "2026-05-06T21:56:54Z",
+  "pushed_at": "2026-07-08T17:10:25Z",
   "stars": 0,
   "tier": 3,
   "tier_reason": "default tier",

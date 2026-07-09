@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.31,
+  "audit_elapsed_seconds": 4.96,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:36Z",
+  "audited_at": "2026-07-09T01:14:37Z",
   "core_loop": {
     "path": "src/gpd/cli.py",
     "role": "largest source file",

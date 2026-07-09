@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.16,
+  "audit_elapsed_seconds": 0.81,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:06Z",
+  "audited_at": "2026-07-09T01:26:15Z",
   "core_loop": null,
   "deps": {},
   "description": "Neural Networks: Zero to Hero",

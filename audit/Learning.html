@@ -245,8 +245,8 @@ body.card-mode .sidebar { display: none; }
 </style></head><body class="deep-mode"><div class="layout"><aside class="sidebar"><div class="brand"><img src="../assets/mascot.png" alt="Sparky mascot — LoveSpark codebase atlas"><div class="brand-text">Atlas<small>LoveSpark Codebase Atlas</small></div></div><a class="atlas-link" href="../index.html">&larr; back to index</a><nav class="nav"><a href="#sec-tldr">TL;DR</a><a href="#sec-data">The Data</a><a href="#sec-naive">The Naive Version</a><a href="#sec-architecture">The Architecture</a><a href="#sec-core_loop">The Core Loop</a><a href="#sec-verification">The Verification Loop</a><a href="#sec-assumptions">The Assumptions</a><a href="#sec-stack">The Stack</a><a href="#sec-decisions">The Decisions</a><a href="#sec-tradeoffs">The Trade-offs</a><a href="#sec-metrics">The Metrics</a><a href="#sec-failures">The Failures</a><a href="#sec-v_next">v0.next / Open Questions</a><a href="#sec-reproducibility">Reproducibility</a><a href="#sec-takeaway">The Takeaway</a></nav><div class="theme-toggle"><select id="theme-select" aria-label="Theme"><option value="retro">Retro pink</option><option value="dark">Dark</option><option value="beige">Beige</option><option value="slate">Slate</option></select></div></aside><main class="main"><header class="repo-head"><h1>Learning</h1><div class="meta"><span class="tier-badge tier-2">Tier&nbsp;2</span> · <span class="visibility-badge">public</span> · <a href="https://github.com/Joona-t/Learnin" target="_blank" rel="noopener">Joona-t/Learnin</a> · v2.1.88</div></header><section class="atlas-section" id="sec-tldr"><h2>TL;DR</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add a one-sentence pitch to <code>audit-meta.yml</code> → <code>tldr</code>. Karpathy-style: punchy, concrete, no "exciting" / "powerful".</div><p>A Node Project written primarily in TypeScript.</p>
 <div class="kv-grid">
 <div class="kv"><div class="k">Primary language</div><span class="v">TypeScript</span></div>
-<div class="kv"><div class="k">LOC (source)</div><span class="v">517,143</span></div>
-<div class="kv"><div class="k">Files</div><span class="v">1,936</span></div>
+<div class="kv"><div class="k">LOC (source)</div><span class="v">1,031,023</span></div>
+<div class="kv"><div class="k">Files</div><span class="v">4,038</span></div>
 <div class="kv"><div class="k">Version</div><span class="v">2.1.88</span></div>
 <div class="kv"><div class="k">Last commit</div><span class="v">2026-03-31</span></div>
 <div class="kv"><div class="k">Commits</div><span class="v">1</span></div>
@@ -261,30 +261,36 @@ body.card-mode .sidebar { display: none; }
 <div class="mermaid-host">
 <pre><code class="language-mermaid">graph TD
   Repo[&quot;Learning&quot;]
+  Repo --&gt; assistant[&quot;assistant/&quot;]
+  Repo --&gt; bridge[&quot;bridge/&quot;]
+  Repo --&gt; build_src[&quot;build-src/&quot;]
+  Repo --&gt; coordinator[&quot;coordinator/&quot;]
+  Repo --&gt; dist[&quot;dist/&quot;]
   Repo --&gt; docs[&quot;docs/&quot;]
+  Repo --&gt; proactive[&quot;proactive/&quot;]
   Repo --&gt; scripts[&quot;scripts/&quot;]
+  Repo --&gt; services[&quot;services/&quot;]
+  Repo --&gt; skills[&quot;skills/&quot;]
   Repo --&gt; src[&quot;src/&quot;]
   Repo --&gt; stubs[&quot;stubs/&quot;]
-  Repo --&gt; tools[&quot;tools/&quot;]
-  Repo --&gt; types[&quot;types/&quot;]
-  Repo --&gt; utils[&quot;utils/&quot;]
-  Repo --&gt; vendor[&quot;vendor/&quot;]</code></pre>
+  Repo --&gt; tasks[&quot;tasks/&quot;]
+  Repo --&gt; tools[&quot;tools/&quot;]</code></pre>
 </div>
-<p class="empty-state">Replace with a real C4 diagram via <code>audit-meta.yml</code> → <code>architecture.diagram</code>.</p></section><section class="atlas-section" id="sec-core_loop"><h2>The Core Loop</h2><p>File: <code>src/commands/perf-issue/index.js</code></p>
+<p class="empty-state">Replace with a real C4 diagram via <code>audit-meta.yml</code> → <code>architecture.diagram</code>.</p></section><section class="atlas-section" id="sec-core_loop"><h2>The Core Loop</h2><p>File: <code>assistant/index.js</code></p>
 <p class='empty-state'>Role: JavaScript entry &middot; detection: canonical-name</p>
 <p>Open the file to read it inline (preview hidden in medium mode).</p></section><section class="atlas-section" id="sec-verification"><h2>The Verification Loop</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>verification:</code> to <code>audit-meta.yml</code>. Karpathy's 2024+ frame: where does this system check its own work? Tests? Asserts? LLM-as-judge? Manual review? If nothing — say so.</div><p>No tests, no CI, no assertions detected. The verification loop is YOU.</p></section><section class="atlas-section" id="sec-assumptions"><h2>The Assumptions</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>assumptions:</code> (list of 2–5 bullets) to <code>audit-meta.yml</code>. What is this code silently assuming? User always online? File always exists? Input always well-formed? Karpathy's instinct: don't hide confusion.</div></section><section class="atlas-section" id="sec-stack"><h2>The Stack</h2><h3>npm dev <small style='font-weight:400;color:var(--ls-text-soft);'>(2)</small></h3>
 <ul><li>esbuild</li><li>typescript</li></ul></section><section class="atlas-section" id="sec-decisions"><h2>The Decisions</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>decisions:</code> to <code>audit-meta.yml</code> — each item: <code>date</code>, <code>title</code>, <code>why</code>. Karpathy's instinct: WHY, not WHAT. Commit subjects below are surface, not decisions.</div><table><thead><tr><th>Date</th><th>Subject</th></tr></thead><tbody><tr><td>2026-03-31</td><td>Update copyright attribution from PBC to Anthropic and Claude</td></tr></tbody></table></section><section class="atlas-section" id="sec-tradeoffs"><h2>The Trade-offs</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>tradeoffs:</code> to <code>audit-meta.yml</code>. Karpathy's rule: every decision is a trade-off. What got cut? What broke when you chose X over Y?</div></section><section class="atlas-section" id="sec-metrics"><h2>The Metrics</h2><div class="kv-grid">
-<div class="kv"><div class="k">Total LOC</div><span class="v">517,143</span></div>
-<div class="kv"><div class="k">Files</div><span class="v">1,936</span></div>
+<div class="kv"><div class="k">Total LOC</div><span class="v">1,031,023</span></div>
+<div class="kv"><div class="k">Files</div><span class="v">4,038</span></div>
 <div class="kv"><div class="k">Commits</div><span class="v">1</span></div>
 <div class="kv"><div class="k">Contributors</div><span class="v">1</span></div>
 <div class="kv"><div class="k">Version</div><span class="v">2.1.88</span></div>
-<div class="kv"><div class="k">LOC / source file</div><span class="v">268</span></div>
+<div class="kv"><div class="k">LOC / source file</div><span class="v">256</span></div>
 <div class="kv"><div class="k">Deps / 1k LOC</div><span class="v">0.0</span></div>
 <div class="kv"><div class="k">Test / source LOC</div><span class="v warn">0.00</span></div>
 </div>
 <h3>Lines of code by language</h3>
-<table><thead><tr><th>Language</th><th style="text-align:right">Lines</th><th style="text-align:right">%</th></tr></thead><tbody><tr><td>TypeScript</td><td style='text-align:right'>513,266</td><td style='text-align:right'>99.3%</td></tr><tr><td>Markdown</td><td style='text-align:right'>2,592</td><td style='text-align:right'>0.5%</td></tr><tr><td>JavaScript</td><td style='text-align:right'>709</td><td style='text-align:right'>0.1%</td></tr><tr><td>JSON</td><td style='text-align:right'>573</td><td style='text-align:right'>0.1%</td></tr><tr><td>Other</td><td style='text-align:right'>3</td><td style='text-align:right'>0.0%</td></tr></tbody></table></section><section class="atlas-section" id="sec-failures"><h2>The Failures</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Create a <code>BUGS_AND_ITERATIONS.md</code> per CLAUDE.md rule #11 — every bug fix logged.</div>
+<table><thead><tr><th>Language</th><th style="text-align:right">Lines</th><th style="text-align:right">%</th></tr></thead><tbody><tr><td>TypeScript</td><td style='text-align:right'>1,026,510</td><td style='text-align:right'>99.6%</td></tr><tr><td>Markdown</td><td style='text-align:right'>2,643</td><td style='text-align:right'>0.3%</td></tr><tr><td>JavaScript</td><td style='text-align:right'>1,294</td><td style='text-align:right'>0.1%</td></tr><tr><td>JSON</td><td style='text-align:right'>573</td><td style='text-align:right'>0.1%</td></tr><tr><td>Other</td><td style='text-align:right'>3</td><td style='text-align:right'>0.0%</td></tr></tbody></table></section><section class="atlas-section" id="sec-failures"><h2>The Failures</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Create a <code>BUGS_AND_ITERATIONS.md</code> per CLAUDE.md rule #11 — every bug fix logged.</div>
 <h3>Silent failure modes</h3>
 <div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>silent_failures:</code> (list) to <code>audit-meta.yml</code>. Karpathy: name 3–5 ways this would <em>silently</em> break — wrong output, slow degradation, no exception. If 90% of inputs disappeared, would you notice?</div></section><section class="atlas-section" id="sec-v_next"><h2>v0.next / Open Questions</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>v_next:</code> (a list of strings) to <code>audit-meta.yml</code> — 3–5 things you'd change today. Open questions count. Honest uncertainty welcomed.</div></section><section class="atlas-section" id="sec-reproducibility"><h2>Reproducibility</h2><pre><code class="lang-bash"># clone
 git clone https://github.com/Joona-t/Learnin.git
@@ -293,7 +299,7 @@ cd Learning
 # install + run
 npm install
 npm run dev   # or: npm start</code></pre>
-<div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>reproducibility_timing</code> and <code>reproducibility_hardware</code> to <code>audit-meta.yml</code>. nanoGPT-style: "trains in 3 minutes on a single GPU."</div></section><section class="atlas-section" id="sec-takeaway"><h2>The Takeaway</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>takeaway:</code> (list of 1–3 strings) to <code>audit-meta.yml</code>. Karpathy-style: plain-prose lessons another project could steal. No jargon. No grand claims.</div></section><footer class="repo-foot"><div>Generated by atlas v0.2.0 · 2026-05-14T09:46:27Z</div><div><a href="../index.html">&larr; atlas index</a></div></footer></main></div><script>
+<div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>reproducibility_timing</code> and <code>reproducibility_hardware</code> to <code>audit-meta.yml</code>. nanoGPT-style: "trains in 3 minutes on a single GPU."</div></section><section class="atlas-section" id="sec-takeaway"><h2>The Takeaway</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>takeaway:</code> (list of 1–3 strings) to <code>audit-meta.yml</code>. Karpathy-style: plain-prose lessons another project could steal. No jargon. No grand claims.</div></section><footer class="repo-foot"><div>Generated by atlas v0.2.0 · 2026-07-09T01:07:46Z</div><div><a href="../index.html">&larr; atlas index</a></div></footer></main></div><script>
 const themeSel = document.getElementById('theme-select');
 if (themeSel) {
   const saved = localStorage.getItem('ls-atlas-theme') || 'retro';

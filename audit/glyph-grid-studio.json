@@ -1,0 +1,403 @@
+{
+  "audit_elapsed_seconds": 84.12,
+  "audit_meta": {},
+  "audit_mode": "deep",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-07-09T01:02:37Z",
+  "core_loop": {
+    "path": "src-tauri/src/main.rs",
+    "role": "Rust binary entry",
+    "source": "canonical-name"
+  },
+  "data_samples": [
+    {
+      "content": "// Prevents additional console window on Windows in release, DO NOT REMOVE!!\n#![cfg_attr(not(debug_assertions), windows_subsystem = \"windows\")]\n\nuse clap::{Parser, Subcommand};\nuse std::path::PathBuf;\n\n/// Real-time character-grid image renderer.\n///\n/// Default behavior with no subcommand: launches the visual studio (GUI).\n/// Subcommands provide headless operation for scripts and AI agents.\n#[derive(Parser, Debug)]\n#[command(name = \"glyph-grid-studio\", version, about, long_about = None)]\nstruct Cli {\n    #[command(subcommand)]\n    command: Option<Command>,\n}\n\n#[derive(Subcommand, Debug)]\nenum Command {\n    /// Launch the visual studio (default if no subcommand given).\n    Studio,\n\n    /// Render a single image to an animated GIF, headlessly.\n    Render(RenderArgs),\n\n    /// Render many variants of the SAME source in ONE Tauri session.  Reads a\n    /// manifest JSON with `{in, frames, jobs:[{name,out,format?,config}, ...]}`\n    /// and runs all jobs back-to-back without re-launching the app per variant.\n    /// ~10\u00d7 faster than calling `render` repeatedly because Tauri startup +\n    /// source-image decode happens once.  See ITER-024 in BUGS_AND_ITERATIONS.md.\n    Batch(BatchArgs),\n\n    /// Print the catalog of available palettes / ramps / dithers / glyph sets / postprocess stages.\n    Catalog,\n\n    /// Run the MCP server (Model Context Protocol over stdio JSON-RPC).\n    /// Wire this into Claude Desktop / Cursor via their MCP config; tools then\n    /// appear as `glyph_grid_render` and `glyph_grid_catalog`.\n    Mcp,\n}",
+      "label": "src-tauri/src/main.rs",
+      "lang": "rust"
+    },
+    {
+      "content": "use base64::engine::general_purpose;\nuse base64::Engine as _;\nuse serde::{Deserialize, Serialize};\nuse std::fs;\nuse std::io::Cursor;\nuse std::path::PathBuf;\nuse std::sync::{Arc, Mutex};\nuse tauri::Manager;\nuse tauri_plugin_dialog::DialogExt;\n\npub mod mcp;\n\n/* ============================================================================\n *  CLI / headless-render plumbing.\n *\n *  When the binary is launched with `render --in foo --out bar`, main.rs\n *  builds a HeadlessRenderJob and calls run_headless_render(). That function\n *  spins up a Tauri runtime with a hidden window, stores the job in managed\n *  state, and waits for the JS side to call exit_with_status() when done.\n *  The same rendering pipeline is used as the GUI path \u2014 only the entry +\n *  exit are different.\n * ============================================================================ */\n\n#[derive(Debug, Clone, Serialize, Deserialize, Default)]\npub struct ConfigOverrides {\n    pub palette: Option<String>,\n    pub color_mode: Option<String>,\n    pub ramp: Option<String>,\n    pub dither_mode: Option<String>,\n    pub selection_mode: Option<String>,\n    pub glyph_set: Option<String>,\n    pub sampling_strategy: Option<String>,\n    pub postprocess: Vec<String>,\n    pub cols: Option<u32>,\n    pub rows: Option<u32>,\n}\n\n#[derive(Debug, Clone)]\npub struct HeadlessRenderJob {\n    pub in_path: PathBuf,\n    pub out_path: PathBuf,\n    pub frames: u32,\n    pub show_window: bool,\n    pub preset_path: Option<PathBuf>,\n    pub config_overrides: ConfigOverrides,\n    /// Output format. `\"gif\"` (default) \u2192 gifski; `\"mp4\"` \u2192 openh264 + mp4.\n    /// When None, derived from `out_path`'s extension.\n    pub format: Option<String>,\n}\n",
+      "label": "src-tauri/src/lib.rs",
+      "lang": "rust"
+    },
+    {
+      "content": "#[tauri::command]\nfn get_cli_render_job(state: tauri::State<CliJobState>) -> Option<serde_json::Value> {\n    state.job.lock().ok().and_then(|g| g.clone())\n}\n\n/// JS-side log forwarding for headless / production builds where\n/// `console.log` doesn't reach stderr.  Useful for surfacing batch errors.\n#[tauri::command]\nfn cli_log(msg: String) {\n    eprintln!(\"glyph-grid-studio[js]: {}\", msg);\n}\n\n/// ",
+      "label": "IPC command: get_cli_render_job (lib.rs)",
+      "lang": "rust"
+    }
+  ],
+  "deps": {
+    "npm": [],
+    "npm_dev": []
+  },
+  "description": "Real-time character-grid image renderer for macOS \u2014 GUI + CLI + MCP server. p5.js + Tauri 2 + Rust.",
+  "disk_usage_kb": 27129,
+  "docs": {
+    "AGENTS.md": false,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": false,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.0,
+    "deps_total": 0,
+    "loc_per_source_file": 415.24,
+    "source_file_count": 25,
+    "source_loc": 10381,
+    "test_loc": 1106,
+    "test_to_source_ratio": 0.10654079568442347
+  },
+  "failures": [
+    {
+      "title": "ITER \u2014 add `basalt` as a 3rd site theme (Cream \u00b7 Candy \u00b7 Basalt)"
+    },
+    {
+      "title": "BUG-010 \u2014 Export GIF/MP4 before loading an image hangs the recorder forever (P0)"
+    },
+    {
+      "title": "BUG-011 \u2014 Preset save/load silently drops `invertSignal`, `bgThreshold`, `dispersal` (P1, data-loss)"
+    },
+    {
+      "title": "BUG-012 \u2014 Drag-dropping a non-image file fails silently (P2)"
+    },
+    {
+      "title": "ITER \u2014 repo hygiene for public (P0/P1)"
+    },
+    {
+      "title": "ITER \u2014 release mechanics (P0)"
+    },
+    {
+      "title": "ITER \u2014 download website (LoveSpark design system)"
+    },
+    {
+      "title": "BUG-009 \u2014 App permanently freezes after every GUI export; Clear image appears broken"
+    },
+    {
+      "title": "ITER-037 \u2014 Temporal glyph stability (anti-flicker, measured 97.8 % suppression)"
+    },
+    {
+      "title": "ITER-038 \u2014 Vector SVG + plain-text export"
+    },
+    {
+      "title": "ITER-039 \u2014 Flow mode (edge-tangent-flow glyph orientation)"
+    },
+    {
+      "title": "ITER-036 \u2014 Animate Still feature completed (was WIP failing gate A1)"
+    },
+    {
+      "title": "Also fixed \u2014 relative `--in` paths hung instead of erroring"
+    },
+    {
+      "title": "ITER-035 \u2014 Orchestrator resilience (audit arch findings, all confirmed by adversarial re-read)"
+    },
+    {
+      "title": "ITER-033 \u2014 Coverage for every untested shipped feature"
+    },
+    {
+      "title": "ITER-034 \u2014 Docs-vs-code drift"
+    },
+    {
+      "title": "ITER-030 \u2014 Export feedback (live-verified gap)"
+    },
+    {
+      "title": "ITER-031 \u2014 Batch jobs inherited the previous job's config"
+    },
+    {
+      "title": "ITER-032 \u2014 Keyboard/scroll/jargon polish (live-verified)"
+    },
+    {
+      "title": "BUG-006 \u2014 User presets + recent-sources silently lost on every relaunch"
+    },
+    {
+      "title": "BUG-007 \u2014 `kawaii-pink` missing from catalog_json() (CLI + MCP)"
+    },
+    {
+      "title": "BUG-008 \u2014 Recent dropdown could never update (even in-session)"
+    },
+    {
+      "title": "ITER-029 \u2014 a11y/P0 batch (audit findings, live-verified)"
+    },
+    {
+      "title": "ITER-028 \u2014 `CONFIG.renderer='webgl'` instanced-grid path (opt-in, gated, CPU-fallback)"
+    },
+    {
+      "title": "ITER-027 \u2014 benchmark reframed to a scaling profile + 3-term composite"
+    }
+  ],
+  "files": {
+    "binary_count": 54,
+    "file_count": 186,
+    "files_by_lang": {
+      "HTML": 2,
+      "JSON": 28,
+      "JavaScript": 18,
+      "Markdown": 27,
+      "Other": 49,
+      "Python": 1,
+      "Ruby": 1,
+      "Rust": 4,
+      "Shell": 1,
+      "TOML": 1
+    },
+    "largest_source_files": [
+      {
+        "bytes": 195625,
+        "path": "src/index.html"
+      },
+      {
+        "bytes": 81868,
+        "path": "src/lib/glyph-studio.js"
+      },
+      {
+        "bytes": 55653,
+        "path": "src-tauri/src/lib.rs"
+      },
+      {
+        "bytes": 33045,
+        "path": "docs/index.html"
+      },
+      {
+        "bytes": 32337,
+        "path": "src/lib/glyph-wave6.js"
+      },
+      {
+        "bytes": 29746,
+        "path": "src/lib/glyph-crt.js"
+      },
+      {
+        "bytes": 22117,
+        "path": "src/lib/glyph-sources.js"
+      },
+      {
+        "bytes": 21183,
+        "path": "src/lib/glyph-runtime.js"
+      },
+      {
+        "bytes": 21076,
+        "path": "src/lib/glyph-shape-index.js"
+      },
+      {
+        "bytes": 15599,
+        "path": "src/lib/glyph-composition.js"
+      },
+      {
+        "bytes": 15112,
+        "path": "src/lib/glyph-outputs.js"
+      },
+      {
+        "bytes": 14886,
+        "path": "src/lib/glyph-primitives.js"
+      }
+    ],
+    "loc_by_lang": {
+      "HTML": 4811,
+      "JSON": 25082,
+      "JavaScript": 8001,
+      "Markdown": 6793,
+      "Other": 4739,
+      "Python": 215,
+      "Ruby": 24,
+      "Rust": 1803,
+      "Shell": 338,
+      "TOML": 63
+    },
+    "loc_total": 51869,
+    "primary_language": "JavaScript"
+  },
+  "git": {
+    "branch": "alpha-notice",
+    "commit_count": 96,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 96,
+        "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-06-28T10:04:12+03:00",
+    "is_git": true,
+    "last_commit_date": "2026-06-28T10:04:12+03:00",
+    "recent_commits": [
+      {
+        "date": "2026-06-28T10:04:12+03:00",
+        "sha": "675d973",
+        "subject": "Label landing site as Alpha / still in testing"
+      },
+      {
+        "date": "2026-06-25T19:21:03+03:00",
+        "sha": "6cbef1d",
+        "subject": "merge: Basalt Monolith 3rd theme"
+      },
+      {
+        "date": "2026-06-25T19:21:03+03:00",
+        "sha": "09e9705",
+        "subject": "site: add Basalt Monolith as a 3rd theme (Cream \u00b7 Candy \u00b7 Basalt)"
+      },
+      {
+        "date": "2026-06-25T18:26:05+03:00",
+        "sha": "d1cc35a",
+        "subject": "merge: integrate origin/main (PRs #1 package.json metadata, #2 README MP4 note)"
+      },
+      {
+        "date": "2026-06-25T18:25:11+03:00",
+        "sha": "571aa7d",
+        "subject": "merge: nav ankh icon polish + kaneki showcase"
+      },
+      {
+        "date": "2026-06-25T18:25:07+03:00",
+        "sha": "8b0d514",
+        "subject": "site: clean nav ankh icon (fills bubble) + kaneki showcase"
+      },
+      {
+        "date": "2026-06-25T18:23:20+03:00",
+        "sha": "e148641",
+        "subject": "docs: list MP4/H.264 export in the README Features table (#2)"
+      },
+      {
+        "date": "2026-06-25T18:23:13+03:00",
+        "sha": "b698344",
+        "subject": "chore: add description, license, author, and repository metadata to package.json (#1)"
+      },
+      {
+        "date": "2026-06-25T18:12:06+03:00",
+        "sha": "8740a0f",
+        "subject": "merge: ankh brand icon on the site"
+      },
+      {
+        "date": "2026-06-25T18:12:04+03:00",
+        "sha": "b6074ef",
+        "subject": "site: ankh brand icon (favicon + nav + cream hero); candy keeps Sparky"
+      },
+      {
+        "date": "2026-06-25T18:01:20+03:00",
+        "sha": "5f59824",
+        "subject": "merge: cream serif font + headline overlap fix"
+      },
+      {
+        "date": "2026-06-25T18:01:17+03:00",
+        "sha": "15fbeef",
+        "subject": "site: cream theme \u2192 Cinzel + EB Garamond serif; fix headline overlap"
+      },
+      {
+        "date": "2026-06-25T17:49:02+03:00",
+        "sha": "e8070f9",
+        "subject": "merge: Sparky showcase on the download site"
+      },
+      {
+        "date": "2026-06-25T17:48:51+03:00",
+        "sha": "6219034",
+        "subject": "site: swap kaneki showcase for full-colour Sparky render (both themes)"
+      },
+      {
+        "date": "2026-06-25T16:31:13+03:00",
+        "sha": "0d13e79",
+        "subject": "merge: v0.1.8 ship-readiness \u2014 public release + LoveSpark site (gate 22/22)"
+      },
+      {
+        "date": "2026-06-25T16:30:45+03:00",
+        "sha": "c9bfb1c",
+        "subject": "ship: v0.1.8 \u2014 public-release readiness + universal build + LoveSpark download site"
+      },
+      {
+        "date": "2026-06-10T09:20:08+03:00",
+        "sha": "5caa0e2",
+        "subject": "merge: BUG-009 GUI export freeze fix (v0.1.7)"
+      },
+      {
+        "date": "2026-06-10T09:20:08+03:00",
+        "sha": "4d3d46c",
+        "subject": "fix: BUG-009 \u2014 app froze permanently after every GUI export (v0.1.7)"
+      },
+      {
+        "date": "2026-06-10T08:02:28+03:00",
+        "sha": "693baf4",
+        "subject": "merge: SOTA features v0.1.6 \u2014 gated green (22/22)"
+      },
+      {
+        "date": "2026-06-10T08:02:27+03:00",
+        "sha": "2e22901",
+        "subject": "feat(v0.1.6): three SOTA features \u2014 temporal stability, vector export, flow mode"
+      },
+      {
+        "date": "2026-06-10T06:15:26+03:00",
+        "sha": "7b3a56b",
+        "subject": "merge: Animate Still + export-encode optimization v0.1.5 \u2014 gated green (22/22)"
+      },
+      {
+        "date": "2026-06-10T06:15:26+03:00",
+        "sha": "c670063",
+        "subject": "feat+perf(v0.1.5): land Animate Still + export encode 20% faster"
+      },
+      {
+        "date": "2026-06-10T05:49:12+03:00",
+        "sha": "e45683c",
+        "subject": "merge(audit): CS-4 harness hardening v0.1.4 \u2014 gated green (22/22)"
+      },
+      {
+        "date": "2026-06-10T05:49:12+03:00",
+        "sha": "38507b1",
+        "subject": "fix(audit-cs4): loop-harness resilience (v0.1.4)"
+      },
+      {
+        "date": "2026-06-10T05:44:52+03:00",
+        "sha": "c84c016",
+        "subject": "merge(audit): CS-3 tests+docs v0.1.3 \u2014 gated green (22/22)"
+      },
+      {
+        "date": "2026-06-10T05:44:52+03:00",
+        "sha": "cf274b5",
+        "subject": "test(audit-cs3): coverage for untested shipped features + doc drift (v0.1.3)"
+      },
+      {
+        "date": "2026-06-10T04:30:45+03:00",
+        "sha": "6489897",
+        "subject": "merge(audit): CS-2 daily-use UX v0.1.2 \u2014 gated green (18/18)"
+      },
+      {
+        "date": "2026-06-10T04:30:45+03:00",
+        "sha": "fa43b67",
+        "subject": "fix(audit-cs2): daily-use UX \u2014 export feedback, batch config isolation, focus/scroll (v0.1.2)"
+      },
+      {
+        "date": "2026-06-10T03:35:00+03:00",
+        "sha": "ccc2f84",
+        "subject": "merge(audit): CS-1 P0 correctness v0.1.1 \u2014 gated green (18/18)"
+      },
+      {
+        "date": "2026-06-10T03:35:00+03:00",
+        "sha": "96e08ff",
+        "subject": "fix(audit-cs1): P0 correctness \u2014 persistence data-loss, catalog drift, a11y (v0.1.1)"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/glyph-grid-studio.git"
+  },
+  "is_archived": false,
+  "kind": {
+    "is_node_project": true,
+    "is_tauri_project": true
+  },
+  "local_path": "/Users/darkfire/glyph-grid-studio",
+  "ls_check": null,
+  "name": "glyph-grid-studio",
+  "pushed_at": "2026-06-28T07:14:09Z",
+  "stars": 1,
+  "tier": 1,
+  "tier_reason": "explicit allowlist (Tier 1)",
+  "url": "https://github.com/Joona-t/glyph-grid-studio",
+  "version": "0.1.8",
+  "visibility": "public"
+}

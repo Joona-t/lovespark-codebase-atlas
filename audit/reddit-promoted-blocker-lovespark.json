@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.28,
+  "audit_elapsed_seconds": 1.47,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:49Z",
+  "audited_at": "2026-07-09T01:17:50Z",
   "core_loop": {
     "path": "content.js",
     "role": "Chrome extension content script",
@@ -15,7 +15,7 @@
     ]
   },
   "description": "Hides promoted and sponsored posts from Reddit feeds \u2014 clean browsing with no tracking or data collection",
-  "disk_usage_kb": 743,
+  "disk_usage_kb": 744,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -162,7 +162,7 @@
   "local_path": "/Users/darkfire/atlas-source-clones/reddit-promoted-blocker-lovespark",
   "ls_check": null,
   "name": "reddit-promoted-blocker-lovespark",
-  "pushed_at": "2026-04-19T23:00:38Z",
+  "pushed_at": "2026-07-08T22:48:49Z",
   "stars": 0,
   "tier": 3,
   "tier_reason": "default tier",

@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.12,
+  "audit_elapsed_seconds": 0.74,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:16Z",
+  "audited_at": "2026-07-09T01:27:02Z",
   "core_loop": null,
   "deps": {},
   "description": "I posted some extensions on Chrome, but they could be better with less stringent rules & requirements that the web-store enforce. Those versions will live on here to do with as you wish ",

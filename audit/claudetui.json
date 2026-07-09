@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.85,
+  "audit_elapsed_seconds": 6.28,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:33Z",
+  "audited_at": "2026-07-09T01:08:45Z",
   "core_loop": {
     "path": "src/main.rs",
     "role": "Rust binary entry",
@@ -43,7 +43,7 @@
     ]
   },
   "description": "Rust TUI multiplexer for Claude Code CLI \u2014 multi-session PTY embedding, git diff pane, command palette. Experimental.",
-  "disk_usage_kb": 43,
+  "disk_usage_kb": 51,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -65,17 +65,20 @@
     "research.md": false
   },
   "efficiency": {
-    "deps_per_kloc": 4.995836802664446,
+    "deps_per_kloc": 4.672897196261682,
     "deps_total": 12,
-    "loc_per_source_file": 150.125,
+    "loc_per_source_file": 160.5,
     "source_file_count": 16,
-    "source_loc": 2402,
+    "source_loc": 2568,
     "test_loc": 0,
     "test_to_source_ratio": 0.0
   },
   "failures": [
     {
       "title": "2026-03-17: Black Screen Fix"
+    },
+    {
+      "title": "2026-07-08: BUG-P1-8 \u2014 Unconditional redraw burns ~106k-144k allocs/sec on idle frames"
     }
   ],
   "files": {
@@ -89,11 +92,11 @@
     },
     "largest_source_files": [
       {
-        "bytes": 18694,
+        "bytes": 24037,
         "path": "src/main.rs"
       },
       {
-        "bytes": 13562,
+        "bytes": 14355,
         "path": "src/app.rs"
       },
       {
@@ -109,12 +112,12 @@
         "path": "src/ui/command_palette.rs"
       },
       {
-        "bytes": 3811,
-        "path": "src/ui/diff_pane.rs"
+        "bytes": 4925,
+        "path": "src/pty/session.rs"
       },
       {
-        "bytes": 3773,
-        "path": "src/pty/session.rs"
+        "bytes": 3811,
+        "path": "src/ui/diff_pane.rs"
       },
       {
         "bytes": 3383,
@@ -138,28 +141,33 @@
       }
     ],
     "loc_by_lang": {
-      "Markdown": 127,
+      "Markdown": 149,
       "Other": 2,
-      "Rust": 2402,
+      "Rust": 2568,
       "TOML": 19
     },
-    "loc_total": 2550,
+    "loc_total": 2738,
     "primary_language": "Rust"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 3,
+    "branch": "fleet-p1",
+    "commit_count": 4,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 3,
+        "commits": 4,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-03-17T10:19:09+02:00",
+    "first_commit_date": "2026-07-08T14:24:25+03:00",
     "is_git": true,
-    "last_commit_date": "2026-03-17T10:19:09+02:00",
+    "last_commit_date": "2026-07-08T14:24:25+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-08T14:24:25+03:00",
+        "sha": "2a7135d",
+        "subject": "fix: dirty-flag redraw so idle frames stop burning allocations (BUG-P1-8)"
+      },
       {
         "date": "2026-03-17T10:19:09+02:00",
         "sha": "bdebda2",
@@ -185,7 +193,7 @@
   "local_path": "/Users/darkfire/claudetui",
   "ls_check": null,
   "name": "claudetui",
-  "pushed_at": "2026-03-17T08:19:11Z",
+  "pushed_at": "2026-07-08T11:24:44Z",
   "stars": 0,
   "tier": 2,
   "tier_reason": "explicit allowlist (Tier 2)",

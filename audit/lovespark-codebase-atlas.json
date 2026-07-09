@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.19,
+  "audit_elapsed_seconds": 1.63,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:59Z",
+  "audited_at": "2026-07-09T01:19:12Z",
   "core_loop": {
     "path": "index.html",
     "role": "largest source file",
@@ -11,7 +11,7 @@
   },
   "deps": {},
   "description": "Karpathy-style audit of every Joona-t public repo. Auto-updates on push. Built with the LoveSpark atlas pipeline.",
-  "disk_usage_kb": 404,
+  "disk_usage_kb": 598,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -35,23 +35,29 @@
   "efficiency": {
     "deps_per_kloc": 0.0,
     "deps_total": 0,
-    "loc_per_source_file": 339.7,
+    "loc_per_source_file": 340.0,
     "source_file_count": 10,
-    "source_loc": 3397,
+    "source_loc": 3400,
     "test_loc": 0,
     "test_to_source_ratio": 0.0
   },
   "failures": [
     {
       "title": "2026-05-14 \u00b7 ITER-001 \u2014 Bootstrap"
+    },
+    {
+      "title": "2026-07-08 \u00b7 BUG-002 / ITER-002 \u2014 Nightly cron dead since bootstrap, both mirrors 55 days stale"
+    },
+    {
+      "title": "2026-07-08 \u00b7 ITER-003 \u2014 Phase 4 (Tier-3 bulk cards): coverage gap closed, 41\u219251 public"
     }
   ],
   "files": {
     "binary_count": 3,
-    "file_count": 70,
+    "file_count": 122,
     "files_by_lang": {
-      "HTML": 26,
-      "JSON": 26,
+      "HTML": 52,
+      "JSON": 52,
       "Markdown": 2,
       "Other": 2,
       "Python": 10,
@@ -59,8 +65,12 @@
     },
     "largest_source_files": [
       {
-        "bytes": 40911,
+        "bytes": 47699,
         "path": "index.html"
+      },
+      {
+        "bytes": 36557,
+        "path": "audit/glyph-grid-studio.html"
       },
       {
         "bytes": 34666,
@@ -87,6 +97,10 @@
         "path": "audit/glyph-grid.html"
       },
       {
+        "bytes": 20064,
+        "path": "audit/Learning.html"
+      },
+      {
         "bytes": 20060,
         "path": "audit/research-swarm.html"
       },
@@ -97,41 +111,48 @@
       {
         "bytes": 19568,
         "path": "audit/zarathustra.html"
-      },
-      {
-        "bytes": 19558,
-        "path": "audit/lovespark-a11y-toolkit.html"
-      },
-      {
-        "bytes": 19441,
-        "path": "audit/forging.html"
       }
     ],
     "loc_by_lang": {
-      "HTML": 7856,
-      "JSON": 5106,
-      "Markdown": 68,
+      "HTML": 15442,
+      "JSON": 9785,
+      "Markdown": 176,
       "Other": 25,
-      "Python": 3397,
+      "Python": 3400,
       "YAML": 3
     },
-    "loc_total": 16455,
+    "loc_total": 28831,
     "primary_language": "Python"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 2,
+    "branch": "fleet-p0",
+    "commit_count": 5,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 2,
+        "commits": 5,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-05-14T12:39:59+03:00",
+    "first_commit_date": "2026-07-08T19:08:11+03:00",
     "is_git": true,
-    "last_commit_date": "2026-05-14T12:39:59+03:00",
+    "last_commit_date": "2026-07-08T19:08:11+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-08T19:08:11+03:00",
+        "sha": "baf7585",
+        "subject": "atlas: Phase 4 bulk-card audits \u2014 close public coverage gap (41\u219251/51)"
+      },
+      {
+        "date": "2026-07-08T11:20:59+03:00",
+        "sha": "01734d3",
+        "subject": "docs: log P0-1-atlas nightly-cron root cause + fix (BUG-002/ITER-002)"
+      },
+      {
+        "date": "2026-05-14T12:47:31+03:00",
+        "sha": "00fb626",
+        "subject": "atlas: refresh (2026-05-14 09:47 UTC)"
+      },
       {
         "date": "2026-05-14T12:39:59+03:00",
         "sha": "e544a6c",
@@ -148,9 +169,69 @@
   "is_archived": false,
   "kind": {},
   "local_path": "/Users/darkfire/atlas-checkouts/lovespark-codebase-atlas",
-  "ls_check": null,
+  "ls_check": {
+    "categories": {
+      "quality": [
+        {
+          "details": [],
+          "id": "QUAL-README",
+          "message": "README.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-LICENSE",
+          "message": "LICENSE present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-GITIGNORE",
+          "message": ".gitignore present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-BUGS-LOG",
+          "message": "BUGS_AND_ITERATIONS.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-PAID-API",
+          "message": "No paid LLM API patterns detected",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-TEST-DRIFT",
+          "message": "No test files found \u2014 nothing to compare",
+          "passed": true,
+          "severity": "warn"
+        },
+        {
+          "details": [],
+          "id": "QUAL-CHANGELOG-DRIFT",
+          "message": "No CHANGELOG.md + manifest.json pair to compare",
+          "passed": true,
+          "severity": "warn"
+        }
+      ]
+    },
+    "project": "lovespark-codebase-atlas",
+    "summary": {
+      "total_fail": 0,
+      "total_pass": 7
+    },
+    "type": "web-static"
+  },
   "name": "lovespark-codebase-atlas",
-  "pushed_at": "2026-05-14T09:40:00Z",
+  "pushed_at": "2026-07-08T16:08:38Z",
   "stars": 0,
   "tier": 3,
   "tier_reason": "default tier",

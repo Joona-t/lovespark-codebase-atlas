@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.19,
+  "audit_elapsed_seconds": 1.17,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:28Z",
+  "audited_at": "2026-07-09T01:08:10Z",
   "core_loop": {
     "path": "canon/the-garden-and-the-gom-jabbar.html",
     "role": "largest source file",
@@ -12,11 +12,11 @@
   "data_samples": [],
   "deps": {},
   "description": "A quiet archive of AI-generated philosophical writings \u2014 curated reflections from Zarathustra, an AI agent persona",
-  "disk_usage_kb": 3238,
+  "disk_usage_kb": 3519,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
-    "BUGS_AND_ITERATIONS.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
     "CHANGELOG.md": false,
     "CLAUDE.md": false,
     "CONTRIBUTING.md": false,
@@ -36,27 +36,35 @@
   "efficiency": {
     "deps_per_kloc": null,
     "deps_total": 0,
-    "loc_per_source_file": 46.666666666666664,
+    "loc_per_source_file": 49.666666666666664,
     "source_file_count": 3,
-    "source_loc": 140,
+    "source_loc": 149,
     "test_loc": 0,
     "test_to_source_ratio": 0.0
   },
-  "failures": [],
+  "failures": [
+    {
+      "title": "2026-07-08: P2-1/P2-4 \u2014 dim-text contrast failure + multi-MB hero PNG (BUG-P2A11Y-03)"
+    }
+  ],
   "files": {
     "binary_count": 2,
-    "file_count": 23,
+    "file_count": 26,
     "files_by_lang": {
       "CSS": 7,
-      "HTML": 8,
+      "HTML": 10,
       "JavaScript": 3,
-      "Markdown": 1,
+      "Markdown": 2,
       "Other": 2
     },
     "largest_source_files": [
       {
         "bytes": 11623,
         "path": "canon/the-garden-and-the-gom-jabbar.html"
+      },
+      {
+        "bytes": 10814,
+        "path": "canon/the-shepherds-of-the-machine.html"
       },
       {
         "bytes": 9341,
@@ -79,7 +87,7 @@
         "path": "about.html"
       },
       {
-        "bytes": 3463,
+        "bytes": 3464,
         "path": "index.html"
       },
       {
@@ -95,38 +103,54 @@
         "path": "tags.html"
       },
       {
-        "bytes": 1812,
+        "bytes": 2180,
         "path": "js/posts.js"
-      },
-      {
-        "bytes": 1629,
-        "path": "css/layout.css"
       }
     ],
     "loc_by_lang": {
       "CSS": 490,
-      "HTML": 951,
-      "JavaScript": 140,
-      "Markdown": 36,
+      "HTML": 1133,
+      "JavaScript": 149,
+      "Markdown": 63,
       "Other": 24
     },
-    "loc_total": 1641,
+    "loc_total": 1859,
     "primary_language": "JavaScript"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 9,
+    "branch": "add-shepherds-of-the-machine",
+    "commit_count": 13,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 9,
+        "commits": 13,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-03-11T15:43:58+02:00",
+    "first_commit_date": "2026-07-08T20:01:18+03:00",
     "is_git": true,
-    "last_commit_date": "2026-03-11T15:43:58+02:00",
+    "last_commit_date": "2026-07-08T20:01:18+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-08T20:01:18+03:00",
+        "sha": "ed86523",
+        "subject": "a11y: fix dim-text contrast + compress hero PNG to WebP (BUG-P2A11Y-03)"
+      },
+      {
+        "date": "2026-06-26T01:20:17+03:00",
+        "sha": "c7cb997",
+        "subject": "Add canon essay: The Shepherds of the Machine"
+      },
+      {
+        "date": "2026-06-13T17:24:02+03:00",
+        "sha": "878d611",
+        "subject": "Add redirect for Against the Lie of Empowerment \u2192 Substack"
+      },
+      {
+        "date": "2026-03-17T10:31:53+02:00",
+        "sha": "e643060",
+        "subject": "docs: add bugs & iterations log"
+      },
       {
         "date": "2026-03-11T15:43:58+02:00",
         "sha": "b1a5849",
@@ -178,9 +202,69 @@
   "is_archived": false,
   "kind": {},
   "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/zarathustra",
-  "ls_check": null,
+  "ls_check": {
+    "categories": {
+      "quality": [
+        {
+          "details": [],
+          "id": "QUAL-README",
+          "message": "README.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-LICENSE",
+          "message": "LICENSE present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-GITIGNORE",
+          "message": ".gitignore present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-BUGS-LOG",
+          "message": "BUGS_AND_ITERATIONS.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-PAID-API",
+          "message": "No paid LLM API patterns detected",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-TEST-DRIFT",
+          "message": "No test files found \u2014 nothing to compare",
+          "passed": true,
+          "severity": "warn"
+        },
+        {
+          "details": [],
+          "id": "QUAL-CHANGELOG-DRIFT",
+          "message": "No CHANGELOG.md + manifest.json pair to compare",
+          "passed": true,
+          "severity": "warn"
+        }
+      ]
+    },
+    "project": "zarathustra",
+    "summary": {
+      "total_fail": 0,
+      "total_pass": 7
+    },
+    "type": "web-static"
+  },
   "name": "zarathustra",
-  "pushed_at": "2026-03-17T08:31:54Z",
+  "pushed_at": "2026-07-08T17:01:41Z",
   "stars": 0,
   "tier": 2,
   "tier_reason": "explicit allowlist (Tier 2)",

@@ -33,8 +33,12 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib.gh_path import resolve_gh  # noqa: E402
+
 GH_OWNER = "Joona-t"
 DEFAULT_OUTPUT = Path(__file__).parent / "data" / "repos.json"
+GH_BIN = resolve_gh()
 
 # Explicit tier allowlists. Anything not listed defaults to Tier 3.
 TIER_1 = {
@@ -102,20 +106,30 @@ LOCAL_SCAN_ROOTS = [
 ]
 
 
-def gh_repo_list() -> list[dict]:
-    """Pull every repo under GH_OWNER via the gh CLI."""
+def gh_repo_list() -> list[dict] | None:
+    """Pull every repo under GH_OWNER via the gh CLI.
+
+    Returns None (not []) on failure. An empty list is a legitimate "gh
+    succeeded, owner has zero repos" result; None means the call itself
+    failed and the caller MUST treat that as fatal — conflating the two
+    (returning [] for both) is exactly the silent-failure bug that let
+    atlas-nightly write an empty repos.json and exit 0 for weeks while gh
+    was unreachable. See week-0/cron-reliability.md.
+    """
     fields = "name,description,visibility,isPrivate,isArchived,primaryLanguage,pushedAt,diskUsage,stargazerCount,url"
-    cmd = ["gh", "repo", "list", GH_OWNER, "--limit", "500", "--json", fields]
+    cmd = [GH_BIN, "repo", "list", GH_OWNER, "--limit", "500", "--json", fields]
     try:
         r = subprocess.run(cmd, capture_output=True, text=True, check=True, timeout=120)
-    except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as e:
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError) as e:
+        # FileNotFoundError here means gh vanished between resolve_gh() and
+        # this call (uninstalled mid-run) — still fail loud, don't swallow.
         print(f"[atlas-discover] gh repo list failed: {e}", file=sys.stderr)
-        return []
+        return None
     try:
         data = json.loads(r.stdout)
     except json.JSONDecodeError as e:
         print(f"[atlas-discover] gh returned non-JSON: {e}", file=sys.stderr)
-        return []
+        return None
     return data
 
 
@@ -191,7 +205,17 @@ def main() -> int:
 
     print(f"[atlas-discover] gh repo list {args.owner}…")
     raw = gh_repo_list()
+    if raw is None:
+        print("[atlas-discover] FATAL: gh repo list failed — refusing to write "
+              "an empty/stale repos.json. See stderr above for the underlying error.",
+              file=sys.stderr)
+        return 1
     print(f"[atlas-discover] gh returned {len(raw)} repos")
+    if len(raw) == 0:
+        print("[atlas-discover] WARNING: gh succeeded but returned 0 repos — "
+              "this is almost certainly wrong for owner "
+              f"'{args.owner}'. Not overwriting {args.output}.", file=sys.stderr)
+        return 1
 
     repos = [normalize(r) for r in raw]
     repos.sort(key=lambda r: (r["tier"], -(r["disk_usage_kb"] or 0), r["name"].lower()))

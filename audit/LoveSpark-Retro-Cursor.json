@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.23,
+  "audit_elapsed_seconds": 2.62,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:35Z",
+  "audited_at": "2026-07-09T01:13:10Z",
   "core_loop": {
     "path": "background.js",
     "role": "Chrome extension service worker / background",
@@ -15,7 +15,7 @@
     ]
   },
   "description": "10 custom cursor themes for the browser \u2014 retro pink, pastels, cyber, mint, golden, holographic, and obsidian styles",
-  "disk_usage_kb": 2141,
+  "disk_usage_kb": 2197,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -24,28 +24,31 @@
     "CLAUDE.md": false,
     "CONTRIBUTING.md": false,
     "LICENSE": true,
-    "PLAN.md": false,
+    "PLAN.md": true,
     "PRE-PUBLIC-CHECKLIST.md": false,
     "PUBLIC-LAUNCH-PLAN.md": false,
     "README": false,
     "README.md": true,
     "README.rst": false,
-    "RESEARCH.md": false,
+    "RESEARCH.md": true,
     "audit-meta.yaml": false,
     "audit-meta.yml": false,
-    "plan.md": false,
-    "research.md": false
+    "plan.md": true,
+    "research.md": true
   },
   "efficiency": {
     "deps_per_kloc": 0.0,
     "deps_total": 0,
-    "loc_per_source_file": 112.4,
+    "loc_per_source_file": 149.7,
     "source_file_count": 10,
-    "source_loc": 1124,
+    "source_loc": 1497,
     "test_loc": 0,
     "test_to_source_ratio": 0.0
   },
   "failures": [
+    {
+      "title": "2026-06-28: BUG \u2014 selected cursor only applied after a page refresh"
+    },
     {
       "title": ": |2026-03-05|||Fix theme dropdown: add missing CSS styles for styled dropdown menu"
     },
@@ -57,23 +60,26 @@
     },
     {
       "title": ": |2026-03-05|||fix: theme title text visibility on beige (#4a7c59 earthy green) and slate (#d4714e terracotta)"
+    },
+    {
+      "title": "2026-07-08: ITER \u2014 \"Alive\" update: butterfly-style animated companions on all Y2K packs (v1.1.36)"
     }
   ],
   "files": {
     "binary_count": 114,
-    "file_count": 263,
+    "file_count": 265,
     "files_by_lang": {
       "CSS": 5,
       "HTML": 1,
       "JSON": 56,
       "JavaScript": 9,
-      "Markdown": 3,
+      "Markdown": 5,
       "Other": 74,
       "Python": 1
     },
     "largest_source_files": [
       {
-        "bytes": 32847,
+        "bytes": 52621,
         "path": "gen_cursors.py"
       },
       {
@@ -85,19 +91,19 @@
         "path": "popup.css"
       },
       {
-        "bytes": 9809,
+        "bytes": 9762,
         "path": "popup.html"
       },
       {
-        "bytes": 5457,
+        "bytes": 5795,
         "path": "content_script.js"
       },
       {
-        "bytes": 4878,
+        "bytes": 5128,
         "path": "lib/lovespark-tokens.css"
       },
       {
-        "bytes": 4134,
+        "bytes": 4508,
         "path": "popup.js"
       },
       {
@@ -122,31 +128,56 @@
       }
     ],
     "loc_by_lang": {
-      "CSS": 1290,
-      "HTML": 154,
+      "CSS": 1289,
+      "HTML": 153,
       "JSON": 501,
       "JavaScript": 544,
-      "Markdown": 142,
+      "Markdown": 338,
       "Other": 97,
-      "Python": 580
+      "Python": 953
     },
-    "loc_total": 3308,
+    "loc_total": 3875,
     "primary_language": "Python"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 23,
+    "branch": "feat/alive-y2k-cursors",
+    "commit_count": 28,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 23,
+        "commits": 28,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-05-05T03:43:31+03:00",
+    "first_commit_date": "2026-07-08T09:48:29+03:00",
     "is_git": true,
-    "last_commit_date": "2026-05-05T03:43:31+03:00",
+    "last_commit_date": "2026-07-08T09:48:29+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-08T09:48:29+03:00",
+        "sha": "2dad949",
+        "subject": "Tweak: owner placement feedback on animated companions (v1.1.37)"
+      },
+      {
+        "date": "2026-07-08T09:39:07+03:00",
+        "sha": "53c29dd",
+        "subject": "ITER: 'Alive' update \u2014 butterfly-style animated companions on all Y2K packs (v1.1.36)"
+      },
+      {
+        "date": "2026-06-28T08:37:09+03:00",
+        "sha": "03bb2cc",
+        "subject": "Fix: apply selected cursor live instead of only after page refresh (v1.1.35)"
+      },
+      {
+        "date": "2026-06-28T08:27:04+03:00",
+        "sha": "6e38ad2",
+        "subject": "SEO: rename store title to 'Aesthetic Pink Retro Cursor Pack by LoveSpark' (v1.1.34)"
+      },
+      {
+        "date": "2026-06-21T13:28:59+03:00",
+        "sha": "82f02b5",
+        "subject": "SEO: rename store title to 'Pink Retro Cursor Pack by LoveSpark'"
+      },
       {
         "date": "2026-05-05T03:43:31+03:00",
         "sha": "c964db6",
@@ -272,11 +303,11 @@
   "local_path": "/Users/darkfire/Claude x LoveSpark/Extensions/themes/LoveSpark-Retro-Cursor",
   "ls_check": null,
   "name": "LoveSpark-Retro-Cursor",
-  "pushed_at": "2026-05-05T00:43:34Z",
+  "pushed_at": "2026-07-08T22:53:53Z",
   "stars": 0,
   "tier": 3,
   "tier_reason": "default tier",
   "url": "https://github.com/Joona-t/LoveSpark-Retro-Cursor",
-  "version": "1.1.32",
+  "version": "1.1.37",
   "visibility": "public"
 }

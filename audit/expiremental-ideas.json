@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.17,
+  "audit_elapsed_seconds": 0.76,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:07Z",
+  "audited_at": "2026-07-09T01:26:14Z",
   "core_loop": {
     "path": "src/blitz_swarm/storage.py",
     "role": "largest source file",
@@ -22,7 +22,7 @@
     ]
   },
   "description": "Experimental multi-agent research swarm with a Redis blackboard, SQLite durability, and semantic memory.",
-  "disk_usage_kb": 43,
+  "disk_usage_kb": 51,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -150,7 +150,7 @@
   "local_path": "/Users/darkfire/atlas-source-clones/expiremental-ideas",
   "ls_check": null,
   "name": "expiremental-ideas",
-  "pushed_at": "2026-03-17T08:30:15Z",
+  "pushed_at": "2026-07-08T08:38:18Z",
   "stars": 1,
   "tier": 3,
   "tier_reason": "default tier",

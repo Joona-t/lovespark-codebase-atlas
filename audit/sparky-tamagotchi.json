@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.14,
+  "audit_elapsed_seconds": 0.74,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:15Z",
+  "audited_at": "2026-07-09T01:26:54Z",
   "core_loop": {
     "path": "ui.py",
     "role": "largest source file",

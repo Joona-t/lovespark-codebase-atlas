@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.22,
+  "audit_elapsed_seconds": 2.14,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:35Z",
+  "audited_at": "2026-07-09T01:13:08Z",
   "core_loop": {
     "path": "content.js",
     "role": "Chrome extension content script",
@@ -39,9 +39,9 @@
   "efficiency": {
     "deps_per_kloc": null,
     "deps_total": 0,
-    "loc_per_source_file": 84.8,
-    "source_file_count": 5,
-    "source_loc": 424,
+    "loc_per_source_file": 64.66666666666667,
+    "source_file_count": 9,
+    "source_loc": 582,
     "test_loc": 0,
     "test_to_source_ratio": 0.0
   },
@@ -58,12 +58,12 @@
   ],
   "files": {
     "binary_count": 57,
-    "file_count": 132,
+    "file_count": 137,
     "files_by_lang": {
-      "CSS": 6,
+      "CSS": 7,
       "HTML": 2,
       "JSON": 56,
-      "JavaScript": 5,
+      "JavaScript": 9,
       "Markdown": 4,
       "Other": 2
     },
@@ -79,6 +79,10 @@
       {
         "bytes": 9537,
         "path": "popup.html"
+      },
+      {
+        "bytes": 5128,
+        "path": "lib/lovespark-tokens.css"
       },
       {
         "bytes": 4644,
@@ -111,21 +115,17 @@
       {
         "bytes": 1635,
         "path": "lib/lovespark-footer.css"
-      },
-      {
-        "bytes": 1126,
-        "path": "lib/lovespark-footer.js"
       }
     ],
     "loc_by_lang": {
-      "CSS": 1454,
+      "CSS": 1603,
       "HTML": 302,
       "JSON": 505,
-      "JavaScript": 424,
+      "JavaScript": 582,
       "Markdown": 252,
       "Other": 27
     },
-    "loc_total": 2964,
+    "loc_total": 3271,
     "primary_language": "JavaScript"
   },
   "git": {

@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.44,
+  "audit_elapsed_seconds": 2.76,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:52Z",
+  "audited_at": "2026-07-09T01:18:07Z",
   "core_loop": {
     "path": "background.js",
     "role": "Chrome extension service worker / background",
@@ -100,12 +100,12 @@
         "path": "background.js"
       },
       {
-        "bytes": 5123,
-        "path": "generate_icons.py"
+        "bytes": 5128,
+        "path": "lib/lovespark-tokens.css"
       },
       {
-        "bytes": 4878,
-        "path": "lib/lovespark-tokens.css"
+        "bytes": 5123,
+        "path": "generate_icons.py"
       },
       {
         "bytes": 4196,
@@ -129,7 +129,7 @@
       }
     ],
     "loc_by_lang": {
-      "CSS": 1429,
+      "CSS": 1428,
       "HTML": 63,
       "JSON": 666,
       "JavaScript": 1009,
@@ -137,23 +137,28 @@
       "Other": 59,
       "Python": 138
     },
-    "loc_total": 3422,
+    "loc_total": 3421,
     "primary_language": "JavaScript"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 18,
+    "branch": "security/cso-hardening-2026-06-26",
+    "commit_count": 19,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 18,
+        "commits": 19,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-03-17T10:37:14+02:00",
+    "first_commit_date": "2026-06-26T12:36:09+03:00",
     "is_git": true,
-    "last_commit_date": "2026-03-17T10:37:14+02:00",
+    "last_commit_date": "2026-06-26T12:36:09+03:00",
     "recent_commits": [
+      {
+        "date": "2026-06-26T12:36:09+03:00",
+        "sha": "4823306",
+        "subject": "security: add font-src 'self' to CSP (CSO F4 hardening)"
+      },
       {
         "date": "2026-03-17T10:37:14+02:00",
         "sha": "0432c5d",

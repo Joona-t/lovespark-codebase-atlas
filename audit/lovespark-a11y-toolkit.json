@@ -1,18 +1,34 @@
 {
-  "audit_elapsed_seconds": 0.17,
+  "audit_elapsed_seconds": 1.4,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:32Z",
+  "audited_at": "2026-07-09T01:08:35Z",
   "core_loop": {
     "path": "scripts/ls-check.py",
     "role": "largest source file",
     "source": "size-heuristic"
   },
-  "data_samples": [],
+  "data_samples": [
+    {
+      "content": "def ls_check_main() -> None:\n    \"\"\"Console entrypoint for ls-check.\"\"\"\n    _run_script(\"ls-check.py\")\n\n\ndef audit_contrast_main() -> None:\n    \"\"\"Console entrypoint for ls-audit-contrast.\"\"\"\n    _run_script(\"audit-contrast.py\")\n",
+      "label": "Public symbol: ls_check_main() (lovespark_a11y_toolkit/cli.py)",
+      "lang": "python"
+    },
+    {
+      "content": "def audit_contrast_main() -> None:\n    \"\"\"Console entrypoint for ls-audit-contrast.\"\"\"\n    _run_script(\"audit-contrast.py\")\n",
+      "label": "Public symbol: audit_contrast_main() (lovespark_a11y_toolkit/cli.py)",
+      "lang": "python"
+    },
+    {
+      "content": "class ProjectFiles:\n    root: Path\n    all_files: list[Path] = field(default_factory=list)\n    by_ext: dict[str, list[Path]] = field(default_factory=dict)\n\n\ndef collect_project_files(path: str | Path) -> ProjectFiles:\n    \"\"\"Walk a project once and index files by extension.\"\"\"\n    root = Path(path)\n    index = ProjectFiles(root=root)\n    for current, dirs, files in __import__('os').walk(root):\n        dirs[:] = [d for d in dirs if d not in IGNORED_DIRS]\n        for name in files:\n            file_path = Path(current) / name\n            index.all_files.append(file_path)\n            index.by_ext",
+      "label": "Public symbol: ProjectFiles() (lovespark_a11y_toolkit/files.py)",
+      "lang": "python"
+    }
+  ],
   "deps": {},
   "description": "Accessibility auditing toolkit \u2014 WCAG contrast checker, Claude Code slash commands, and a recursive improvement system for extension development",
-  "disk_usage_kb": 56,
+  "disk_usage_kb": 216,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -20,69 +36,149 @@
     "CHANGELOG.md": false,
     "CLAUDE.md": false,
     "CONTRIBUTING.md": false,
-    "LICENSE": false,
-    "PLAN.md": false,
+    "LICENSE": true,
+    "PLAN.md": true,
     "PRE-PUBLIC-CHECKLIST.md": false,
     "PUBLIC-LAUNCH-PLAN.md": false,
     "README": false,
     "README.md": true,
     "README.rst": false,
-    "RESEARCH.md": false,
+    "RESEARCH.md": true,
     "audit-meta.yaml": false,
     "audit-meta.yml": false,
-    "plan.md": false,
-    "research.md": false
+    "plan.md": true,
+    "research.md": true
   },
   "efficiency": {
     "deps_per_kloc": 0.0,
     "deps_total": 0,
-    "loc_per_source_file": 959.0,
-    "source_file_count": 2,
-    "source_loc": 1918,
-    "test_loc": 0,
-    "test_to_source_ratio": 0.0
+    "loc_per_source_file": 248.0,
+    "source_file_count": 11,
+    "source_loc": 2728,
+    "test_loc": 438,
+    "test_to_source_ratio": 0.16055718475073313
   },
   "failures": [],
   "files": {
     "binary_count": 0,
-    "file_count": 14,
+    "file_count": 37,
     "files_by_lang": {
-      "Markdown": 11,
-      "Other": 1,
-      "Python": 2
+      "Markdown": 17,
+      "Other": 7,
+      "Python": 11,
+      "TOML": 1,
+      "YAML": 1
     },
     "largest_source_files": [
       {
-        "bytes": 51122,
+        "bytes": 67966,
         "path": "scripts/ls-check.py"
       },
       {
-        "bytes": 22730,
+        "bytes": 26648,
         "path": "scripts/audit-contrast.py"
+      },
+      {
+        "bytes": 9893,
+        "path": "tests/test_agent_ready_toolkit.py"
+      },
+      {
+        "bytes": 1981,
+        "path": "lovespark_a11y_toolkit/results.py"
+      },
+      {
+        "bytes": 1323,
+        "path": "lovespark_a11y_toolkit/project_detection.py"
+      },
+      {
+        "bytes": 982,
+        "path": "lovespark_a11y_toolkit/files.py"
+      },
+      {
+        "bytes": 593,
+        "path": "lovespark_a11y_toolkit/cli.py"
+      },
+      {
+        "bytes": 309,
+        "path": "lovespark_a11y_toolkit/history.py"
+      },
+      {
+        "bytes": 75,
+        "path": "lovespark_a11y_toolkit/__init__.py"
+      },
+      {
+        "bytes": 0,
+        "path": "lovespark_a11y_toolkit/reporters/__init__.py"
+      },
+      {
+        "bytes": 0,
+        "path": "lovespark_a11y_toolkit/checks/__init__.py"
       }
     ],
     "loc_by_lang": {
-      "Markdown": 1509,
-      "Other": 4,
-      "Python": 1918
+      "Markdown": 2923,
+      "Other": 161,
+      "Python": 2728,
+      "TOML": 23,
+      "YAML": 19
     },
-    "loc_total": 3431,
+    "loc_total": 5854,
     "primary_language": "Python"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 5,
+    "branch": "fleet-p0",
+    "commit_count": 13,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 5,
+        "commits": 13,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-03-17T11:14:59+02:00",
+    "first_commit_date": "2026-07-09T01:23:01+03:00",
     "is_git": true,
-    "last_commit_date": "2026-03-17T11:14:59+02:00",
+    "last_commit_date": "2026-07-09T01:23:01+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-09T01:23:01+03:00",
+        "sha": "e9d6d96",
+        "subject": "fix(a11y-live): recognize ancestor live regions \u2014 kill fleet-wide false positives (KI-041)"
+      },
+      {
+        "date": "2026-07-08T20:34:18+03:00",
+        "sha": "49c554b",
+        "subject": "fix(KI-040): correct false \"ls-check --strict 9/9 pass\" claim in KI-039"
+      },
+      {
+        "date": "2026-07-08T19:59:03+03:00",
+        "sha": "91bbc0d",
+        "subject": "ls-check: add QUAL-TEST-DRIFT + QUAL-CHANGELOG-DRIFT (KI-039, P2-3)"
+      },
+      {
+        "date": "2026-07-08T14:34:25+03:00",
+        "sha": "c6377b3",
+        "subject": "fix(KI-038): QUAL-PAID-API self-audit false positive broke CI"
+      },
+      {
+        "date": "2026-07-08T12:12:07+03:00",
+        "sha": "0f1b6ff",
+        "subject": "fix: repair silently-dead shared-lib drift detector (KI-037)"
+      },
+      {
+        "date": "2026-06-12T17:49:08+03:00",
+        "sha": "3ec6970",
+        "subject": "docs: add KI-036 \u2014 SwiftUI @State survives payload change at same tree position"
+      },
+      {
+        "date": "2026-05-26T14:33:52+03:00",
+        "sha": "b675bbb",
+        "subject": "ls-check: SEC-CDN + KI001 false-positive cleanup"
+      },
+      {
+        "date": "2026-05-24T00:09:03+03:00",
+        "sha": "f6e0190",
+        "subject": "feat: package accessibility toolkit"
+      },
       {
         "date": "2026-03-17T11:14:59+02:00",
         "sha": "39233a7",
@@ -112,11 +208,89 @@
     "remote_url": "https://github.com/Joona-t/lovespark-a11y-toolkit.git"
   },
   "is_archived": false,
-  "kind": {},
+  "kind": {
+    "is_python_project": true
+  },
   "local_path": "/Users/darkfire/Claude x LoveSpark/Apps & Tools/lovespark-a11y-toolkit",
-  "ls_check": null,
+  "ls_check": {
+    "categories": {
+      "python": [
+        {
+          "details": [],
+          "id": "PY-TYPEHINTS",
+          "message": "Type hints on 16/16 functions (100%)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "PY-DOCSTRINGS",
+          "message": "Public functions have docstrings",
+          "passed": true,
+          "severity": "fail"
+        }
+      ],
+      "quality": [
+        {
+          "details": [],
+          "id": "QUAL-README",
+          "message": "README.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-LICENSE",
+          "message": "LICENSE present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-GITIGNORE",
+          "message": ".gitignore present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-BUGS-LOG",
+          "message": "BUGS_AND_ITERATIONS.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-PAID-API",
+          "message": "No paid LLM API patterns detected",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-TEST-DRIFT",
+          "message": "README test-count claims match actual (13 tests)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-CHANGELOG-DRIFT",
+          "message": "No CHANGELOG.md + manifest.json pair to compare",
+          "passed": true,
+          "severity": "warn"
+        }
+      ]
+    },
+    "project": "lovespark-a11y-toolkit",
+    "summary": {
+      "total_fail": 0,
+      "total_pass": 9
+    },
+    "type": "python"
+  },
   "name": "lovespark-a11y-toolkit",
-  "pushed_at": "2026-03-17T09:15:13Z",
+  "pushed_at": "2026-07-09T00:18:38Z",
   "stars": 1,
   "tier": 2,
   "tier_reason": "explicit allowlist (Tier 2)",

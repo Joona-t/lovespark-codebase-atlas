@@ -1,0 +1,284 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>t3code-Sparky-WIP — atlas</title><style>
+:root {
+  --ls-pink-light: #ffc8d6;
+  --ls-pink-mid: #ff9bbb;
+  --ls-pink-deep: #c5276f;
+  --ls-pink-accent: #ff5fa2;
+  --ls-cream: #fff5f8;
+  --ls-text: #2a1825;
+  --ls-text-soft: #6b4858;
+  --ls-bg-gradient: linear-gradient(135deg, #ffc8d6 0%, #ff9bbb 50%, #ffe0e9 100%);
+  --ls-glass: rgba(255, 255, 255, 0.7);
+  --ls-glass-strong: rgba(255, 255, 255, 0.92);
+  --ls-shadow: 0 4px 14px rgba(197, 39, 111, 0.15);
+  --ls-focus: #c5276f;
+  --tier-1: #c5276f;
+  --tier-2: #ff5fa2;
+  --tier-3: #ff9bbb;
+}
+
+[data-theme="dark"] {
+  --ls-bg-gradient: linear-gradient(135deg, #2a1825 0%, #3d1f2e 50%, #1a0f15 100%);
+  --ls-text: #ffe0e9;
+  --ls-text-soft: #c5a3b4;
+  --ls-glass: rgba(60, 30, 45, 0.7);
+  --ls-glass-strong: rgba(80, 40, 60, 0.92);
+  --ls-cream: #2a1825;
+  --ls-pink-deep: #ff9bbb;
+}
+
+[data-theme="beige"] {
+  --ls-bg-gradient: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 50%, #f0dcc0 100%);
+  --ls-pink-deep: #8b3a5f;
+  --ls-pink-accent: #c5276f;
+  --ls-glass: rgba(255, 250, 240, 0.7);
+  --ls-glass-strong: rgba(255, 250, 240, 0.95);
+}
+
+[data-theme="slate"] {
+  --ls-bg-gradient: linear-gradient(135deg, #3d4a5c 0%, #2a3441 50%, #4a5868 100%);
+  --ls-text: #e0e6ef;
+  --ls-text-soft: #a8b3c0;
+  --ls-glass: rgba(70, 80, 95, 0.7);
+  --ls-glass-strong: rgba(85, 95, 110, 0.92);
+  --ls-cream: #2a3441;
+  --ls-pink-deep: #ffb3cc;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('../fonts/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'OpenDyslexic', system-ui, -apple-system, 'SF Pro Rounded', 'Segoe UI', sans-serif;
+  background: var(--ls-bg-gradient);
+  background-attachment: fixed;
+  color: var(--ls-text);
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+.layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+.sidebar {
+  background: var(--ls-glass-strong);
+  border-right: 1px solid rgba(197, 39, 111, 0.18);
+  padding: 16px 14px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+}
+@media (max-width: 900px) { .sidebar { position: static; height: auto; } }
+
+.brand { display: flex; align-items: center; gap: 10px; padding: 4px 8px 12px; }
+.brand img { width: 44px; height: 44px; border-radius: 12px; box-shadow: var(--ls-shadow); }
+.brand-text { font-weight: 700; font-size: 14px; color: var(--ls-pink-deep); line-height: 1.2; }
+.brand-text small { display: block; font-weight: 400; color: var(--ls-text-soft); font-size: 11px; margin-top: 2px; }
+
+.atlas-link { display: block; font-size: 11px; color: var(--ls-pink-deep); text-decoration: none; padding: 6px 8px; margin-bottom: 8px; border-radius: 8px; background: rgba(255, 255, 255, 0.4); }
+.atlas-link:hover { background: rgba(255, 255, 255, 0.7); }
+
+.nav { display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
+.nav a {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--ls-text);
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav a:hover { background: rgba(255, 95, 162, 0.12); }
+.nav a:focus-visible { outline: 2px solid var(--ls-focus); outline-offset: 2px; }
+.nav .num { font-size: 10px; opacity: 0.5; font-variant-numeric: tabular-nums; }
+
+.theme-toggle { margin-top: 14px; padding: 0 8px; }
+.theme-toggle select {
+  width: 100%;
+  font: inherit;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(197, 39, 111, 0.3);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ls-text);
+  cursor: pointer;
+}
+.theme-toggle select:focus-visible { outline: 2px solid var(--ls-focus); }
+
+.main { padding: 28px 36px; max-width: 1080px; }
+@media (max-width: 900px) { .main { padding: 16px; } }
+
+header.repo-head { margin-bottom: 22px; }
+header.repo-head h1 { margin: 0 0 4px; font-size: 32px; color: var(--ls-pink-deep); }
+header.repo-head .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; color: var(--ls-text-soft); font-size: 13px; }
+header.repo-head .meta a { color: var(--ls-pink-deep); }
+
+.tier-badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+.tier-badge.tier-1 { background: var(--tier-1); }
+.tier-badge.tier-2 { background: var(--tier-2); }
+.tier-badge.tier-3 { background: var(--tier-3); color: #5c1a36; }
+.visibility-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(197, 39, 111, 0.12);
+  color: var(--ls-pink-deep);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.archived-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(120, 120, 120, 0.2);
+  color: #555;
+  font-weight: 600;
+}
+
+section.atlas-section { background: var(--ls-glass); border-radius: 14px; padding: 18px 22px; box-shadow: var(--ls-shadow); margin-bottom: 18px; }
+section.atlas-section h2 { color: var(--ls-pink-deep); margin: 0 0 12px; font-size: 20px; border-bottom: 2px solid rgba(197, 39, 111, 0.18); padding-bottom: 6px; }
+section.atlas-section h3 { color: var(--ls-pink-deep); margin: 14px 0 6px; font-size: 15px; }
+section.atlas-section p { margin: 8px 0; }
+section.atlas-section ul, section.atlas-section ol { margin: 8px 0; padding-left: 22px; }
+section.atlas-section li { margin: 4px 0; }
+section.atlas-section a { color: var(--ls-pink-deep); }
+section.atlas-section a:hover { color: var(--ls-pink-accent); }
+
+code { background: rgba(197, 39, 111, 0.08); padding: 1px 6px; border-radius: 4px; font-size: 0.88em; }
+pre { background: rgba(42, 24, 37, 0.94); color: #ffe0e9; padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 12.5px; line-height: 1.45; }
+pre code { background: transparent; padding: 0; color: inherit; }
+[data-theme="dark"] pre { background: rgba(0, 0, 0, 0.5); }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid rgba(197, 39, 111, 0.12); vertical-align: top; }
+th { font-weight: 600; color: var(--ls-pink-deep); }
+
+.kv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin: 10px 0; }
+.kv { background: var(--ls-glass-strong); border-radius: 10px; padding: 10px 12px; }
+.kv .k { font-size: 10.5px; color: var(--ls-text-soft); text-transform: uppercase; letter-spacing: 0.4px; }
+.kv .v { font-size: 18px; font-weight: 700; color: var(--ls-pink-deep); display: block; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.kv .v.good { color: #2a9d4a; }
+.kv .v.warn { color: #e0a836; }
+.kv .v.danger { color: #c44248; }
+
+.mermaid-host { background: rgba(255, 255, 255, 0.5); border-radius: 10px; padding: 14px; margin: 10px 0; overflow-x: auto; text-align: center; }
+
+.empty-state { color: var(--ls-text-soft); font-style: italic; font-size: 13px; }
+
+.placeholder-banner {
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  background: rgba(224, 168, 54, 0.14);
+  color: #7a5615;
+  border-left: 4px solid #e0a836;
+  line-height: 1.5;
+}
+.placeholder-banner strong { color: #5e410f; }
+.placeholder-banner code { background: rgba(224, 168, 54, 0.18); color: #5e410f; }
+
+.llm-banner {
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin: 0 0 10px;
+  font-size: 11.5px;
+  background: rgba(120, 90, 200, 0.10);
+  color: #4a3a78;
+  border-left: 3px solid #7a5fc9;
+}
+.llm-banner code { background: rgba(120, 90, 200, 0.18); color: #2c224a; }
+
+[data-theme="dark"] .placeholder-banner {
+  background: rgba(224, 168, 54, 0.18);
+  color: #ffd88a;
+}
+[data-theme="dark"] .placeholder-banner strong { color: #ffe8b0; }
+[data-theme="dark"] .llm-banner { background: rgba(160, 130, 230, 0.18); color: #d9caf7; }
+
+.health-banner { padding: 10px 14px; border-radius: 10px; margin-bottom: 14px; font-size: 13px; }
+.health-banner.danger { background: rgba(196, 66, 72, 0.12); color: #8c2429; border: 1px solid rgba(196, 66, 72, 0.3); }
+.health-banner.warn { background: rgba(224, 168, 54, 0.15); color: #8b6212; border: 1px solid rgba(224, 168, 54, 0.3); }
+.health-banner.good { background: rgba(42, 157, 74, 0.12); color: #167a32; border: 1px solid rgba(42, 157, 74, 0.3); }
+
+footer.repo-foot { margin-top: 24px; padding-top: 14px; border-top: 1px solid rgba(197, 39, 111, 0.2); font-size: 12px; color: var(--ls-text-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer.repo-foot a { color: var(--ls-pink-deep); }
+
+/* card layout for Tier 3 single-page atlases */
+body.card-mode .main { max-width: 760px; padding: 22px 26px; }
+body.card-mode .layout { grid-template-columns: 1fr; }
+body.card-mode .sidebar { display: none; }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+:focus-visible { outline: 2px solid var(--ls-focus); outline-offset: 2px; border-radius: 4px; }
+</style></head><body class="card-mode"><div class="layout"><main class="main"><header class="repo-head"><h1>t3code-Sparky-WIP</h1><div class="meta"><span class="tier-badge tier-3">Tier&nbsp;3</span> · <span class="visibility-badge">public</span> · <a href="https://github.com/Joona-t/t3code-Sparky-WIP" target="_blank" rel="noopener">Joona-t/t3code-Sparky-WIP</a></div></header><section class="atlas-section" id="sec-tldr"><h2>TL;DR</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add a one-sentence pitch to <code>audit-meta.yml</code> → <code>tldr</code>. Karpathy-style: punchy, concrete, no "exciting" / "powerful".</div><p>A Node Project written primarily in TypeScript.</p>
+<div class="kv-grid">
+<div class="kv"><div class="k">Primary language</div><span class="v">TypeScript</span></div>
+<div class="kv"><div class="k">LOC (source)</div><span class="v">1,425,785</span></div>
+<div class="kv"><div class="k">Files</div><span class="v">5,593</span></div>
+<div class="kv"><div class="k">Last commit</div><span class="v">2026-06-26</span></div>
+<div class="kv"><div class="k">Commits</div><span class="v">1</span></div>
+</div></section><section class="atlas-section" id="sec-data"><h2>The Data</h2><div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add a <code>data:</code> block to <code>audit-meta.yml</code> with concrete inputs/outputs and one real example record. Karpathy's rule: look at the data first.</div><ul><li>Input: HTTP requests (if server) or DOM/user events (if client).</li><li>Output: HTTP responses, files, or rendered UI.</li></ul></section><section class="atlas-section" id="sec-stack"><h2>The Stack</h2><h3>npm dev <small style='font-weight:400;color:var(--ls-text-soft);'>(6)</small></h3>
+<ul><li>@babel/plugin-transform-react-jsx</li><li>@effect/tsgo</li><li>@oxlint/plugins</li><li>@types/node</li><li>@typescript/native-preview</li><li>vite-plus</li></ul></section><section class="atlas-section" id="sec-metrics"><h2>The Metrics</h2><div class="kv-grid">
+<div class="kv"><div class="k">Total LOC</div><span class="v">1,425,785</span></div>
+<div class="kv"><div class="k">Files</div><span class="v">5,593</span></div>
+<div class="kv"><div class="k">Binary files</div><span class="v">158</span></div>
+<div class="kv"><div class="k">Commits</div><span class="v">1</span></div>
+<div class="kv"><div class="k">Contributors</div><span class="v">1</span></div>
+<div class="kv"><div class="k">LOC / source file</div><span class="v">301</span></div>
+<div class="kv"><div class="k">Deps / 1k LOC</div><span class="v">0.0</span></div>
+<div class="kv"><div class="k">Test / source LOC</div><span class="v warn">0.00</span></div>
+</div>
+<h3>Lines of code by language</h3>
+<table><thead><tr><th>Language</th><th style="text-align:right">Lines</th><th style="text-align:right">%</th></tr></thead><tbody><tr><td>TypeScript</td><td style='text-align:right'>1,240,116</td><td style='text-align:right'>87.0%</td></tr><tr><td>Markdown</td><td style='text-align:right'>81,655</td><td style='text-align:right'>5.7%</td></tr><tr><td>YAML</td><td style='text-align:right'>36,323</td><td style='text-align:right'>2.5%</td></tr><tr><td>Other</td><td style='text-align:right'>28,892</td><td style='text-align:right'>2.0%</td></tr><tr><td>JSON</td><td style='text-align:right'>13,381</td><td style='text-align:right'>0.9%</td></tr><tr><td>C</td><td style='text-align:right'>6,667</td><td style='text-align:right'>0.5%</td></tr><tr><td>CSS</td><td style='text-align:right'>6,268</td><td style='text-align:right'>0.4%</td></tr><tr><td>HTML</td><td style='text-align:right'>4,256</td><td style='text-align:right'>0.3%</td></tr><tr><td>Swift</td><td style='text-align:right'>3,948</td><td style='text-align:right'>0.3%</td></tr><tr><td>JavaScript</td><td style='text-align:right'>3,018</td><td style='text-align:right'>0.2%</td></tr><tr><td>Vue</td><td style='text-align:right'>437</td><td style='text-align:right'>0.0%</td></tr><tr><td>Shell</td><td style='text-align:right'>375</td><td style='text-align:right'>0.0%</td></tr></tbody></table></section><section class="atlas-section" id="sec-failures"><h2>The Failures</h2><p class="empty-state">No BUGS_AND_ITERATIONS.md found.</p></section><section class="atlas-section" id="sec-reproducibility"><h2>Reproducibility</h2><pre><code class="lang-bash"># clone
+git clone https://github.com/Joona-t/t3code-Sparky-WIP.git
+cd t3code-Sparky-WIP
+
+# install + run
+npm install
+npm run dev   # or: npm start</code></pre>
+<div class="placeholder-banner">⚠️ <strong>auto-derived placeholder.</strong> Add <code>reproducibility_timing</code> and <code>reproducibility_hardware</code> to <code>audit-meta.yml</code>. nanoGPT-style: "trains in 3 minutes on a single GPU."</div></section><footer class="repo-foot"><div>Generated by atlas v0.2.0 · 2026-07-09T01:10:37Z</div><div><a href="../index.html">&larr; atlas index</a></div></footer></main></div><script>
+const themeSel = document.getElementById('theme-select');
+if (themeSel) {
+  const saved = localStorage.getItem('ls-atlas-theme') || 'retro';
+  themeSel.value = saved;
+  if (saved !== 'retro') document.documentElement.dataset.theme = saved;
+  themeSel.addEventListener('change', () => {
+    const t = themeSel.value;
+    if (t === 'retro') delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = t;
+    localStorage.setItem('ls-atlas-theme', t);
+  });
+}
+</script></body></html>

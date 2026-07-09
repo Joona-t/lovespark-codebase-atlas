@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.18,
+  "audit_elapsed_seconds": 0.91,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:28Z",
+  "audited_at": "2026-07-09T01:08:08Z",
   "core_loop": {
     "path": "index.html",
     "role": "largest source file",
@@ -12,11 +12,11 @@
   "data_samples": [],
   "deps": {},
   "description": "",
-  "disk_usage_kb": 3401,
+  "disk_usage_kb": 3829,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
-    "BUGS_AND_ITERATIONS.md": false,
+    "BUGS_AND_ITERATIONS.md": true,
     "CHANGELOG.md": false,
     "CLAUDE.md": false,
     "CONTRIBUTING.md": false,
@@ -45,38 +45,45 @@
   "failures": [],
   "files": {
     "binary_count": 1,
-    "file_count": 3,
+    "file_count": 4,
     "files_by_lang": {
       "HTML": 1,
+      "Markdown": 1,
       "Other": 1
     },
     "largest_source_files": [
       {
-        "bytes": 49405,
+        "bytes": 49406,
         "path": "index.html"
       }
     ],
     "loc_by_lang": {
       "HTML": 1391,
+      "Markdown": 34,
       "Other": 4
     },
-    "loc_total": 1395,
+    "loc_total": 1429,
     "primary_language": "HTML"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 6,
+    "branch": "fleet-p2",
+    "commit_count": 7,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 6,
+        "commits": 7,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-02-26T05:12:31+02:00",
+    "first_commit_date": "2026-07-08T20:01:29+03:00",
     "is_git": true,
-    "last_commit_date": "2026-02-26T05:12:31+02:00",
+    "last_commit_date": "2026-07-08T20:01:29+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-08T20:01:29+03:00",
+        "sha": "7d3f4a3",
+        "subject": "fix: convert hero PNG to WebP, drop dead PNG (P2-4 asset diet)"
+      },
       {
         "date": "2026-02-26T05:12:31+02:00",
         "sha": "e2be9ef",
@@ -115,7 +122,7 @@
   "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/darkfire-null",
   "ls_check": null,
   "name": "darkfire-null",
-  "pushed_at": "2026-03-17T08:32:24Z",
+  "pushed_at": "2026-07-08T17:01:50Z",
   "stars": 0,
   "tier": 2,
   "tier_reason": "explicit allowlist (Tier 2)",

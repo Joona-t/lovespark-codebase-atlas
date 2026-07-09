@@ -1,11 +1,11 @@
 {
-  "audit_elapsed_seconds": 0.62,
+  "audit_elapsed_seconds": 26.75,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:27Z",
+  "audited_at": "2026-07-09T01:07:46Z",
   "core_loop": {
-    "path": "src/commands/perf-issue/index.js",
+    "path": "assistant/index.js",
     "role": "JavaScript entry",
     "source": "canonical-name"
   },
@@ -33,37 +33,37 @@
     "CLAUDE.md": false,
     "CONTRIBUTING.md": false,
     "LICENSE": false,
-    "PLAN.md": false,
+    "PLAN.md": true,
     "PRE-PUBLIC-CHECKLIST.md": false,
     "PUBLIC-LAUNCH-PLAN.md": false,
     "README": false,
     "README.md": true,
     "README.rst": false,
-    "RESEARCH.md": false,
+    "RESEARCH.md": true,
     "audit-meta.yaml": false,
     "audit-meta.yml": false,
-    "plan.md": false,
-    "research.md": false
+    "plan.md": true,
+    "research.md": true
   },
   "efficiency": {
     "deps_per_kloc": 0.0,
     "deps_total": 0,
-    "loc_per_source_file": 267.83480979676915,
-    "source_file_count": 1919,
-    "source_loc": 513975,
+    "loc_per_source_file": 256.18245264207377,
+    "source_file_count": 4012,
+    "source_loc": 1027804,
     "test_loc": 0,
     "test_to_source_ratio": 0.0
   },
   "failures": [],
   "files": {
     "binary_count": 0,
-    "file_count": 1936,
+    "file_count": 4038,
     "files_by_lang": {
       "JSON": 3,
-      "JavaScript": 31,
-      "Markdown": 13,
-      "Other": 1,
-      "TypeScript": 1888
+      "JavaScript": 237,
+      "Markdown": 18,
+      "Other": 5,
+      "TypeScript": 3775
     },
     "largest_source_files": [
       {
@@ -71,58 +71,58 @@
         "path": "src/screens/REPL.tsx"
       },
       {
+        "bytes": 894878,
+        "path": "build-src/src/screens/REPL.tsx"
+      },
+      {
         "bytes": 803924,
         "path": "src/main.tsx"
+      },
+      {
+        "bytes": 802711,
+        "path": "build-src/src/main.tsx"
       },
       {
         "bytes": 355032,
         "path": "src/components/PromptInput/PromptInput.tsx"
       },
       {
+        "bytes": 354621,
+        "path": "build-src/src/components/PromptInput/PromptInput.tsx"
+      },
+      {
         "bytes": 321775,
         "path": "src/commands/plugin/ManagePlugins.tsx"
+      },
+      {
+        "bytes": 321775,
+        "path": "build-src/src/commands/plugin/ManagePlugins.tsx"
       },
       {
         "bytes": 271407,
         "path": "src/components/Settings/Config.tsx"
       },
       {
+        "bytes": 271140,
+        "path": "build-src/src/components/Settings/Config.tsx"
+      },
+      {
         "bytes": 251886,
         "path": "src/ink/ink.tsx"
       },
       {
-        "bytes": 233734,
-        "path": "src/tools/AgentTool/AgentTool.tsx"
-      },
-      {
-        "bytes": 214955,
-        "path": "src/utils/ansiToPng.ts"
-      },
-      {
-        "bytes": 212735,
-        "path": "src/cli/print.ts"
-      },
-      {
-        "bytes": 212610,
-        "path": "src/hooks/useTypeahead.tsx"
-      },
-      {
-        "bytes": 200487,
-        "path": "src/components/LogSelector.tsx"
-      },
-      {
-        "bytes": 193203,
-        "path": "src/utils/messages.ts"
+        "bytes": 251886,
+        "path": "build-src/src/ink/ink.tsx"
       }
     ],
     "loc_by_lang": {
       "JSON": 573,
-      "JavaScript": 709,
-      "Markdown": 2592,
+      "JavaScript": 1294,
+      "Markdown": 2643,
       "Other": 3,
-      "TypeScript": 513266
+      "TypeScript": 1026510
     },
-    "loc_total": 517143,
+    "loc_total": 1031023,
     "primary_language": "TypeScript"
   },
   "git": {

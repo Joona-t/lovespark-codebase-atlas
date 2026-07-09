@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.18,
+  "audit_elapsed_seconds": 0.96,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:28Z",
+  "audited_at": "2026-07-09T01:08:19Z",
   "core_loop": {
     "path": "assets/index-D9VVYao6.js",
     "role": "largest source file",
@@ -12,7 +12,7 @@
   "data_samples": [],
   "deps": {},
   "description": "FORGING \u2014 Glitch art canvas animation with particle clouds and CRT effects",
-  "disk_usage_kb": 2355,
+  "disk_usage_kb": 2356,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -45,11 +45,12 @@
   "failures": [],
   "files": {
     "binary_count": 1,
-    "file_count": 7,
+    "file_count": 8,
     "files_by_lang": {
       "CSS": 1,
       "HTML": 1,
       "JavaScript": 1,
+      "Markdown": 1,
       "Other": 2,
       "YAML": 1
     },
@@ -71,26 +72,32 @@
       "CSS": 2,
       "HTML": 18,
       "JavaScript": 9,
+      "Markdown": 22,
       "Other": 34,
       "YAML": 33
     },
-    "loc_total": 96,
+    "loc_total": 118,
     "primary_language": "JavaScript"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 11,
+    "branch": "fleet-p2",
+    "commit_count": 12,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 11,
+        "commits": 12,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-03-28T06:09:02+02:00",
+    "first_commit_date": "2026-07-08T20:05:54+03:00",
     "is_git": true,
-    "last_commit_date": "2026-03-28T06:09:02+02:00",
+    "last_commit_date": "2026-07-08T20:05:54+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-08T20:05:54+03:00",
+        "sha": "4b05821",
+        "subject": "Add ARCHIVED.md: prep for fleet archive (dormant stripped bundle)"
+      },
       {
         "date": "2026-03-28T06:09:02+02:00",
         "sha": "b19f1bc",
@@ -154,7 +161,7 @@
   "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/forging",
   "ls_check": null,
   "name": "forging",
-  "pushed_at": "2026-03-28T04:09:06Z",
+  "pushed_at": "2026-07-08T17:05:56Z",
   "stars": 0,
   "tier": 2,
   "tier_reason": "explicit allowlist (Tier 2)",

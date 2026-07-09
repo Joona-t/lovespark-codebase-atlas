@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.14,
+  "audit_elapsed_seconds": 0.75,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:15Z",
+  "audited_at": "2026-07-09T01:26:55Z",
   "core_loop": null,
   "deps": {},
   "description": "A Claude Code skill that creates other Claude Code skills. Built because agent swarms kept discovering repeatable workflows during execution that got written inline into reports and then forgotten \u2014 agents had no way to codify reusable patterns as skills without stopping everything. Now any agent can forge the skill it needs on the fly.",

@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.16,
+  "audit_elapsed_seconds": 1.28,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:53Z",
+  "audited_at": "2026-07-09T01:18:18Z",
   "core_loop": {
     "path": "content.js",
     "role": "Chrome extension content script",
@@ -134,7 +134,329 @@
     "is_chrome_extension": true
   },
   "local_path": "/Users/darkfire/atlas-source-clones/Aaron-Public-Knowledge-Unblocker",
-  "ls_check": null,
+  "ls_check": {
+    "categories": {
+      "accessibility": [
+        {
+          "details": [],
+          "id": "A11Y-CONTRAST",
+          "message": "Contrast audit (80 pass, all 4 themes)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-KI001",
+          "message": "No --ls-pink-accent as background",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-KI004",
+          "message": "No low-opacity text elements",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-KI006",
+          "message": "No bare outline suppressions",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-KI008",
+          "message": "All animated CSS has prefers-reduced-motion",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-DIALOG",
+          "message": "No popup.html found (N/A)",
+          "passed": true,
+          "severity": "warn"
+        },
+        {
+          "details": [],
+          "id": "A11Y-EXPANDED",
+          "message": "No dropdowns found (N/A)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-LABEL",
+          "message": "All emoji buttons have aria-label",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-LIVE",
+          "message": "Dynamic content handling OK",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-INPUT",
+          "message": "All inputs have accessible labels",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-TOUCH",
+          "message": "Touch targets enforced by lovespark-base.css min-height: 32px",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "A11Y-LANG",
+          "message": "<html lang=\"en\"> present",
+          "passed": true,
+          "severity": "fail"
+        }
+      ],
+      "brand": [
+        {
+          "details": [],
+          "id": "BRAND-SPARKY",
+          "message": "mascot.png present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "BRAND-GRADIENT",
+          "message": "No HTML pages \u2014 content-script-only (N/A)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "BRAND-THEME",
+          "message": "No HTML pages \u2014 content-script-only (N/A)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "BRAND-LIB-WIRED",
+          "message": "No popup.html (N/A)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "BRAND-DEAD-LIB",
+          "message": "No lib/ directory (N/A)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "BRAND-LIB-SYNC",
+          "message": "No lib/ directory (N/A)",
+          "passed": true,
+          "severity": "warn"
+        },
+        {
+          "details": [],
+          "id": "BRAND-TOKEN-DRIFT",
+          "message": "Design tokens in sync",
+          "passed": true,
+          "severity": "fail"
+        }
+      ],
+      "mv3": [
+        {
+          "details": [],
+          "id": "MV3-STORAGE-MIX",
+          "message": "Storage API consistent (local only)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "MV3-STORAGE-AREA-MATCH",
+          "message": "onChanged area-guard check N/A (not a single-area writer)",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "MV3-STORAGE-KEY",
+          "message": "Storage keys consistent",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "MV3-SETTIMEOUT",
+          "message": "No setTimeout + storage in SW",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "MV3-DEBUG-GUARD",
+          "message": "No onRuleMatchedDebug if-guards",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "MV3-DNR-PROP",
+          "message": "DNR property names correct",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "MV3-SETINTERVAL",
+          "message": "No setInterval in content scripts",
+          "passed": true,
+          "severity": "fail"
+        }
+      ],
+      "permissions": [
+        {
+          "details": [],
+          "id": "PERM-UNUSED",
+          "message": "All declared permissions appear used",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "PERM-MISSING",
+          "message": "No missing permissions detected",
+          "passed": true,
+          "severity": "fail"
+        }
+      ],
+      "quality": [
+        {
+          "details": [],
+          "id": "QUAL-README",
+          "message": "README.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-LICENSE",
+          "message": "LICENSE present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-GITIGNORE",
+          "message": ".gitignore present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-BUGS-LOG",
+          "message": "BUGS_AND_ITERATIONS.md present",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-PAID-API",
+          "message": "No paid LLM API patterns detected",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "QUAL-TEST-DRIFT",
+          "message": "No test files found \u2014 nothing to compare",
+          "passed": true,
+          "severity": "warn"
+        },
+        {
+          "details": [],
+          "id": "QUAL-CHANGELOG-DRIFT",
+          "message": "No CHANGELOG.md + manifest.json pair to compare",
+          "passed": true,
+          "severity": "warn"
+        }
+      ],
+      "security": [
+        {
+          "details": [],
+          "id": "SEC-INNERHTML",
+          "message": "No innerHTML usage",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "SEC-CSP",
+          "message": "CSP present in manifest",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "SEC-CDN",
+          "message": "No external CDN links",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "SEC-CDN-FONTS",
+          "message": "No Google Fonts CDN links",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "SEC-EVAL",
+          "message": "No dynamic code execution",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "SEC-EXT-CONNECT",
+          "message": "No wildcard externally_connectable",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "SEC-EMPTY-CATCH",
+          "message": "No empty catch blocks in SWs",
+          "passed": true,
+          "severity": "fail"
+        },
+        {
+          "details": [],
+          "id": "SEC-SENDMSG",
+          "message": "sendMessage calls have error handling",
+          "passed": true,
+          "severity": "fail"
+        }
+      ]
+    },
+    "project": "Aaron-Public-Knowledge-Unblocker",
+    "summary": {
+      "total_fail": 0,
+      "total_pass": 43
+    },
+    "type": "extension"
+  },
   "name": "Aaron-Public-Knowledge-Unblocker",
   "pushed_at": "2026-05-14T02:26:42Z",
   "stars": 1,

@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.3,
+  "audit_elapsed_seconds": 3.58,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:30Z",
+  "audited_at": "2026-07-09T01:08:24Z",
   "core_loop": {
     "path": "orchestrator.py",
     "role": "largest source file",
@@ -16,13 +16,13 @@
       "lang": "python"
     },
     {
-      "content": "def plan_agents(\n    topic: str,\n    use_llm: bool = True,\n    *,\n    domain: str | None = None,\n    persona_critics: bool | None = None,\n) -> list[BlitzAgent]:\n    \"\"\"Plan which agents to spawn for a given topic.\n\n    When use_llm=True, invokes an LLM to analyze the topic and determine\n    optimal agent count and subtopic assignments. Falls back to heuristic.\n\n    `domain` selects which preset under prompts/<domain>/ is used. If None,\n    reads from blitz.toml [swarm] domain.\n\n    `persona_critics` enables MAR-style persona-typed critic prompts (Phase 1).\n    If None, reads from blitz.toml [s",
+      "content": "def plan_agents(\n    topic: str,\n    use_llm: bool = True,\n    *,\n    domain: str | None = None,\n    persona_critics: bool | None = None,\n    backend_id: str | None = None,\n    sandbox: str | None = None,\n) -> list[BlitzAgent]:\n    \"\"\"Plan which agents to spawn for a given topic.\n\n    When use_llm=True, invokes an LLM to analyze the topic and determine\n    optimal agent count and subtopic assignments. Falls back to heuristic.\n\n    `domain` selects which preset under prompts/<domain>/ is used. If None,\n    reads from blitz.toml [swarm] domain.\n\n    `persona_critics` enables MAR-style persona-ty",
       "label": "Public symbol: plan_agents() (agents.py)",
       "lang": "python"
     },
     {
-      "content": "def load_slate(path: str | Path = \"bench/slate_v1.toml\") -> BenchSlate:\n    \"\"\"Load a TOML slate file. Returns BenchSlate.\"\"\"\n    p = Path(path)\n    raw_bytes = p.read_bytes()\n    raw = tomllib.loads(raw_bytes.decode(\"utf-8\"))\n    prompts = tuple(\n        BenchPrompt(\n            id=row[\"id\"],\n            tier=row[\"tier\"],\n            domain=row[\"domain\"],\n            parallelizable=row[\"parallelizable\"],\n            tool_heavy=row[\"tool_heavy\"],\n            budget_usd=float(row[\"budget_usd\"]),\n            expected_coverage=tuple(row[\"expected_coverage\"]),\n            text=row[\"text\"],\n       ",
-      "label": "Public symbol: load_slate() (bench/__init__.py)",
+      "content": "class CodexLocalBackend:\n    model: str = DEFAULT_CODEX_MODEL\n    reasoning_effort: str = DEFAULT_CODEX_REASONING\n    sandbox: str = DEFAULT_SANDBOX\n    approval_policy: str = DEFAULT_APPROVAL\n    ephemeral: bool = True\n    backend_id: str = \"codex\"\n    adapter_kind: str = \"codex_cli\"\n\n    capabilities = BackendCapabilities(\n        adapter_kind=\"codex_cli\",\n        structured_output=True,\n        schema_enforcement=True,\n        tool_sandbox=True,\n        local=True,\n        supports_ephemeral=True,\n    )\n\n    def is_available(self) -> bool:\n        return shutil.which(\"codex\") is not None\n\n ",
+      "label": "Public symbol: CodexLocalBackend() (backends/adapters/cli.py)",
       "lang": "python"
     }
   ],
@@ -35,7 +35,7 @@
     ]
   },
   "description": "(experimental) Parallel multi-agent swarm architecture for collective AI intelligence. All agents live. All agents share memory. All agents iterate until consensus.",
-  "disk_usage_kb": 372,
+  "disk_usage_kb": 608,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -57,13 +57,13 @@
     "research.md": true
   },
   "efficiency": {
-    "deps_per_kloc": 0.2566735112936345,
+    "deps_per_kloc": 0.22234574763757645,
     "deps_total": 4,
-    "loc_per_source_file": 213.4794520547945,
-    "source_file_count": 73,
-    "source_loc": 15584,
-    "test_loc": 6170,
-    "test_to_source_ratio": 0.3959188911704312
+    "loc_per_source_file": 219.390243902439,
+    "source_file_count": 82,
+    "source_loc": 17990,
+    "test_loc": 7270,
+    "test_to_source_ratio": 0.40411339633129517
   },
   "failures": [
     {
@@ -89,23 +89,23 @@
     }
   ],
   "files": {
-    "binary_count": 1,
-    "file_count": 185,
+    "binary_count": 2,
+    "file_count": 197,
     "files_by_lang": {
       "JSON": 15,
-      "Markdown": 81,
-      "Other": 7,
-      "Python": 71,
+      "Markdown": 82,
+      "Other": 8,
+      "Python": 80,
       "SQL": 2,
       "TOML": 8
     },
     "largest_source_files": [
       {
-        "bytes": 34523,
+        "bytes": 58968,
         "path": "orchestrator.py"
       },
       {
-        "bytes": 22458,
+        "bytes": 23674,
         "path": "agents.py"
       },
       {
@@ -113,7 +113,7 @@
         "path": "bench/runner.py"
       },
       {
-        "bytes": 18021,
+        "bytes": 19342,
         "path": "memory/writer.py"
       },
       {
@@ -129,16 +129,16 @@
         "path": "bench/mast_regression.py"
       },
       {
+        "bytes": 16032,
+        "path": "memory/reader.py"
+      },
+      {
         "bytes": 15493,
         "path": "tests/test_phase3.py"
       },
       {
         "bytes": 14851,
         "path": "mechanisms/cascade_guard.py"
-      },
-      {
-        "bytes": 14716,
-        "path": "memory/reader.py"
       },
       {
         "bytes": 14330,
@@ -151,29 +151,39 @@
     ],
     "loc_by_lang": {
       "JSON": 432,
-      "Markdown": 12620,
-      "Other": 109,
-      "Python": 15350,
+      "Markdown": 12784,
+      "Other": 110,
+      "Python": 17756,
       "SQL": 234,
-      "TOML": 525
+      "TOML": 581
     },
-    "loc_total": 29270,
+    "loc_total": 31897,
     "primary_language": "Python"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 20,
+    "branch": "codex/harness-agnostic-backends",
+    "commit_count": 22,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 20,
+        "commits": 22,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-05-10T20:29:00+03:00",
+    "first_commit_date": "2026-05-21T00:52:34+03:00",
     "is_git": true,
-    "last_commit_date": "2026-05-10T20:29:00+03:00",
+    "last_commit_date": "2026-05-21T00:52:34+03:00",
     "recent_commits": [
+      {
+        "date": "2026-05-21T00:52:34+03:00",
+        "sha": "d99cabb",
+        "subject": "Add harness-agnostic backend registry"
+      },
+      {
+        "date": "2026-05-21T00:34:46+03:00",
+        "sha": "6bf95d8",
+        "subject": "Add Codex-first backend orchestration"
+      },
       {
         "date": "2026-05-10T20:29:00+03:00",
         "sha": "790eaec",
@@ -284,7 +294,7 @@
   "local_path": "/Users/darkfire/Claude x LoveSpark/blitz-swarm",
   "ls_check": null,
   "name": "blitz-swarm",
-  "pushed_at": "2026-05-10T17:29:02Z",
+  "pushed_at": "2026-06-10T02:48:03Z",
   "stars": 1,
   "tier": 2,
   "tier_reason": "explicit allowlist (Tier 2)",

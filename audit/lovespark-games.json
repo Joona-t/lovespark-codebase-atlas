@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.35,
+  "audit_elapsed_seconds": 1.0,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:28Z",
+  "audited_at": "2026-07-09T01:08:09Z",
   "core_loop": {
     "path": "index.html",
     "role": "largest source file",
@@ -12,7 +12,7 @@
   "data_samples": [],
   "deps": {},
   "description": "LoveSpark Games \u2014 Kawaii Arcade. Free browser games, no ads, built with love.",
-  "disk_usage_kb": 3510,
+  "disk_usage_kb": 3614,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -25,7 +25,7 @@
     "PRE-PUBLIC-CHECKLIST.md": false,
     "PUBLIC-LAUNCH-PLAN.md": false,
     "README": false,
-    "README.md": false,
+    "README.md": true,
     "README.rst": false,
     "RESEARCH.md": false,
     "audit-meta.yaml": false,
@@ -44,45 +44,68 @@
   },
   "failures": [
     {
+      "title": "BUG-001 \u2014 2026-07-08: Self-host Google Fonts, remove CDN dependency"
+    },
+    {
       "title": "2026-03-06: Upgrade planets to psychedelic trance animations (WIP ring fix)"
     }
   ],
   "files": {
-    "binary_count": 4,
-    "file_count": 7,
+    "binary_count": 16,
+    "file_count": 20,
     "files_by_lang": {
       "HTML": 1,
-      "Markdown": 1,
+      "Markdown": 2,
       "Other": 1
     },
     "largest_source_files": [
       {
-        "bytes": 70720,
+        "bytes": 76851,
         "path": "index.html"
       }
     ],
     "loc_by_lang": {
-      "HTML": 1627,
-      "Markdown": 33,
+      "HTML": 1708,
+      "Markdown": 116,
       "Other": 21
     },
-    "loc_total": 1681,
+    "loc_total": 1845,
     "primary_language": "HTML"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 8,
+    "branch": "fleet-p2",
+    "commit_count": 12,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 8,
+        "commits": 12,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-05-13T15:28:44+03:00",
+    "first_commit_date": "2026-07-08T19:48:29+03:00",
     "is_git": true,
-    "last_commit_date": "2026-05-13T15:28:44+03:00",
+    "last_commit_date": "2026-07-08T19:48:29+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-08T19:48:29+03:00",
+        "sha": "9dff997",
+        "subject": "fix(games): self-host Google Fonts, add README (BUG-001)"
+      },
+      {
+        "date": "2026-06-24T12:05:22+03:00",
+        "sha": "b0e1308",
+        "subject": "fix(games): real icons + CWS links for Flappy Waifu and Dreamy Garden"
+      },
+      {
+        "date": "2026-06-24T11:58:05+03:00",
+        "sha": "8383e8b",
+        "subject": "feat(hero): replace rotating game-disc behind Sparky with cosmic-waifu backdrop"
+      },
+      {
+        "date": "2026-05-22T22:15:34+03:00",
+        "sha": "7d2caf7",
+        "subject": "Add LoveSpark Island card to games page with Steam coming soon status"
+      },
       {
         "date": "2026-05-13T15:28:44+03:00",
         "sha": "727bf7e",
@@ -131,7 +154,7 @@
   "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/lovespark-games",
   "ls_check": null,
   "name": "lovespark-games",
-  "pushed_at": "2026-05-13T12:30:01Z",
+  "pushed_at": "2026-07-08T16:48:52Z",
   "stars": 0,
   "tier": 2,
   "tier_reason": "explicit allowlist (Tier 2)",

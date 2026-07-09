@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.56,
+  "audit_elapsed_seconds": 1.55,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:54Z",
+  "audited_at": "2026-07-09T01:18:19Z",
   "core_loop": {
     "path": "crates/skyroads-cli/src/main.rs",
     "role": "Rust binary entry",

@@ -1,5 +1,5 @@
 {
-  "audit_elapsed_seconds": 30.24,
+  "audit_elapsed_seconds": 4.07,
   "audit_meta": {
     "assumptions": [
       "Browser has p5.js 1.11.2+ from CDN (no offline mode)",
@@ -77,7 +77,7 @@
   },
   "audit_mode": "deep",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:37:18Z",
+  "audited_at": "2026-07-09T01:04:08Z",
   "core_loop": {
     "path": "index.html lines 200-400 (the p5.draw function + glyph sampling loop)",
     "role": "Walk an N\u00d7M grid over source Graphics buffer, sample brightness/color per cell, pick character from ramp, render at source hue.",
@@ -276,10 +276,6 @@
   },
   "is_archived": false,
   "kind": {},
-  "llm_enrich": {
-    "silent_failures": "- If a CONFIG field is renamed or removed but old sketches still reference it via `CONFIG.compat`, the fallback path silently uses the v2 default and renders a subtly different image \u2014 byte-identical claim broken with no error.\n- p5.js loads from CDN by `<script>` tag; if the CDN version auto-bumps (e.g. unpinned `p5.min.js`), `noiseSeed`/`randomSeed` RNG output can shift and every sketch renders differently with no warning.\n- Glyph-density mapping reads pixel luminance after `pixelDensity()` defaults to devicePixelRatio; running the same sketch on a Retina vs. 1x display yields a different glyph count and aspect, looking \"fine\" on both.\n- XDoG prefilter and CRT post-process chain are floating-point pipelines \u2014 on a browser update that changes Canvas2D antialiasing or WebGL precision, output drifts gradually across commits and no test catches it (291 files, zero declared deps means no pinned toolchain).\n- With 73k LOC across 291 single-file sketches and no shared module, a copy-paste bug in the v1\u2192v2 compat shim can land in one sketch and stay invisible for months because nothing cross-validates rendered output against a reference image.",
-    "stack_rationale": "Pure browser p5.js \u2014 zero declared dependencies, single-file sketch loaded via CDN script tag. No build step, no bundler, no package.json, no TypeScript. Notably absent: any npm tooling at all, which is unusual for a 73k-LOC JS repo and suggests the LOC count is dominated by generated output, fixtures, or vendored p5 rather than authored source."
-  },
   "local_path": "/Users/darkfire/Claude x LoveSpark/Web Projects/glyph-grid",
   "ls_check": null,
   "name": "glyph-grid",

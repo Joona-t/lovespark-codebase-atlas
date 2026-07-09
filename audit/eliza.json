@@ -1,0 +1,267 @@
+{
+  "audit_elapsed_seconds": 93.15,
+  "audit_meta": {},
+  "audit_mode": "card",
+  "audit_version": "0.2.0",
+  "audited_at": "2026-07-09T01:09:24Z",
+  "core_loop": {
+    "path": ".github/issue-evidence/9581-macos-desktop-cua/manifest.json",
+    "role": "Chrome extension manifest",
+    "source": "canonical-name"
+  },
+  "deps": {
+    "npm": [
+      "@electric-sql/pglite",
+      "@electric-sql/pglite-socket",
+      "@elizaos/plugin-agent-orchestrator",
+      "@elizaos/plugin-anthropic",
+      "@elizaos/plugin-elizacloud",
+      "@elizaos/plugin-groq",
+      "@elizaos/plugin-local-inference",
+      "@elizaos/plugin-nearai",
+      "@elizaos/plugin-ollama",
+      "@elizaos/plugin-openai",
+      "@elizaos/plugin-sql",
+      "@elizaos/plugin-zai",
+      "@elysiajs/cors",
+      "@openai/codex",
+      "@radix-ui/react-checkbox",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-dropdown-menu",
+      "@radix-ui/react-label",
+      "@radix-ui/react-popover",
+      "@radix-ui/react-select",
+      "@radix-ui/react-separator",
+      "@radix-ui/react-slider",
+      "@radix-ui/react-slot",
+      "@radix-ui/react-switch",
+      "@radix-ui/react-tabs",
+      "@radix-ui/react-tooltip",
+      "abitype",
+      "class-variance-authority",
+      "clsx",
+      "elysia",
+      "eventsource-parser",
+      "hono",
+      "node-edge-tts",
+      "pg",
+      "robot3",
+      "tailwind-merge",
+      "zod"
+    ],
+    "npm_dev": [
+      "@biomejs/biome",
+      "@capacitor/core",
+      "@elizaos-benchmarks/lib",
+      "@elizaos/agent",
+      "@elizaos/core",
+      "@elizaos/plugin-agent-skills",
+      "@elizaos/plugin-personal-assistant",
+      "@elizaos/shared",
+      "@elizaos/vitest-vite",
+      "@playwright/test",
+      "@testing-library/react",
+      "@types/bun",
+      "@types/node",
+      "@types/react",
+      "@types/react-dom",
+      "@types/react-test-renderer",
+      "@typescript/native-preview",
+      "@vitejs/plugin-react",
+      "@vitest/coverage-v8",
+      "browserify-sign",
+      "bun-types",
+      "chalk",
+      "create-hash",
+      "create-hmac",
+      "ethers",
+      "express",
+      "fast-check",
+      "handlebars",
+      "hash-base",
+      "jsdom",
+      "json5",
+      "knip",
+      "lerna",
+      "playwright",
+      "pure-rand",
+      "react-test-renderer",
+      "secp256k1",
+      "tsx",
+      "turbo",
+      "typescript",
+      "vite",
+      "vitest"
+    ]
+  },
+  "description": "Open source agentic operating system",
+  "disk_usage_kb": 719888,
+  "docs": {
+    "AGENTS.md": true,
+    "ARCHITECTURE.md": false,
+    "BUGS_AND_ITERATIONS.md": false,
+    "CHANGELOG.md": false,
+    "CLAUDE.md": true,
+    "CONTRIBUTING.md": false,
+    "LICENSE": true,
+    "PLAN.md": false,
+    "PRE-PUBLIC-CHECKLIST.md": false,
+    "PUBLIC-LAUNCH-PLAN.md": false,
+    "README": false,
+    "README.md": true,
+    "README.rst": false,
+    "RESEARCH.md": false,
+    "audit-meta.yaml": false,
+    "audit-meta.yml": false,
+    "plan.md": false,
+    "research.md": false
+  },
+  "efficiency": {
+    "deps_per_kloc": 0.01036695664258544,
+    "deps_total": 37,
+    "loc_per_source_file": 232.4042456208895,
+    "source_file_count": 15357,
+    "source_loc": 3569032,
+    "test_loc": 0,
+    "test_to_source_ratio": 0.0
+  },
+  "failures": [],
+  "files": {
+    "binary_count": 1481,
+    "file_count": 30001,
+    "files_by_lang": {
+      "C": 240,
+      "C++": 4,
+      "CSS": 131,
+      "Go": 3,
+      "HTML": 217,
+      "JSON": 2674,
+      "Java": 39,
+      "JavaScript": 732,
+      "Kotlin": 3,
+      "Markdown": 1479,
+      "Other": 7438,
+      "Python": 2621,
+      "Ruby": 58,
+      "Rust": 45,
+      "SQL": 257,
+      "Shell": 736,
+      "Swift": 19,
+      "TOML": 93,
+      "TypeScript": 10600,
+      "XML": 57,
+      "YAML": 1074
+    },
+    "largest_source_files": [
+      {
+        "bytes": 543422,
+        "path": ".github/issue-evidence/9300-showcase-apps/mock-loop-playwright-report.html"
+      },
+      {
+        "bytes": 482009,
+        "path": "packages/benchmarks/tau-bench/elizaos_tau_bench/upstream/envs/retail/tasks_train.py"
+      },
+      {
+        "bytes": 440365,
+        "path": "packages/benchmarks/terminal-bench/tasks/make-doom-for-mips/solution.sh"
+      },
+      {
+        "bytes": 414509,
+        "path": "packages/cloud/sdk/src/public-routes.ts"
+      },
+      {
+        "bytes": 367611,
+        "path": "packages/core/src/services/message.ts"
+      },
+      {
+        "bytes": 311873,
+        "path": "packages/benchmarks/terminal-bench/tasks/pytorch-model-cli/task-deps/lodepng.cpp"
+      },
+      {
+        "bytes": 294525,
+        "path": "packages/core/src/generated/action-docs.ts"
+      },
+      {
+        "bytes": 286142,
+        "path": "packages/benchmarks/orchestrator/code_agent_matrix.py"
+      },
+      {
+        "bytes": 284470,
+        "path": "packages/core/src/runtime.ts"
+      },
+      {
+        "bytes": 255686,
+        "path": "packages/app-core/scripts/run-mobile-build.mjs"
+      },
+      {
+        "bytes": 229119,
+        "path": ".github/issue-evidence/9963-live-restore-run/viewer/data.js"
+      },
+      {
+        "bytes": 221739,
+        "path": "packages/agent/src/runtime/eliza.ts"
+      }
+    ],
+    "loc_by_lang": {
+      "C": 42110,
+      "C++": 9068,
+      "CSS": 43056,
+      "Go": 581,
+      "HTML": 26349,
+      "JSON": 742604,
+      "Java": 8252,
+      "JavaScript": 188312,
+      "Kotlin": 384,
+      "Markdown": 425431,
+      "Other": 1523973,
+      "Python": 766677,
+      "Ruby": 14770,
+      "Rust": 7261,
+      "SQL": 16506,
+      "Shell": 89088,
+      "Swift": 2930,
+      "TOML": 3982,
+      "TypeScript": 2423093,
+      "XML": 2013,
+      "YAML": 59592
+    },
+    "loc_total": 6396032,
+    "primary_language": "TypeScript"
+  },
+  "git": {
+    "branch": "develop",
+    "commit_count": 1,
+    "contributor_count": 1,
+    "contributors": [
+      {
+        "commits": 1,
+        "name": "Shaw <shawmakesmagic@gmail.com>"
+      }
+    ],
+    "first_commit_date": "2026-06-30T17:22:59-04:00",
+    "is_git": true,
+    "last_commit_date": "2026-06-30T17:22:59-04:00",
+    "recent_commits": [
+      {
+        "date": "2026-06-30T17:22:59-04:00",
+        "sha": "32da2746",
+        "subject": "feat(security): complete secret/PII swap \u2014 detectors + nonce + egress + fuzz/red-team/bench (#10469) (#10551)"
+      }
+    ],
+    "remote_url": "https://github.com/Joona-t/eliza.git"
+  },
+  "is_archived": false,
+  "kind": {
+    "is_node_project": true
+  },
+  "local_path": "/Users/darkfire/atlas-source-clones/eliza",
+  "ls_check": null,
+  "name": "eliza",
+  "pushed_at": "2026-06-30T21:25:17Z",
+  "stars": 0,
+  "tier": 3,
+  "tier_reason": "default tier",
+  "url": "https://github.com/Joona-t/eliza",
+  "version": "2.0.4",
+  "visibility": "public"
+}

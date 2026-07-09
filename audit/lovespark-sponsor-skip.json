@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.19,
+  "audit_elapsed_seconds": 1.77,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:46:44Z",
+  "audited_at": "2026-07-09T01:17:14Z",
   "core_loop": {
     "path": "background.js",
     "role": "Chrome extension service worker / background",
@@ -19,7 +19,7 @@
     ]
   },
   "description": "Browser extension that auto-skips YouTube sponsors, intros, and outros via SponsorBlock \u2014 three skip modes with channel whitelisting",
-  "disk_usage_kb": 756,
+  "disk_usage_kb": 771,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -81,43 +81,43 @@
         "path": "lib/lovespark-fonts.css"
       },
       {
-        "bytes": 16965,
+        "bytes": 16963,
         "path": "background.js"
       },
       {
-        "bytes": 15065,
+        "bytes": 15063,
         "path": "content.js"
       },
       {
-        "bytes": 14134,
+        "bytes": 14132,
         "path": "popup.css"
       },
       {
-        "bytes": 13192,
+        "bytes": 13190,
         "path": "settings.css"
       },
       {
-        "bytes": 9035,
+        "bytes": 9033,
         "path": "popup.js"
       },
       {
-        "bytes": 8455,
+        "bytes": 8451,
         "path": "settings.html"
       },
       {
-        "bytes": 7356,
+        "bytes": 7354,
         "path": "settings.js"
       },
       {
-        "bytes": 6280,
+        "bytes": 6278,
         "path": "popup.html"
       },
       {
-        "bytes": 4878,
+        "bytes": 5128,
         "path": "lib/lovespark-tokens.css"
       },
       {
-        "bytes": 4789,
+        "bytes": 4787,
         "path": "generate_icons.py"
       },
       {
@@ -126,31 +126,41 @@
       }
     ],
     "loc_by_lang": {
-      "CSS": 1923,
+      "CSS": 1922,
       "HTML": 250,
       "JSON": 528,
       "JavaScript": 1607,
-      "Markdown": 333,
+      "Markdown": 340,
       "Other": 25,
       "Python": 138
     },
-    "loc_total": 4804,
+    "loc_total": 4810,
     "primary_language": "JavaScript"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 19,
+    "branch": "rename/youtube-sponsor-skip",
+    "commit_count": 21,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 19,
+        "commits": 21,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-03-17T10:38:32+02:00",
+    "first_commit_date": "2026-06-26T23:21:09+03:00",
     "is_git": true,
-    "last_commit_date": "2026-03-17T10:38:32+02:00",
+    "last_commit_date": "2026-06-26T23:21:09+03:00",
     "recent_commits": [
+      {
+        "date": "2026-06-26T23:21:09+03:00",
+        "sha": "efb37ef",
+        "subject": "Rename display title: LoveSpark Sponsor Skip -> YouTube Sponsor Skip"
+      },
+      {
+        "date": "2026-06-26T12:36:10+03:00",
+        "sha": "ec56619",
+        "subject": "security: add font-src 'self' to CSP (CSO F4 hardening)"
+      },
       {
         "date": "2026-03-17T10:38:32+02:00",
         "sha": "5f346f2",
@@ -256,11 +266,11 @@
   "local_path": "/Users/darkfire/Claude x LoveSpark/Extensions/productivity/lovespark-sponsor-skip",
   "ls_check": null,
   "name": "lovespark-sponsor-skip",
-  "pushed_at": "2026-03-17T08:38:33Z",
+  "pushed_at": "2026-06-26T20:21:10Z",
   "stars": 1,
   "tier": 3,
   "tier_reason": "default tier",
   "url": "https://github.com/Joona-t/lovespark-sponsor-skip",
-  "version": "2.0.35",
+  "version": "2.0.36",
   "visibility": "public"
 }

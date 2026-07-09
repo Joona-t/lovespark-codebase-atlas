@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.14,
+  "audit_elapsed_seconds": 0.92,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:14Z",
+  "audited_at": "2026-07-09T01:26:52Z",
   "core_loop": {
     "path": "hooks/post-edit-lint.sh",
     "role": "largest source file",
@@ -11,7 +11,7 @@
   },
   "deps": {},
   "description": "Hands-off quality enforcement for the LoveSpark extension suite \u2014 hooks, CI/CD, and session automation",
-  "disk_usage_kb": 9,
+  "disk_usage_kb": 10,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -44,9 +44,9 @@
   "failures": [],
   "files": {
     "binary_count": 0,
-    "file_count": 8,
+    "file_count": 9,
     "files_by_lang": {
-      "Markdown": 1,
+      "Markdown": 2,
       "Shell": 5,
       "YAML": 2
     },
@@ -73,27 +73,32 @@
       }
     ],
     "loc_by_lang": {
-      "Markdown": 187,
+      "Markdown": 211,
       "Shell": 369,
       "YAML": 80
     },
-    "loc_total": 636,
+    "loc_total": 660,
     "primary_language": "Shell"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 1,
+    "branch": "fleet-p2",
+    "commit_count": 2,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 1,
+        "commits": 2,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-03-17T11:42:43+02:00",
+    "first_commit_date": "2026-07-08T20:11:00+03:00",
     "is_git": true,
-    "last_commit_date": "2026-03-17T11:42:43+02:00",
+    "last_commit_date": "2026-07-08T20:11:00+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-08T20:11:00+03:00",
+        "sha": "973ce70",
+        "subject": "Add ARCHIVED.md: prep for fleet archive (never-installed hooks toolkit)"
+      },
       {
         "date": "2026-03-17T11:42:43+02:00",
         "sha": "ef89cee",
@@ -107,7 +112,7 @@
   "local_path": "/Users/darkfire/Claude x LoveSpark/Apps & Tools/lovespark-automation",
   "ls_check": null,
   "name": "lovespark-automation",
-  "pushed_at": "2026-03-17T09:43:03Z",
+  "pushed_at": "2026-07-08T17:11:02Z",
   "stars": 0,
   "tier": 3,
   "tier_reason": "default tier",

@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.23,
+  "audit_elapsed_seconds": 1.25,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:07Z",
+  "audited_at": "2026-07-09T01:26:19Z",
   "core_loop": {
     "path": "scripts/claudeception-activator.sh",
     "role": "largest source file",

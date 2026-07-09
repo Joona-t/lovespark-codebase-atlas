@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 0.26,
+  "audit_elapsed_seconds": 1.28,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-05-14T09:47:08Z",
+  "audited_at": "2026-07-09T01:26:21Z",
   "core_loop": {
     "path": "scripts/swarm-build.py",
     "role": "largest source file",
