@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 2.88,
+  "audit_elapsed_seconds": 3.45,
   "audit_meta": {},
   "audit_mode": "deep",
   "audit_version": "0.2.0",
-  "audited_at": "2026-07-09T01:05:49Z",
+  "audited_at": "2026-07-10T01:04:45Z",
   "core_loop": {
     "path": "tools/task_templates.py",
     "role": "largest source file",
@@ -12,7 +12,7 @@
   "data_samples": [],
   "deps": {},
   "description": "A philosophical idea around typed absence, provenance, and compaction in agent systems. Milestone 1 is now complete: https://github.com/Joona-t/primordial",
-  "disk_usage_kb": 1325,
+  "disk_usage_kb": 2266,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -296,7 +296,7 @@
   "local_path": "/Users/darkfire/primordial",
   "ls_check": null,
   "name": "primordial",
-  "pushed_at": "2026-07-08T16:11:01Z",
+  "pushed_at": "2026-07-09T08:05:00Z",
   "stars": 2,
   "tier": 1,
   "tier_reason": "explicit allowlist (Tier 1)",

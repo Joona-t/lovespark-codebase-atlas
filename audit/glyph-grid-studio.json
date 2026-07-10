@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 84.12,
+  "audit_elapsed_seconds": 54.48,
   "audit_meta": {},
   "audit_mode": "deep",
   "audit_version": "0.2.0",
-  "audited_at": "2026-07-09T01:02:37Z",
+  "audited_at": "2026-07-10T01:02:41Z",
   "core_loop": {
     "path": "src-tauri/src/main.rs",
     "role": "Rust binary entry",
@@ -31,7 +31,7 @@
     "npm_dev": []
   },
   "description": "Real-time character-grid image renderer for macOS \u2014 GUI + CLI + MCP server. p5.js + Tauri 2 + Rust.",
-  "disk_usage_kb": 27129,
+  "disk_usage_kb": 27131,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -208,14 +208,14 @@
       "JSON": 25082,
       "JavaScript": 8001,
       "Markdown": 6793,
-      "Other": 4739,
+      "Other": 4817,
       "Python": 215,
       "Ruby": 24,
       "Rust": 1803,
       "Shell": 338,
       "TOML": 63
     },
-    "loc_total": 51869,
+    "loc_total": 51947,
     "primary_language": "JavaScript"
   },
   "git": {
@@ -393,7 +393,7 @@
   "local_path": "/Users/darkfire/glyph-grid-studio",
   "ls_check": null,
   "name": "glyph-grid-studio",
-  "pushed_at": "2026-06-28T07:14:09Z",
+  "pushed_at": "2026-07-09T08:05:28Z",
   "stars": 1,
   "tier": 1,
   "tier_reason": "explicit allowlist (Tier 1)",

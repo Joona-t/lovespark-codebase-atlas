@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 2.76,
+  "audit_elapsed_seconds": 2.31,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-07-09T01:18:07Z",
+  "audited_at": "2026-07-10T01:05:24Z",
   "core_loop": {
     "path": "background.js",
     "role": "Chrome extension service worker / background",
@@ -19,7 +19,7 @@
     ]
   },
   "description": "Blocks intrusive popups, redirect chains, and unwanted overlays across all websites",
-  "disk_usage_kb": 708,
+  "disk_usage_kb": 710,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -259,7 +259,7 @@
   "local_path": "/Users/darkfire/Claude x LoveSpark/Extensions/privacy/lovespark-popup-blocker",
   "ls_check": null,
   "name": "lovespark-popup-blocker",
-  "pushed_at": "2026-03-17T09:40:13Z",
+  "pushed_at": "2026-07-09T08:02:25Z",
   "stars": 0,
   "tier": 3,
   "tier_reason": "default tier",
