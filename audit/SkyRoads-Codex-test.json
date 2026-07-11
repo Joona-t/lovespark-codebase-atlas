@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 1.55,
+  "audit_elapsed_seconds": 2.26,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-07-09T01:18:19Z",
+  "audited_at": "2026-07-11T01:04:11Z",
   "core_loop": {
     "path": "crates/skyroads-cli/src/main.rs",
     "role": "Rust binary entry",
@@ -21,7 +21,7 @@
     "CHANGELOG.md": false,
     "CLAUDE.md": false,
     "CONTRIBUTING.md": false,
-    "LICENSE": false,
+    "LICENSE": true,
     "PLAN.md": false,
     "PRE-PUBLIC-CHECKLIST.md": false,
     "PUBLIC-LAUNCH-PLAN.md": false,
@@ -37,21 +37,25 @@
   "efficiency": {
     "deps_per_kloc": 0.0,
     "deps_total": 0,
-    "loc_per_source_file": 492.2,
-    "source_file_count": 25,
-    "source_loc": 12305,
+    "loc_per_source_file": 447.9655172413793,
+    "source_file_count": 29,
+    "source_loc": 12991,
     "test_loc": 0,
     "test_to_source_ratio": 0.0
   },
   "failures": [],
   "files": {
     "binary_count": 27,
-    "file_count": 66,
+    "file_count": 120,
     "files_by_lang": {
-      "Markdown": 5,
-      "Other": 2,
+      "HTML": 1,
+      "JSON": 42,
+      "JavaScript": 3,
+      "Markdown": 9,
+      "Other": 5,
       "Python": 3,
       "Rust": 22,
+      "Shell": 1,
       "TOML": 7
     },
     "largest_source_files": [
@@ -80,6 +84,10 @@
         "path": "crates/skyroads-core/src/app.rs"
       },
       {
+        "bytes": 17005,
+        "path": "crates/skyroads-cli/src/main.rs"
+      },
+      {
         "bytes": 14716,
         "path": "crates/skyroads-data/src/trekdat.rs"
       },
@@ -98,40 +106,63 @@
       {
         "bytes": 10227,
         "path": "crates/skyroads-data/src/muzax.rs"
-      },
-      {
-        "bytes": 9777,
-        "path": "crates/skyroads-data/src/level.rs"
       }
     ],
     "loc_by_lang": {
-      "Markdown": 1385,
-      "Other": 15,
+      "HTML": 27,
+      "JSON": 361557,
+      "JavaScript": 401,
+      "Markdown": 2027,
+      "Other": 83,
       "Python": 3243,
-      "Rust": 9062,
-      "TOML": 74
+      "Rust": 9324,
+      "Shell": 23,
+      "TOML": 78
     },
-    "loc_total": 13779,
+    "loc_total": 376763,
     "primary_language": "Rust"
   },
   "git": {
-    "branch": "main",
-    "commit_count": 1,
-    "contributor_count": 1,
+    "branch": "neon-3d-merge",
+    "commit_count": 4,
+    "contributor_count": 3,
     "contributors": [
+      {
+        "commits": 2,
+        "name": "Joona <tyrninoksa.joona@gmail.com>"
+      },
+      {
+        "commits": 1,
+        "name": "Ammaar Reshi <ammaar@elevenlabs.io>"
+      },
       {
         "commits": 1,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-03-17T10:32:03+02:00",
+    "first_commit_date": "2026-07-09T21:34:39+03:00",
     "is_git": true,
-    "last_commit_date": "2026-03-17T10:32:03+02:00",
+    "last_commit_date": "2026-07-09T21:34:39+03:00",
     "recent_commits": [
+      {
+        "date": "2026-07-09T21:34:39+03:00",
+        "sha": "74947fc",
+        "subject": "Fable-5 audit: 45 confirmed findings fixed (1 P0, 17 P1) + full report"
+      },
+      {
+        "date": "2026-07-09T21:01:01+03:00",
+        "sha": "d5ddffa",
+        "subject": "P1: asset-extraction pipeline + merger plan + IP posture (neon 3D merge)"
+      },
       {
         "date": "2026-03-17T10:32:03+02:00",
         "sha": "6cfe92a",
         "subject": "docs: add bugs & iterations log"
+      },
+      {
+        "date": "2026-03-08T01:06:13-05:00",
+        "sha": "4c59173",
+        "subject": "Initial SkyRoads native port and reverse engineering baseline"
       }
     ],
     "remote_url": "https://github.com/Joona-t/SkyRoads-Codex-test.git"
@@ -140,10 +171,10 @@
   "kind": {
     "is_rust_project": true
   },
-  "local_path": "/Users/darkfire/atlas-source-clones/SkyRoads-Codex-test",
+  "local_path": "/Users/darkfire/SkyRoads-Codex-test",
   "ls_check": null,
   "name": "SkyRoads-Codex-test",
-  "pushed_at": "2026-03-17T08:32:04Z",
+  "pushed_at": "2026-07-11T00:51:21Z",
   "stars": 0,
   "tier": 3,
   "tier_reason": "default tier",
