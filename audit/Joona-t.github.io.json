@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 1.88,
+  "audit_elapsed_seconds": 1.8,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-07-09T01:07:40Z",
+  "audited_at": "2026-07-16T01:01:58Z",
   "core_loop": {
     "path": "styles.css",
     "role": "largest source file",
@@ -12,7 +12,7 @@
   "data_samples": [],
   "deps": {},
   "description": "LoveSpark portfolio \u2014 retro-styled landing page showcasing the full suite of browser extensions, tools, and research projects",
-  "disk_usage_kb": 18022,
+  "disk_usage_kb": 18141,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -342,7 +342,7 @@
     "type": "web-static"
   },
   "name": "Joona-t.github.io",
-  "pushed_at": "2026-07-08T22:21:14Z",
+  "pushed_at": "2026-07-13T02:56:57Z",
   "stars": 0,
   "tier": 2,
   "tier_reason": "explicit allowlist (Tier 2)",
