@@ -1,15 +1,15 @@
 {
-  "audit_elapsed_seconds": 86.51,
+  "audit_elapsed_seconds": 85.22,
   "audit_meta": {},
   "audit_mode": "card",
   "audit_version": "0.2.0",
-  "audited_at": "2026-07-09T01:21:11Z",
+  "audited_at": "2026-08-27T01:04:28Z",
   "core_loop": null,
   "deps": {
     "pip": []
   },
   "description": "12-week hands-on ML/RL learning spine \u2014 micrograd to GPT to PPO to DPO/GRPO to MLX LoRA. Every week ends in a from-scratch artifact. No AI-written code (tutor contract in CLAUDE.md).",
-  "disk_usage_kb": 166,
+  "disk_usage_kb": 179,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -90,7 +90,7 @@
   "local_path": "/Users/darkfire/ml-spine",
   "ls_check": null,
   "name": "ml-spine",
-  "pushed_at": "2026-06-14T08:27:57Z",
+  "pushed_at": "2026-08-26T03:41:53Z",
   "stars": 0,
   "tier": 3,
   "tier_reason": "default tier",
