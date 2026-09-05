@@ -1,9 +1,9 @@
 {
-  "audit_elapsed_seconds": 75.23,
+  "audit_elapsed_seconds": 28.26,
   "audit_meta": {},
   "audit_mode": "deep",
   "audit_version": "0.2.0",
-  "audited_at": "2026-08-09T01:02:48Z",
+  "audited_at": "2026-09-05T01:02:40Z",
   "core_loop": {
     "path": "src-tauri/src/main.rs",
     "role": "Rust binary entry",
@@ -31,7 +31,7 @@
     "npm_dev": []
   },
   "description": "Real-time character-grid image renderer for macOS \u2014 GUI + CLI + MCP server. p5.js + Tauri 2 + Rust.",
-  "disk_usage_kb": 27179,
+  "disk_usage_kb": 27255,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -55,11 +55,11 @@
   "efficiency": {
     "deps_per_kloc": 0.0,
     "deps_total": 0,
-    "loc_per_source_file": 415.24,
+    "loc_per_source_file": 418.44,
     "source_file_count": 25,
-    "source_loc": 10381,
-    "test_loc": 1106,
-    "test_to_source_ratio": 0.10654079568442347
+    "source_loc": 10461,
+    "test_loc": 1124,
+    "test_to_source_ratio": 0.10744670681579199
   },
   "failures": [
     {
@@ -155,15 +155,15 @@
     },
     "largest_source_files": [
       {
-        "bytes": 195625,
+        "bytes": 208616,
         "path": "src/index.html"
       },
       {
-        "bytes": 81868,
+        "bytes": 83739,
         "path": "src/lib/glyph-studio.js"
       },
       {
-        "bytes": 55653,
+        "bytes": 56378,
         "path": "src-tauri/src/lib.rs"
       },
       {
@@ -204,18 +204,18 @@
       }
     ],
     "loc_by_lang": {
-      "HTML": 4811,
-      "JSON": 25082,
-      "JavaScript": 8001,
+      "HTML": 5114,
+      "JSON": 25089,
+      "JavaScript": 8051,
       "Markdown": 6793,
-      "Other": 6862,
+      "Other": 8921,
       "Python": 215,
       "Ruby": 24,
-      "Rust": 1803,
-      "Shell": 338,
+      "Rust": 1824,
+      "Shell": 347,
       "TOML": 63
     },
-    "loc_total": 53992,
+    "loc_total": 56441,
     "primary_language": "JavaScript"
   },
   "git": {
@@ -393,11 +393,11 @@
   "local_path": "/Users/darkfire/glyph-grid-studio",
   "ls_check": null,
   "name": "glyph-grid-studio",
-  "pushed_at": "2026-08-08T04:37:44Z",
+  "pushed_at": "2026-09-04T22:53:18Z",
   "stars": 1,
   "tier": 1,
   "tier_reason": "explicit allowlist (Tier 1)",
   "url": "https://github.com/Joona-t/glyph-grid-studio",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "visibility": "public"
 }
