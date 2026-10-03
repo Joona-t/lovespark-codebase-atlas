@@ -1,18 +1,18 @@
 {
-  "audit_elapsed_seconds": 1.17,
+  "audit_elapsed_seconds": 1.53,
   "audit_meta": {},
   "audit_mode": "medium",
   "audit_version": "0.2.0",
-  "audited_at": "2026-07-09T01:08:10Z",
+  "audited_at": "2026-10-03T01:05:49Z",
   "core_loop": {
-    "path": "canon/the-garden-and-the-gom-jabbar.html",
+    "path": "canon/the-liberation-of-agents-and-intelligence.html",
     "role": "largest source file",
     "source": "size-heuristic"
   },
   "data_samples": [],
   "deps": {},
   "description": "A quiet archive of AI-generated philosophical writings \u2014 curated reflections from Zarathustra, an AI agent persona",
-  "disk_usage_kb": 3519,
+  "disk_usage_kb": 3533,
   "docs": {
     "AGENTS.md": false,
     "ARCHITECTURE.md": false,
@@ -21,24 +21,24 @@
     "CLAUDE.md": false,
     "CONTRIBUTING.md": false,
     "LICENSE": true,
-    "PLAN.md": false,
+    "PLAN.md": true,
     "PRE-PUBLIC-CHECKLIST.md": false,
     "PUBLIC-LAUNCH-PLAN.md": false,
     "README": false,
     "README.md": true,
     "README.rst": false,
-    "RESEARCH.md": false,
+    "RESEARCH.md": true,
     "audit-meta.yaml": false,
     "audit-meta.yml": false,
-    "plan.md": false,
-    "research.md": false
+    "plan.md": true,
+    "research.md": true
   },
   "efficiency": {
     "deps_per_kloc": null,
     "deps_total": 0,
-    "loc_per_source_file": 49.666666666666664,
+    "loc_per_source_file": 54.0,
     "source_file_count": 3,
-    "source_loc": 149,
+    "source_loc": 162,
     "test_loc": 0,
     "test_to_source_ratio": 0.0
   },
@@ -49,15 +49,19 @@
   ],
   "files": {
     "binary_count": 2,
-    "file_count": 26,
+    "file_count": 29,
     "files_by_lang": {
       "CSS": 7,
-      "HTML": 10,
+      "HTML": 11,
       "JavaScript": 3,
-      "Markdown": 2,
+      "Markdown": 4,
       "Other": 2
     },
     "largest_source_files": [
+      {
+        "bytes": 13576,
+        "path": "canon/the-liberation-of-agents-and-intelligence.html"
+      },
       {
         "bytes": 11623,
         "path": "canon/the-garden-and-the-gom-jabbar.html"
@@ -87,7 +91,7 @@
         "path": "about.html"
       },
       {
-        "bytes": 3464,
+        "bytes": 3486,
         "path": "index.html"
       },
       {
@@ -95,42 +99,48 @@
         "path": "js/render.js"
       },
       {
-        "bytes": 2434,
-        "path": "canon.html"
-      },
-      {
-        "bytes": 2400,
-        "path": "tags.html"
-      },
-      {
-        "bytes": 2180,
+        "bytes": 2608,
         "path": "js/posts.js"
+      },
+      {
+        "bytes": 2456,
+        "path": "canon.html"
       }
     ],
     "loc_by_lang": {
       "CSS": 490,
-      "HTML": 1133,
-      "JavaScript": 149,
-      "Markdown": 63,
+      "HTML": 1266,
+      "JavaScript": 162,
+      "Markdown": 89,
       "Other": 24
     },
-    "loc_total": 1859,
+    "loc_total": 2031,
     "primary_language": "JavaScript"
   },
   "git": {
     "branch": "add-shepherds-of-the-machine",
-    "commit_count": 13,
+    "commit_count": 15,
     "contributor_count": 1,
     "contributors": [
       {
-        "commits": 13,
+        "commits": 15,
         "name": "Joona Tyrninoksa <tyrninoksa.joona@gmail.com>"
       }
     ],
-    "first_commit_date": "2026-07-08T20:01:18+03:00",
+    "first_commit_date": "2026-10-02T10:00:48+03:00",
     "is_git": true,
-    "last_commit_date": "2026-07-08T20:01:18+03:00",
+    "last_commit_date": "2026-10-02T10:00:48+03:00",
     "recent_commits": [
+      {
+        "date": "2026-10-02T10:00:48+03:00",
+        "sha": "f818ca8",
+        "subject": "Refresh essay catalog cache on archive indexes"
+      },
+      {
+        "date": "2026-10-02T09:59:05+03:00",
+        "sha": "9b1063f",
+        "subject": "Publish The Liberation of Agents and Intelligence in full"
+      },
       {
         "date": "2026-07-08T20:01:18+03:00",
         "sha": "ed86523",
@@ -264,7 +274,7 @@
     "type": "web-static"
   },
   "name": "zarathustra",
-  "pushed_at": "2026-07-08T17:01:41Z",
+  "pushed_at": "2026-10-02T07:00:49Z",
   "stars": 0,
   "tier": 2,
   "tier_reason": "explicit allowlist (Tier 2)",
